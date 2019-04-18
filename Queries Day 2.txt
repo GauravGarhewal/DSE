@@ -1,0 +1,803 @@
+CREATE TABLE SUPPLIER( SNO CHAR(4),
+			SNAME VARCHAR(20),STATUS VARCHAR(5),CITY VARCHAR(20),
+			CONSTRAINT PR_SUP PRIMARY KEY(SNO));
+
+
+CREATE TABLE PARTS( PNO CHAR(4) NOT NULL,
+			PNAME VARCHAR(20),
+			COLOR VARCHAR(15),
+			WEIGHT NUMBER(4,2),
+			CITY VARCHAR(20));
+
+SELECT * FROM TAB
+
+DESC SUPPLIERS;
+
+DESCRIBE PARTS;
+
+CREATE TABLE SUP_PART(
+		SNO CHAR(4),
+		PNO CHAR(4),
+		QUANTITY NUMBER(10),
+		CONSTRAINT SUP_PART_PK PRIMARY KEY(SNO,PNO));
+
+
+CREATE TABLE SUP_PARTS(
+		SNO CHAR(4),
+		PNO CHAR(4),
+		QUANTITY NUMBER(10),
+		CONSTRAINT SUP_PART_PK PRIMARY KEY(SNO,PNO),
+		CONSTRAINT FK_SUP FOREIGN KEY(SNO) REFERENCES SUPPLIER(SNO),
+		CONSTRAINT FK_PARTS FOREIGN KEY(PNO) REFERENCES PARTS(PNO));
+
+ALTER TABLE PARTS 
+DROP PRIMARY KEY;
+
+ALTER TABLE SUP_PART
+DROP PRIMARY KEY;
+
+ALTER TABLE SUP_PART
+DROP FOREINGN KEY;
+
+ALTER TABLE SUP_PART
+DROP CONSTRAINT 
+
+SELECT CONSTRAINT_NAME FROM USER_CONSTRAINTS WHERE TABLE_NAME LIKE 'PARTS';
+
+SELECT SYSDATE FROM DUAL;
+
+SELECT 10+2 FROM DUAL;
+
+
+SQL> CREATE TABLE SUPPLIER( SNO CHAR(4),
+  2  SNAME VARCHAR(20),STATUS VARCHAR(5),CITY VARCHAR(20),
+  3  CONSTRAINT PR_SUP PRIMARY KEY(SNO));
+
+Table created.
+
+SQL>
+SQL> CREATE TABLE PARTS( PNO CHAR(4) NOT NULL,
+  2  PNAME VARCHAR(20),
+  3  COLOR VARCHAR(15),
+  4  WEIGHT NUMBER(4,2),
+  5  CITY VARCHAR(20));
+
+Table created.
+
+SQL> CREATE TABLE SUP_PARTS(
+  2  SNO CHAR(4),
+  3  PNO CHAR(4),
+  4  QUANTITY NUMBER(10),
+  5  CONSTRAINT SUP_PART_PK PRIMARY KEY(SNO,PNO),
+  6  CONSTRAINT FK_SUP FOREIGN KEY(SNO) REFERENCES SUPPLIER(SNO),
+  7  CONSTRAINT FK_PARTS FOREIGN KEY(PNO) REFERENCES PARTS(PNO));
+CONSTRAINT FK_PARTS FOREIGN KEY(PNO) REFERENCES PARTS(PNO))
+                                                      *
+ERROR at line 7:
+ORA-02270: no matching unique or primary key for this column-list
+
+
+SQL> CREATE TABLE SUP_PART(
+  2  SNO CHAR(4),
+  3  PNO CHAR(4),
+  4  QUANTITY NUMBER(10),
+  5  CONSTRAINT SUP_PART_PK PRIMARY KEY(SNO,PNO));
+
+Table created.
+
+SQL> INSERT INTO SUPPLIER
+  2  VALUES('&SNO','&SNAME','&STATUS','&CITY')
+  3  INSERT INTO SUPPLIER VALUE(S1,RAM,10,BLR)
+  4  /
+Enter value for sno: S2
+Enter value for sname: SHYAM
+Enter value for status: 7
+Enter value for city: CHENNAI
+old   2: VALUES('&SNO','&SNAME','&STATUS','&CITY')
+new   2: VALUES('S2','SHYAM','7','CHENNAI')
+INSERT INTO SUPPLIER VALUE(S1,RAM,10,BLR)
+*
+ERROR at line 3:
+ORA-00933: SQL command not properly ended
+
+
+SQL> INSERT INTO SUPPLIER VALUE(S1,RAM,10,BLR);
+INSERT INTO SUPPLIER VALUE(S1,RAM,10,BLR)
+                                  *
+ERROR at line 1:
+ORA-01747: invalid user.table.column, table.column, or column specification
+
+
+SQL> /
+INSERT INTO SUPPLIER VALUE(S1,RAM,10,BLR)
+                                  *
+ERROR at line 1:
+ORA-01747: invalid user.table.column, table.column, or column specification
+
+
+SQL> VALUES('&SNO','&SNAME','&STATUS','&CITY')
+SP2-0734: unknown command beginning "VALUES('&S..." - rest of line ignored.
+SQL> INSERT INTO SUPPLIER
+  2  VALUES('&SNO','&SNAME','&STATUS','&CITY')
+  3  /
+Enter value for sno: S2
+Enter value for sname: GAURAV
+Enter value for status: 6
+Enter value for city: MAHARASHTRA
+old   2: VALUES('&SNO','&SNAME','&STATUS','&CITY')
+new   2: VALUES('S2','GAURAV','6','MAHARASHTRA')
+
+1 row created.
+
+SQL> /
+Enter value for sno: S1
+Enter value for sname: DEBASHIS
+Enter value for status: 8
+Enter value for city: ASSAM
+old   2: VALUES('&SNO','&SNAME','&STATUS','&CITY')
+new   2: VALUES('S1','DEBASHIS','8','ASSAM')
+
+1 row created.
+
+SQL> /
+Enter value for sno: S3
+Enter value for sname: AMBARISH
+Enter value for status: 7
+Enter value for city: CHENNAI
+old   2: VALUES('&SNO','&SNAME','&STATUS','&CITY')
+new   2: VALUES('S3','AMBARISH','7','CHENNAI')
+
+1 row created.
+
+SQL> S1
+SP2-0042: unknown command "S1" - rest of line ignored.
+SQL> /
+Enter value for sno: S1
+Enter value for sname: HARISH
+Enter value for status: 8
+Enter value for city: MUMBAI
+old   2: VALUES('&SNO','&SNAME','&STATUS','&CITY')
+new   2: VALUES('S1','HARISH','8','MUMBAI')
+INSERT INTO SUPPLIER
+*
+ERROR at line 1:
+ORA-00001: unique constraint (SYSTEM.PR_SUP) violated
+
+
+SQL> /
+Enter value for sno: S4
+Enter value for sname: HARISHJ
+Enter value for status: 5
+Enter value for city: GOA
+old   2: VALUES('&SNO','&SNAME','&STATUS','&CITY')
+new   2: VALUES('S4','HARISHJ','5','GOA')
+
+1 row created.
+
+SQL> /
+Enter value for sno: S5
+Enter value for sname: BAKUL
+Enter value for status: 4
+Enter value for city: MUMBAI
+old   2: VALUES('&SNO','&SNAME','&STATUS','&CITY')
+new   2: VALUES('S5','BAKUL','4','MUMBAI')
+
+1 row created.
+
+SQL> S6
+SP2-0042: unknown command "S6" - rest of line ignored.
+SQL> /
+Enter value for sno: S6
+Enter value for sname: MANISH
+Enter value for status: 2
+Enter value for city: MP
+old   2: VALUES('&SNO','&SNAME','&STATUS','&CITY')
+new   2: VALUES('S6','MANISH','2','MP')
+
+1 row created.
+
+SQL> /
+Enter value for sno: S7
+Enter value for sname: NAKUL
+Enter value for status: 1
+Enter value for city: ORISSA
+old   2: VALUES('&SNO','&SNAME','&STATUS','&CITY')
+new   2: VALUES('S7','NAKUL','1','ORISSA')
+
+1 row created.
+
+SQL> /
+Enter value for sno: S8
+Enter value for sname: MAYONESSE
+Enter value for status: 6
+Enter value for city: BANGLORE
+old   2: VALUES('&SNO','&SNAME','&STATUS','&CITY')
+new   2: VALUES('S8','MAYONESSE','6','BANGLORE')
+
+1 row created.
+
+SQL> /
+Enter value for sno: S9
+Enter value for sname: BINDWA
+Enter value for status: 6
+Enter value for city: NASIK
+old   2: VALUES('&SNO','&SNAME','&STATUS','&CITY')
+new   2: VALUES('S9','BINDWA','6','NASIK')
+
+1 row created.
+
+SQL> /
+Enter value for sno: S10
+Enter value for sname: KARISHMA
+Enter value for status: 9
+Enter value for city: MALYALAM
+old   2: VALUES('&SNO','&SNAME','&STATUS','&CITY')
+new   2: VALUES('S10','KARISHMA','9','MALYALAM')
+
+1 row created.
+
+SQL> SELECT * FROM SUPPLIER
+  2  ;
+
+SNO  SNAME                STATU CITY
+---- -------------------- ----- --------------------
+S2   GAURAV               6     MAHARASHTRA
+S1   DEBASHIS             8     ASSAM
+S3   AMBARISH             7     CHENNAI
+S4   HARISHJ              5     GOA
+S5   BAKUL                4     MUMBAI
+S6   MANISH               2     MP
+S7   NAKUL                1     ORISSA
+S8   MAYONESSE            6     BANGLORE
+S9   BINDWA               6     NASIK
+S10  KARISHMA             9     MALYALAM
+
+10 rows selected.
+
+SQL> INSERT INTO PARTS VALUES('&PNO','&PNAME','&COLOR',&WEIGHT,'&CITY');
+Enter value for pno: P1
+Enter value for pname: NUT
+Enter value for color: SILVER
+Enter value for weight: 100.02
+Enter value for city: MUMBAI
+old   1: INSERT INTO PARTS VALUES('&PNO','&PNAME','&COLOR',&WEIGHT,'&CITY')
+new   1: INSERT INTO PARTS VALUES('P1','NUT','SILVER',100.02,'MUMBAI')
+INSERT INTO PARTS VALUES('P1','NUT','SILVER',100.02,'MUMBAI')
+                                             *
+ERROR at line 1:
+ORA-01438: value larger than specified precision allowed for this column
+
+
+SQL> /
+Enter value for pno: P1
+Enter value for pname: NUT
+Enter value for color: SILVER
+Enter value for weight: 10.02
+Enter value for city: MUMBAI
+old   1: INSERT INTO PARTS VALUES('&PNO','&PNAME','&COLOR',&WEIGHT,'&CITY')
+new   1: INSERT INTO PARTS VALUES('P1','NUT','SILVER',10.02,'MUMBAI')
+
+1 row created.
+
+SQL> /
+Enter value for pno: P2
+Enter value for pname: NAIL
+Enter value for color: GREY
+Enter value for weight: 3.65
+Enter value for city: BANGLORE
+old   1: INSERT INTO PARTS VALUES('&PNO','&PNAME','&COLOR',&WEIGHT,'&CITY')
+new   1: INSERT INTO PARTS VALUES('P2','NAIL','GREY',3.65,'BANGLORE')
+
+1 row created.
+
+SQL> /
+Enter value for pno: P3
+Enter value for pname: TURBINE
+Enter value for color: BLACK
+Enter value for weight: 963.5
+Enter value for city: ORISSA
+old   1: INSERT INTO PARTS VALUES('&PNO','&PNAME','&COLOR',&WEIGHT,'&CITY')
+new   1: INSERT INTO PARTS VALUES('P3','TURBINE','BLACK',963.5,'ORISSA')
+INSERT INTO PARTS VALUES('P3','TURBINE','BLACK',963.5,'ORISSA')
+                                                *
+ERROR at line 1:
+ORA-01438: value larger than specified precision allowed for this column
+
+
+SQL> /
+Enter value for pno: P3
+Enter value for pname: TURBINE
+Enter value for color: BLACK
+Enter value for weight: 96.65
+Enter value for city: ORISSA
+old   1: INSERT INTO PARTS VALUES('&PNO','&PNAME','&COLOR',&WEIGHT,'&CITY')
+new   1: INSERT INTO PARTS VALUES('P3','TURBINE','BLACK',96.65,'ORISSA')
+
+1 row created.
+
+SQL> /
+Enter value for pno: P4
+Enter value for pname: LAPTOP
+Enter value for color: BRONZE
+Enter value for weight: 7111
+Enter value for city: DELHI
+old   1: INSERT INTO PARTS VALUES('&PNO','&PNAME','&COLOR',&WEIGHT,'&CITY')
+new   1: INSERT INTO PARTS VALUES('P4','LAPTOP','BRONZE',7111,'DELHI')
+INSERT INTO PARTS VALUES('P4','LAPTOP','BRONZE',7111,'DELHI')
+                                                *
+ERROR at line 1:
+ORA-01438: value larger than specified precision allowed for this column
+
+
+SQL> /
+Enter value for pno: P4
+Enter value for pname: LAPTOP
+Enter value for color: BRONZE
+Enter value for weight: 71.11
+Enter value for city: DELHI
+old   1: INSERT INTO PARTS VALUES('&PNO','&PNAME','&COLOR',&WEIGHT,'&CITY')
+new   1: INSERT INTO PARTS VALUES('P4','LAPTOP','BRONZE',71.11,'DELHI')
+
+1 row created.
+
+SQL> /
+Enter value for pno: P5
+Enter value for pname: MOBILE
+Enter value for color: YELLOW
+Enter value for weight: 56.69
+Enter value for city: PUNJAB
+old   1: INSERT INTO PARTS VALUES('&PNO','&PNAME','&COLOR',&WEIGHT,'&CITY')
+new   1: INSERT INTO PARTS VALUES('P5','MOBILE','YELLOW',56.69,'PUNJAB')
+
+1 row created.
+
+SQL> SELECT * FROM PARTS
+  2  ;
+
+PNO  PNAME                COLOR               WEIGHT CITY
+---- -------------------- --------------- ---------- --------------------
+P1   NUT                  SILVER               10.02 MUMBAI
+P2   NAIL                 GREY                  3.65 BANGLORE
+P3   TURBINE              BLACK                96.65 ORISSA
+P4   LAPTOP               BRONZE               71.11 DELHI
+P5   MOBILE               YELLOW               56.69 PUNJAB
+
+SQL> SELECT * FROM SUPPLIERS;
+SELECT * FROM SUPPLIERS
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> SELECT * FROM SUPPLIER;
+
+SNO  SNAME                STATU CITY
+---- -------------------- ----- --------------------
+S2   GAURAV               6     MAHARASHTRA
+S1   DEBASHIS             8     ASSAM
+S3   AMBARISH             7     CHENNAI
+S4   HARISHJ              5     GOA
+S5   BAKUL                4     MUMBAI
+S6   MANISH               2     MP
+S7   NAKUL                1     ORISSA
+S8   MAYONESSE            6     BANGLORE
+S9   BINDWA               6     NASIK
+S10  KARISHMA             9     MALYALAM
+
+10 rows selected.
+
+SQL> INSERT INTO SUP_PART VALUES('&SNO','&PNO',&QUANTITY);
+Enter value for sno: S1
+Enter value for pno: P1
+Enter value for quantity: 1000
+old   1: INSERT INTO SUP_PART VALUES('&SNO','&PNO',&QUANTITY)
+new   1: INSERT INTO SUP_PART VALUES('S1','P1',1000)
+
+1 row created.
+
+SQL> ALTER TABLE PARTS
+  2  ;
+
+*
+ERROR at line 2:
+ORA-02210: no options specified for ALTER TABLE
+
+
+SQL> ALTER TABLE SUPPLIER MODIFY STATUS NUMBER(2);
+ALTER TABLE SUPPLIER MODIFY STATUS NUMBER(2)
+                            *
+ERROR at line 1:
+ORA-01439: column to be modified must be empty to change datatype
+
+
+SQL> /
+ALTER TABLE SUPPLIER MODIFY STATUS NUMBER(2)
+                            *
+ERROR at line 1:
+ORA-01439: column to be modified must be empty to change datatype
+
+
+SQL> INSERT INTO SUP_PART VALUES('&SNO','&PNO',&QUANTITY);
+Enter value for sno: S1
+Enter value for pno: P2
+Enter value for quantity: 6300
+old   1: INSERT INTO SUP_PART VALUES('&SNO','&PNO',&QUANTITY)
+new   1: INSERT INTO SUP_PART VALUES('S1','P2',6300)
+
+1 row created.
+
+SQL> DESC SUPPLIER;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SNO                                       NOT NULL CHAR(4)
+ SNAME                                              VARCHAR2(20)
+ STATUS                                             VARCHAR2(5)
+ CITY                                               VARCHAR2(20)
+
+SQL> INSERT INTO SUP_PART VALUES('&SNO','&PNO',&QUANTITY);
+Enter value for sno: S3
+Enter value for pno: P1
+Enter value for quantity: 5600
+old   1: INSERT INTO SUP_PART VALUES('&SNO','&PNO',&QUANTITY)
+new   1: INSERT INTO SUP_PART VALUES('S3','P1',5600)
+
+1 row created.
+
+SQL> SELECT SNMAE FROM SUPPLIER WHERE CITY='MUMBAI';
+SELECT SNMAE FROM SUPPLIER WHERE CITY='MUMBAI'
+       *
+ERROR at line 1:
+ORA-00904: "SNMAE": invalid identifier
+
+
+SQL> SELECT SNAME FROM SUPPLIER WHERE CITY='MUMBAI';
+
+SNAME
+--------------------
+BAKUL
+
+SQL> SELECT * FROM SUP_PART;
+
+SNO  PNO    QUANTITY
+---- ---- ----------
+S1   P1         1000
+S1   P2         6300
+S3   P1         5600
+
+SQL> /
+
+SNO  PNO    QUANTITY
+---- ---- ----------
+S1   P1         1000
+S1   P2         6300
+S3   P1         5600
+
+SQL> INSERT INTO SUP_PART VALUES('&SNO','&PNO',&QUANTITY);
+Enter value for sno: S2
+Enter value for pno: P3
+Enter value for quantity: 56983
+old   1: INSERT INTO SUP_PART VALUES('&SNO','&PNO',&QUANTITY)
+new   1: INSERT INTO SUP_PART VALUES('S2','P3',56983)
+
+1 row created.
+
+SQL> /
+Enter value for sno: S2
+Enter value for pno: P5
+Enter value for quantity: 98000
+old   1: INSERT INTO SUP_PART VALUES('&SNO','&PNO',&QUANTITY)
+new   1: INSERT INTO SUP_PART VALUES('S2','P5',98000)
+
+1 row created.
+
+SQL> SELECT SNAME FROM SUPPLIER WHERE CITY='MUMBAI';
+
+SNAME
+--------------------
+BAKUL
+
+SQL> SELECT * FROM SUPPLIERS;
+SELECT * FROM SUPPLIERS
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> SELECT * FROM SUPPLIER;
+
+SNO  SNAME                STATU CITY
+---- -------------------- ----- --------------------
+S2   GAURAV               6     MAHARASHTRA
+S1   DEBASHIS             8     ASSAM
+S3   AMBARISH             7     CHENNAI
+S4   HARISHJ              5     GOA
+S5   BAKUL                4     MUMBAI
+S6   MANISH               2     MP
+S7   NAKUL                1     ORISSA
+S8   MAYONESSE            6     BANGLORE
+S9   BINDWA               6     NASIK
+S10  KARISHMA             9     MALYALAM
+
+10 rows selected.
+
+SQL> SELECT SNAME FROM SUPPLIER WHERE SNAME LIKE 'MA';
+
+
+SQL> SELECT * FROM PARTS
+  2  ;
+
+PNO  PNAME                COLOR               WEIGHT CITY
+---- -------------------- --------------- ---------- --------------------
+P1   NUT                  SILVER               10.02 MUMBAI
+P2   NAIL                 GREY                  3.65 BANGLORE
+P3   TURBINE              BLACK                96.65 ORISSA
+P4   LAPTOP               BRONZE               71.11 DELHI
+P5   MOBILE               YELLOW               56.69 PUNJAB
+
+SQL> UPDATE PARTS SET COLOR='RED' WHERE PNO='P3';
+
+1 row updated.
+
+SQL> SELECT * FROM PARTS
+  2  ;
+
+PNO  PNAME                COLOR               WEIGHT CITY
+---- -------------------- --------------- ---------- --------------------
+P1   NUT                  SILVER               10.02 MUMBAI
+P2   NAIL                 GREY                  3.65 BANGLORE
+P3   TURBINE              RED                  96.65 ORISSA
+P4   LAPTOP               BRONZE               71.11 DELHI
+P5   MOBILE               YELLOW               56.69 PUNJAB
+
+SQL> SELECT PNAME FROM PARTS WHERE COLOR='RED' AND CITY='ORISSA';
+
+PNAME
+--------------------
+TURBINE
+
+SQL> SELECT PNAME FROM PARTS WHERE COLOR!='RED';
+
+PNAME
+--------------------
+NUT
+NAIL
+LAPTOP
+MOBILE
+
+SQL> SELECT PNAME FROM PARTS WHERE CITY!='BANGLORE';
+
+PNAME
+--------------------
+NUT
+TURBINE
+LAPTOP
+MOBILE
+
+SQL> SELECT * FROM SUPPLIER WHERE CITY!='BANGLORE';
+
+SNO  SNAME                STATU CITY
+---- -------------------- ----- --------------------
+S2   GAURAV               6     MAHARASHTRA
+S1   DEBASHIS             8     ASSAM
+S3   AMBARISH             7     CHENNAI
+S4   HARISHJ              5     GOA
+S5   BAKUL                4     MUMBAI
+S6   MANISH               2     MP
+S7   NAKUL                1     ORISSA
+S9   BINDWA               6     NASIK
+S10  KARISHMA             9     MALYALAM
+
+9 rows selected.
+
+SQL> SELECT * FROM SUPPLIER WHERE CITY<>'BANGLORE';
+
+SNO  SNAME                STATU CITY
+---- -------------------- ----- --------------------
+S2   GAURAV               6     MAHARASHTRA
+S1   DEBASHIS             8     ASSAM
+S3   AMBARISH             7     CHENNAI
+S4   HARISHJ              5     GOA
+S5   BAKUL                4     MUMBAI
+S6   MANISH               2     MP
+S7   NAKUL                1     ORISSA
+S9   BINDWA               6     NASIK
+S10  KARISHMA             9     MALYALAM
+
+9 rows selected.
+
+SQL> SELECT * FROM SUPPLIER WHERE CITY NOT IN ('BANGLORE','MUMBAI');
+
+SNO  SNAME                STATU CITY
+---- -------------------- ----- --------------------
+S2   GAURAV               6     MAHARASHTRA
+S1   DEBASHIS             8     ASSAM
+S3   AMBARISH             7     CHENNAI
+S4   HARISHJ              5     GOA
+S6   MANISH               2     MP
+S7   NAKUL                1     ORISSA
+S9   BINDWA               6     NASIK
+S10  KARISHMA             9     MALYALAM
+
+8 rows selected.
+
+SQL> SELECT * FROM PARTS;
+
+PNO  PNAME                COLOR               WEIGHT CITY
+---- -------------------- --------------- ---------- --------------------
+P1   NUT                  SILVER               10.02 MUMBAI
+P2   NAIL                 GREY                  3.65 BANGLORE
+P3   TURBINE              RED                  96.65 ORISSA
+P4   LAPTOP               BRONZE               71.11 DELHI
+P5   MOBILE               YELLOW               56.69 PUNJAB
+
+SQL> SELECT * FRPM PARTS WHERE WEIGHT<15;
+SELECT * FRPM PARTS WHERE WEIGHT<15
+         *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> SELECT * FROM PARTS WHERE WEIGHT<15;
+
+PNO  PNAME                COLOR               WEIGHT CITY
+---- -------------------- --------------- ---------- --------------------
+P1   NUT                  SILVER               10.02 MUMBAI
+P2   NAIL                 GREY                  3.65 BANGLORE
+
+SQL> SELECT * FROM PARTS WHERE WEIGHT>10 AND WEIGHT<20;
+
+PNO  PNAME                COLOR               WEIGHT CITY
+---- -------------------- --------------- ---------- --------------------
+P1   NUT                  SILVER               10.02 MUMBAI
+
+SQL> SELECT * FROM PARTS WHERE 10<WEIGHT<20;
+SELECT * FROM PARTS WHERE 10<WEIGHT<20
+                                   *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> SELECT * FROM PARTS WHERE WEIGHT>10 AND WEIGHT<20;
+
+PNO  PNAME                COLOR               WEIGHT CITY
+---- -------------------- --------------- ---------- --------------------
+P1   NUT                  SILVER               10.02 MUMBAI
+
+SQL> SELECT * FROM PARTS WHERE WEIGHT BETWEEN 10 AND 20;
+
+PNO  PNAME                COLOR               WEIGHT CITY
+---- -------------------- --------------- ---------- --------------------
+P1   NUT                  SILVER               10.02 MUMBAI
+
+SQL> SELECT * FROM SUPPLIERS;
+SELECT * FROM SUPPLIERS
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> SELECT * FROM SUPPLIER;
+
+SNO  SNAME                STATU CITY
+---- -------------------- ----- --------------------
+S2   GAURAV               6     MAHARASHTRA
+S1   DEBASHIS             8     ASSAM
+S3   AMBARISH             7     CHENNAI
+S4   HARISHJ              5     GOA
+S5   BAKUL                4     MUMBAI
+S6   MANISH               2     MP
+S7   NAKUL                1     ORISSA
+S8   MAYONESSE            6     BANGLORE
+S9   BINDWA               6     NASIK
+S10  KARISHMA             9     MALYALAM
+
+10 rows selected.
+
+SQL> SELECT * FROM SUPPLIER WHERE SNAME LIKE 'MA%';
+
+SNO  SNAME                STATU CITY
+---- -------------------- ----- --------------------
+S6   MANISH               2     MP
+S8   MAYONESSE            6     BANGLORE
+
+SQL> SELECT * FROM SUPPLIER WHERE SNAME LIKE '%S';
+
+SNO  SNAME                STATU CITY
+---- -------------------- ----- --------------------
+S1   DEBASHIS             8     ASSAM
+
+SQL> SELECT * FROM SUPPLIER WHERE SNAME LIKE '%S%';
+
+SNO  SNAME                STATU CITY
+---- -------------------- ----- --------------------
+S1   DEBASHIS             8     ASSAM
+S3   AMBARISH             7     CHENNAI
+S4   HARISHJ              5     GOA
+S6   MANISH               2     MP
+S8   MAYONESSE            6     BANGLORE
+S10  KARISHMA             9     MALYALAM
+
+6 rows selected.
+
+SQL> SELECT * FROM SUPPLIER WHERE SNAME LIKE '_S%';
+
+no rows selected
+
+SQL> SELECT * FROM SUPPLIER WHERE SNAME LIKE '_A%';
+
+SNO  SNAME                STATU CITY
+---- -------------------- ----- --------------------
+S2   GAURAV               6     MAHARASHTRA
+S4   HARISHJ              5     GOA
+S5   BAKUL                4     MUMBAI
+S6   MANISH               2     MP
+S7   NAKUL                1     ORISSA
+S8   MAYONESSE            6     BANGLORE
+S10  KARISHMA             9     MALYALAM
+
+7 rows selected.
+
+SQL> SELECT * FROM SUPPLIER WHERE SNAME LIKE '______';
+
+SNO  SNAME                STATU CITY
+---- -------------------- ----- --------------------
+S2   GAURAV               6     MAHARASHTRA
+S6   MANISH               2     MP
+S9   BINDWA               6     NASIK
+
+SQL> SELECT * FROM SUPPLIER WHERE SNAME LIKE '_____';
+
+SNO  SNAME                STATU CITY
+---- -------------------- ----- --------------------
+S5   BAKUL                4     MUMBAI
+S7   NAKUL                1     ORISSA
+
+SQL> SELECT * FROM SUPPLIER;
+
+SNO  SNAME                STATU CITY
+---- -------------------- ----- --------------------
+S2   GAURAV               6     MAHARASHTRA
+S1   DEBASHIS             8     ASSAM
+S3   AMBARISH             7     CHENNAI
+S4   HARISHJ              5     GOA
+S5   BAKUL                4     MUMBAI
+S6   MANISH               2     MP
+S7   NAKUL                1     ORISSA
+S8   MAYONESSE            6     BANGLORE
+S9   BINDWA               6     NASIK
+S10  KARISHMA             9     MALYALAM
+
+10 rows selected.
+
+SQL> SELECT * FROM SUPPLIER WHERE SNAME='gaurav';
+
+no rows selected
+
+SQL> SELECT * FROM SUP_PARTS WHERE PNO='P1';
+SELECT * FROM SUP_PARTS WHERE PNO='P1'
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> SELECT * FROM SUP_PART WHERE PNO='P1';
+
+SNO  PNO    QUANTITY
+---- ---- ----------
+S1   P1         1000
+S3   P1         5600
+
+SQL> SELECT * FROM SUP_PART WHERE PNO='P2';
+
+SNO  PNO    QUANTITY
+---- ---- ----------
+S1   P2         6300
+
+SQL> SELECT SNAME FROM SUPPLIER WHERE SNO IN (SELECT SNO FROM SUP_PART WHERE PNO='P1');
+
+SNAME
+--------------------
+DEBASHIS
+AMBARISH
+
+SQL>

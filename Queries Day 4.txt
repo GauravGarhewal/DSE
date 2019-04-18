@@ -1,0 +1,2703 @@
+
+SQL*Plus: Release 11.2.0.2.0 Production on Mon Nov 26 10:58:36 2018
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> CONNECT
+Enter user-name: SYSTEM
+Enter password:
+Connected.
+SQL> SELECT * FROM SUPPLIER;
+
+SNO  SNAME                    STATUS CITY
+---- -------------------- ---------- --------------------
+S2   SHYAM                        15 MUM
+S3   RAMYA                        20 DEL
+S4   RAM                          30 BLR
+S5   RAMYA                        40 MUM
+S6   JACK                         25 CHI
+S7   JANE                         50 BLR
+S1   RAM                          10 BLR
+
+7 rows selected.
+
+SQL> SELECT * FROM SUP_PARTS;
+
+SNO  PNO    QUANTITY
+---- ---- ----------
+S1   P1          100
+S2   P1          151
+S2   P2          102
+S2   P4          100
+S3   P4           50
+S3   P5          200
+
+6 rows selected.
+
+SQL> SELECT * FROM PARTS P, SUP_PARTS SP WHERE P.PNO=SP.PNO;
+
+PNO  PNAME                COLOR               WEIGHT CITY                 SNO
+---- -------------------- --------------- ---------- -------------------- ----
+PNO    QUANTITY
+---- ----------
+P1   NUT                  RED                     11 BLR                  S2
+P1          151
+
+P1   NUT                  RED                     11 BLR                  S1
+P1          100
+
+P2   BOLT                 BLUE                    22 MUM                  S2
+P2          102
+
+
+PNO  PNAME                COLOR               WEIGHT CITY                 SNO
+---- -------------------- --------------- ---------- -------------------- ----
+PNO    QUANTITY
+---- ----------
+P4   DRILLBIT             BLACK                   30 DEL                  S3
+P4           50
+
+P4   DRILLBIT             BLACK                   30 DEL                  S2
+P4          100
+
+P5   NAIL                 BLACK                    5 CHI                  S3
+P5          200
+
+
+6 rows selected.
+
+SQL> SELECT * FROM PARTS P, SUP_PARTS SP WHERE P.PNO=SP.PNO(+);
+
+PNO  PNAME                COLOR               WEIGHT CITY                 SNO
+---- -------------------- --------------- ---------- -------------------- ----
+PNO    QUANTITY
+---- ----------
+P1   NUT                  RED                     11 BLR                  S1
+P1          100
+
+P1   NUT                  RED                     11 BLR                  S2
+P1          151
+
+P2   BOLT                 BLUE                    22 MUM                  S2
+P2          102
+
+
+PNO  PNAME                COLOR               WEIGHT CITY                 SNO
+---- -------------------- --------------- ---------- -------------------- ----
+PNO    QUANTITY
+---- ----------
+P4   DRILLBIT             BLACK                   30 DEL                  S2
+P4          100
+
+P4   DRILLBIT             BLACK                   30 DEL                  S3
+P4           50
+
+P5   NAIL                 BLACK                    5 CHI                  S3
+P5          200
+
+
+PNO  PNAME                COLOR               WEIGHT CITY                 SNO
+---- -------------------- --------------- ---------- -------------------- ----
+PNO    QUANTITY
+---- ----------
+P8   PEN                  RED                     35 MUM
+
+
+P6   NIB                  WHITE                    2 BLR
+
+
+P11  JACK                 BLACK                      DEL
+
+
+
+PNO  PNAME                COLOR               WEIGHT CITY                 SNO
+---- -------------------- --------------- ---------- -------------------- ----
+PNO    QUANTITY
+---- ----------
+P7   MOUSE                RED                     15 BLR
+
+
+P3   PAINT                GREEN                    1 BLR
+
+
+P10  RIM                  BLACK                      DEL
+
+
+
+12 rows selected.
+
+SQL> SELECT * FROM SUPPLIER;
+
+SNO  SNAME                    STATUS CITY
+---- -------------------- ---------- --------------------
+S2   SHYAM                        15 MUM
+S3   RAMYA                        20 DEL
+S4   RAM                          30 BLR
+S5   RAMYA                        40 MUM
+S6   JACK                         25 CHI
+S7   JANE                         50 BLR
+S1   RAM                          10 BLR
+
+7 rows selected.
+
+SQL> SELECT * FROM PARTS;
+
+PNO  PNAME                COLOR               WEIGHT CITY
+---- -------------------- --------------- ---------- --------------------
+P1   NUT                  RED                     11 BLR
+P2   BOLT                 BLUE                    22 MUM
+P3   PAINT                GREEN                    1 BLR
+P4   DRILLBIT             BLACK                   30 DEL
+P5   NAIL                 BLACK                    5 CHI
+P6   NIB                  WHITE                    2 BLR
+P7   MOUSE                RED                     15 BLR
+P8   PEN                  RED                     35 MUM
+P10  RIM                  BLACK                      DEL
+P11  JACK                 BLACK                      DEL
+
+10 rows selected.
+
+SQL> SELECT * FROM SUPPLIER S, PARTS P WHERE S.CITY=P.CITY
+  2  ;
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S1   RAM                          10 BLR                  P1
+NUT                  RED                     11 BLR
+
+S7   JANE                         50 BLR                  P1
+NUT                  RED                     11 BLR
+
+S4   RAM                          30 BLR                  P1
+NUT                  RED                     11 BLR
+
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S5   RAMYA                        40 MUM                  P2
+BOLT                 BLUE                    22 MUM
+
+S2   SHYAM                        15 MUM                  P2
+BOLT                 BLUE                    22 MUM
+
+S1   RAM                          10 BLR                  P3
+PAINT                GREEN                    1 BLR
+
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S7   JANE                         50 BLR                  P3
+PAINT                GREEN                    1 BLR
+
+S4   RAM                          30 BLR                  P3
+PAINT                GREEN                    1 BLR
+
+S3   RAMYA                        20 DEL                  P4
+DRILLBIT             BLACK                   30 DEL
+
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S6   JACK                         25 CHI                  P5
+NAIL                 BLACK                    5 CHI
+
+S1   RAM                          10 BLR                  P6
+NIB                  WHITE                    2 BLR
+
+S7   JANE                         50 BLR                  P6
+NIB                  WHITE                    2 BLR
+
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S4   RAM                          30 BLR                  P6
+NIB                  WHITE                    2 BLR
+
+S1   RAM                          10 BLR                  P7
+MOUSE                RED                     15 BLR
+
+S7   JANE                         50 BLR                  P7
+MOUSE                RED                     15 BLR
+
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S4   RAM                          30 BLR                  P7
+MOUSE                RED                     15 BLR
+
+S5   RAMYA                        40 MUM                  P8
+PEN                  RED                     35 MUM
+
+S2   SHYAM                        15 MUM                  P8
+PEN                  RED                     35 MUM
+
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S3   RAMYA                        20 DEL                  P10
+RIM                  BLACK                      DEL
+
+S3   RAMYA                        20 DEL                  P11
+JACK                 BLACK                      DEL
+
+
+20 rows selected.
+
+SQL> SELECT * FROM SUPPLIER S, PARTS P WHERE S.CITY=P.CITY ORDER BY S.SNO;
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S1   RAM                          10 BLR                  P1
+NUT                  RED                     11 BLR
+
+S1   RAM                          10 BLR                  P7
+MOUSE                RED                     15 BLR
+
+S1   RAM                          10 BLR                  P6
+NIB                  WHITE                    2 BLR
+
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S1   RAM                          10 BLR                  P3
+PAINT                GREEN                    1 BLR
+
+S2   SHYAM                        15 MUM                  P8
+PEN                  RED                     35 MUM
+
+S2   SHYAM                        15 MUM                  P2
+BOLT                 BLUE                    22 MUM
+
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S3   RAMYA                        20 DEL                  P10
+RIM                  BLACK                      DEL
+
+S3   RAMYA                        20 DEL                  P11
+JACK                 BLACK                      DEL
+
+S3   RAMYA                        20 DEL                  P4
+DRILLBIT             BLACK                   30 DEL
+
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S4   RAM                          30 BLR                  P7
+MOUSE                RED                     15 BLR
+
+S4   RAM                          30 BLR                  P1
+NUT                  RED                     11 BLR
+
+S4   RAM                          30 BLR                  P6
+NIB                  WHITE                    2 BLR
+
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S4   RAM                          30 BLR                  P3
+PAINT                GREEN                    1 BLR
+
+S5   RAMYA                        40 MUM                  P8
+PEN                  RED                     35 MUM
+
+S5   RAMYA                        40 MUM                  P2
+BOLT                 BLUE                    22 MUM
+
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S6   JACK                         25 CHI                  P5
+NAIL                 BLACK                    5 CHI
+
+S7   JANE                         50 BLR                  P6
+NIB                  WHITE                    2 BLR
+
+S7   JANE                         50 BLR                  P3
+PAINT                GREEN                    1 BLR
+
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S7   JANE                         50 BLR                  P1
+NUT                  RED                     11 BLR
+
+S7   JANE                         50 BLR                  P7
+MOUSE                RED                     15 BLR
+
+
+20 rows selected.
+
+SQL> SELECT * FROM SUPPLIER S, PARTS P, SUP_PARTS SP WHERE S.SNO-SP.SNO AND S.CITY=P.CITY ORDER BY S.SNO;
+SELECT * FROM SUPPLIER S, PARTS P, SUP_PARTS SP WHERE S.SNO-SP.SNO AND S.CITY=P.CITY ORDER BY S.SNO
+                                                                   *
+ERROR at line 1:
+ORA-00920: invalid relational operator
+
+
+SQL> SELECT * FROM SUPPLIER S, PARTS P, SUP_PARTS SP WHERE S.SNO=SP.SNO AND S.CITY=P.CITY ORDER BY S.SNO;
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY                 SNO  PNO
+-------------------- --------------- ---------- -------------------- ---- ----
+  QUANTITY
+----------
+S1   RAM                          10 BLR                  P6
+NIB                  WHITE                    2 BLR                  S1   P1
+       100
+
+S1   RAM                          10 BLR                  P3
+PAINT                GREEN                    1 BLR                  S1   P1
+       100
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY                 SNO  PNO
+-------------------- --------------- ---------- -------------------- ---- ----
+  QUANTITY
+----------
+
+S1   RAM                          10 BLR                  P1
+NUT                  RED                     11 BLR                  S1   P1
+       100
+
+S1   RAM                          10 BLR                  P7
+MOUSE                RED                     15 BLR                  S1   P1
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY                 SNO  PNO
+-------------------- --------------- ---------- -------------------- ---- ----
+  QUANTITY
+----------
+       100
+
+S2   SHYAM                        15 MUM                  P2
+BOLT                 BLUE                    22 MUM                  S2   P4
+       100
+
+S2   SHYAM                        15 MUM                  P2
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY                 SNO  PNO
+-------------------- --------------- ---------- -------------------- ---- ----
+  QUANTITY
+----------
+BOLT                 BLUE                    22 MUM                  S2   P2
+       102
+
+S2   SHYAM                        15 MUM                  P2
+BOLT                 BLUE                    22 MUM                  S2   P1
+       151
+
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY                 SNO  PNO
+-------------------- --------------- ---------- -------------------- ---- ----
+  QUANTITY
+----------
+S2   SHYAM                        15 MUM                  P8
+PEN                  RED                     35 MUM                  S2   P4
+       100
+
+S2   SHYAM                        15 MUM                  P8
+PEN                  RED                     35 MUM                  S2   P2
+       102
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY                 SNO  PNO
+-------------------- --------------- ---------- -------------------- ---- ----
+  QUANTITY
+----------
+
+S2   SHYAM                        15 MUM                  P8
+PEN                  RED                     35 MUM                  S2   P1
+       151
+
+S3   RAMYA                        20 DEL                  P10
+RIM                  BLACK                      DEL                  S3   P5
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY                 SNO  PNO
+-------------------- --------------- ---------- -------------------- ---- ----
+  QUANTITY
+----------
+       200
+
+S3   RAMYA                        20 DEL                  P11
+JACK                 BLACK                      DEL                  S3   P4
+        50
+
+S3   RAMYA                        20 DEL                  P10
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY                 SNO  PNO
+-------------------- --------------- ---------- -------------------- ---- ----
+  QUANTITY
+----------
+RIM                  BLACK                      DEL                  S3   P4
+        50
+
+S3   RAMYA                        20 DEL                  P11
+JACK                 BLACK                      DEL                  S3   P5
+       200
+
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY                 SNO  PNO
+-------------------- --------------- ---------- -------------------- ---- ----
+  QUANTITY
+----------
+S3   RAMYA                        20 DEL                  P4
+DRILLBIT             BLACK                   30 DEL                  S3   P4
+        50
+
+S3   RAMYA                        20 DEL                  P4
+DRILLBIT             BLACK                   30 DEL                  S3   P5
+       200
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY                 SNO  PNO
+-------------------- --------------- ---------- -------------------- ---- ----
+  QUANTITY
+----------
+
+
+16 rows selected.
+
+SQL> SELECT * FROM SUPPLIER S, PARTS P, SUP_PARTS SP WHERE S.SNO=SP.SNO AND SP.PNO=P.PNO AND S.CITY=P.CITY ORDER BY S.SNO;
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY                 SNO  PNO
+-------------------- --------------- ---------- -------------------- ---- ----
+  QUANTITY
+----------
+S1   RAM                          10 BLR                  P1
+NUT                  RED                     11 BLR                  S1   P1
+       100
+
+S2   SHYAM                        15 MUM                  P2
+BOLT                 BLUE                    22 MUM                  S2   P2
+       102
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY                 SNO  PNO
+-------------------- --------------- ---------- -------------------- ---- ----
+  QUANTITY
+----------
+
+S3   RAMYA                        20 DEL                  P4
+DRILLBIT             BLACK                   30 DEL                  S3   P4
+        50
+
+
+SQL> SELECT * FROM SUPPLIER S, PARTS P, SUP_PARTS SP WHERE S.SNO=SP.SNO AND SP.PNO=P.PNO;
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY                 SNO  PNO
+-------------------- --------------- ---------- -------------------- ---- ----
+  QUANTITY
+----------
+S1   RAM                          10 BLR                  P1
+NUT                  RED                     11 BLR                  S1   P1
+       100
+
+S2   SHYAM                        15 MUM                  P1
+NUT                  RED                     11 BLR                  S2   P1
+       151
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY                 SNO  PNO
+-------------------- --------------- ---------- -------------------- ---- ----
+  QUANTITY
+----------
+
+S2   SHYAM                        15 MUM                  P2
+BOLT                 BLUE                    22 MUM                  S2   P2
+       102
+
+S3   RAMYA                        20 DEL                  P4
+DRILLBIT             BLACK                   30 DEL                  S3   P4
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY                 SNO  PNO
+-------------------- --------------- ---------- -------------------- ---- ----
+  QUANTITY
+----------
+        50
+
+S2   SHYAM                        15 MUM                  P4
+DRILLBIT             BLACK                   30 DEL                  S2   P4
+       100
+
+S3   RAMYA                        20 DEL                  P5
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY                 SNO  PNO
+-------------------- --------------- ---------- -------------------- ---- ----
+  QUANTITY
+----------
+NAIL                 BLACK                    5 CHI                  S3   P5
+       200
+
+
+6 rows selected.
+
+SQL> SELECT * FROM SUPPLIER S, PARTS P, SUP_PARTS SP WHERE S.SNO=SP.SNO AND SP.PNO=P.PNO AND S.CITY=P.CITY ORDER BY S.SNO;
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY                 SNO  PNO
+-------------------- --------------- ---------- -------------------- ---- ----
+  QUANTITY
+----------
+S1   RAM                          10 BLR                  P1
+NUT                  RED                     11 BLR                  S1   P1
+       100
+
+S2   SHYAM                        15 MUM                  P2
+BOLT                 BLUE                    22 MUM                  S2   P2
+       102
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY                 SNO  PNO
+-------------------- --------------- ---------- -------------------- ---- ----
+  QUANTITY
+----------
+
+S3   RAMYA                        20 DEL                  P4
+DRILLBIT             BLACK                   30 DEL                  S3   P4
+        50
+
+
+SQL> SELECT * FROM SUPPLIER S, PARTS P, SUP_PARTS SP WHERE S.SNO=SP.SNO AND SP.PNO=P.PNO AND S.CITY=P.CITY ORDER BY S.SNO;
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY                 SNO  PNO
+-------------------- --------------- ---------- -------------------- ---- ----
+  QUANTITY
+----------
+S1   RAM                          10 BLR                  P1
+NUT                  RED                     11 BLR                  S1   P1
+       100
+
+S2   SHYAM                        15 MUM                  P2
+BOLT                 BLUE                    22 MUM                  S2   P2
+       102
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY                 SNO  PNO
+-------------------- --------------- ---------- -------------------- ---- ----
+  QUANTITY
+----------
+
+S3   RAMYA                        20 DEL                  P4
+DRILLBIT             BLACK                   30 DEL                  S3   P4
+        50
+
+
+SQL> SELECT COUNT (DISTINCT CITY) FROM SUPPLIER;
+
+COUNT(DISTINCTCITY)
+-------------------
+                  4
+
+SQL> SELECT * FROM SUPPLIER S, PARTS P, SUP_PARTS SP WHERE S.SNO=SP.SNO AND SP.PNO=P.PNO AND S.COLOR=P.COLOR ORDER BY S.SNO;
+SELECT * FROM SUPPLIER S, PARTS P, SUP_PARTS SP WHERE S.SNO=SP.SNO AND SP.PNO=P.PNO AND S.COLOR=P.COLOR ORDER BY S.SNO
+                                                                                        *
+ERROR at line 1:
+ORA-00904: "S"."COLOR": invalid identifier
+
+
+SQL> SELECT * FROM SUPPLIER S, PARTS P, SUP_PARTS SP WHERE S.SNO=SP.SNO AND SP.PNO=P.PNO AND P.COLOR='BLACK' ORDER BY S.SNO;
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY                 SNO  PNO
+-------------------- --------------- ---------- -------------------- ---- ----
+  QUANTITY
+----------
+S2   SHYAM                        15 MUM                  P4
+DRILLBIT             BLACK                   30 DEL                  S2   P4
+       100
+
+S3   RAMYA                        20 DEL                  P4
+DRILLBIT             BLACK                   30 DEL                  S3   P4
+        50
+
+SNO  SNAME                    STATUS CITY                 PNO
+---- -------------------- ---------- -------------------- ----
+PNAME                COLOR               WEIGHT CITY                 SNO  PNO
+-------------------- --------------- ---------- -------------------- ---- ----
+  QUANTITY
+----------
+
+S3   RAMYA                        20 DEL                  P5
+NAIL                 BLACK                    5 CHI                  S3   P5
+       200
+
+
+SQL> SELECT * FROM PARTS;
+
+PNO  PNAME                COLOR               WEIGHT CITY
+---- -------------------- --------------- ---------- --------------------
+P1   NUT                  RED                     11 BLR
+P2   BOLT                 BLUE                    22 MUM
+P3   PAINT                GREEN                    1 BLR
+P4   DRILLBIT             BLACK                   30 DEL
+P5   NAIL                 BLACK                    5 CHI
+P6   NIB                  WHITE                    2 BLR
+P7   MOUSE                RED                     15 BLR
+P8   PEN                  RED                     35 MUM
+P10  RIM                  BLACK                      DEL
+P11  JACK                 BLACK                      DEL
+
+10 rows selected.
+
+SQL> SELECT * FROM SUP_PARTS;
+
+SNO  PNO    QUANTITY
+---- ---- ----------
+S1   P1          100
+S2   P1          151
+S2   P2          102
+S2   P4          100
+S3   P4           50
+S3   P5          200
+
+6 rows selected.
+
+SQL> SELECT * FROM SUP_PARTS GROUP BY SNO;
+SELECT * FROM SUP_PARTS GROUP BY SNO
+       *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression
+
+
+SQL> SELECT SNO,QUANTITY FROM SUP_PARTS GROUP BY SNO;
+SELECT SNO,QUANTITY FROM SUP_PARTS GROUP BY SNO
+           *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression
+
+
+SQL> SELECT * FROM SUP_PARTS;
+
+SNO  PNO    QUANTITY
+---- ---- ----------
+S1   P1          100
+S2   P1          151
+S2   P2          102
+S2   P4          100
+S3   P4           50
+S3   P5          200
+
+6 rows selected.
+
+SQL> SELECT * FROM SUP_PARTS GROUP BY SNO;
+SELECT * FROM SUP_PARTS GROUP BY SNO
+       *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression
+
+
+SQL> SELECT SNO FROM SUP_PARTS GROUP BY SNO;
+
+SNO
+----
+S1
+S2
+S3
+
+SQL> SELECT SNO,SUM(QUANTITY) FROM SUP_PARTS GROUP BY SNO;
+
+SNO  SUM(QUANTITY)
+---- -------------
+S1             100
+S2             353
+S3             250
+
+SQL> SELECT SNO,MAX(SUM(QUANTITY)) FROM SUP_PARTS GROUP BY SNO;
+SELECT SNO,MAX(SUM(QUANTITY)) FROM SUP_PARTS GROUP BY SNO
+       *
+ERROR at line 1:
+ORA-00937: not a single-group group function
+
+
+SQL> SELECT PNO,MAX(SUM(QUANTITY)) FROM SUP_PARTS GROUP BY PNO;
+SELECT PNO,MAX(SUM(QUANTITY)) FROM SUP_PARTS GROUP BY PNO
+       *
+ERROR at line 1:
+ORA-00937: not a single-group group function
+
+
+SQL> SELECT SNO,SUM(QUANTITY) FROM SUP_PARTS GROUP BY SNO;
+
+SNO  SUM(QUANTITY)
+---- -------------
+S1             100
+S2             353
+S3             250
+
+SQL> SELECT PNO,SUM(QUANTITY) FROM SUP_PARTS GROUP BY PNO;
+
+PNO  SUM(QUANTITY)
+---- -------------
+P1             251
+P2             102
+P4             150
+P5             200
+
+SQL> SELECT PNO,SUM(PNO) FROM SUP_PARTS GROUP BY PNO;
+SELECT PNO,SUM(PNO) FROM SUP_PARTS GROUP BY PNO
+               *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> SELECT PNO,COUNT(PNO) FROM SUP_PARTS GROUP BY PNO;
+
+PNO  COUNT(PNO)
+---- ----------
+P1            2
+P2            1
+P4            2
+P5            1
+
+SQL> SELECT PNO,MAX(COUNT(PNO)) FROM SUP_PARTS GROUP BY PNO;
+SELECT PNO,MAX(COUNT(PNO)) FROM SUP_PARTS GROUP BY PNO
+       *
+ERROR at line 1:
+ORA-00937: not a single-group group function
+
+
+SQL> SELECT MAX(COUNT(PNO)) FROM SUP_PARTS GROUP BY PNO;
+
+MAX(COUNT(PNO))
+---------------
+              2
+
+SQL> SELECT AVG(SNAME) FROM SUPPLIER;
+SELECT AVG(SNAME) FROM SUPPLIER
+           *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> SELECT AVG(WEIGHT) FROM PARTS;
+
+AVG(WEIGHT)
+-----------
+     15.125
+
+SQL> SELECT SUM(QUANTITY),AVG(QUANTITY),MAX(QUANTITY),MIN(QUANTITY),COUNT(QUANTITY) FROM SUP_PARTS;
+
+SUM(QUANTITY) AVG(QUANTITY) MAX(QUANTITY) MIN(QUANTITY) COUNT(QUANTITY)
+------------- ------------- ------------- ------------- ---------------
+          703    117.166667           200            50               6
+
+SQL> SELECT S.NO, SUM(QUANTITY),AVG(QUANTITY),MAX(QUANTITY),MIN(QUANTITY),COUNT(QUANTITY) FROM SUP_PARTS GROUP BY SNO;
+SELECT S.NO, SUM(QUANTITY),AVG(QUANTITY),MAX(QUANTITY),MIN(QUANTITY),COUNT(QUANTITY) FROM SUP_PARTS GROUP BY SNO
+       *
+ERROR at line 1:
+ORA-00904: "S"."NO": invalid identifier
+
+
+SQL> SELECT SNO, SUM(QUANTITY),AVG(QUANTITY),MAX(QUANTITY),MIN(QUANTITY),COUNT(QUANTITY) FROM SUP_PARTS GROUP BY SNO;
+
+SNO  SUM(QUANTITY) AVG(QUANTITY) MAX(QUANTITY) MIN(QUANTITY) COUNT(QUANTITY)
+---- ------------- ------------- ------------- ------------- ---------------
+S1             100           100           100           100               1
+S2             353    117.666667           151           100               3
+S3             250           125           200            50               2
+
+SQL> SELECT SNO, SUM(STATUS),AVG(STATUS),MAX(STATUS),MIN(STATUS),COUNT(STATUS) FROM SUPPLIER GROUP BY SNO;
+
+SNO  SUM(STATUS) AVG(STATUS) MAX(STATUS) MIN(STATUS) COUNT(STATUS)
+---- ----------- ----------- ----------- ----------- -------------
+S1            10          10          10          10             1
+S2            15          15          15          15             1
+S3            20          20          20          20             1
+S4            30          30          30          30             1
+S5            40          40          40          40             1
+S6            25          25          25          25             1
+S7            50          50          50          50             1
+
+7 rows selected.
+
+SQL> SELECT SNO, SUM(STATUS),AVG(STATUS),MAX(STATUS),MIN(STATUS),COUNT(STATUS) FROM SUPPLIER GROUP BY CITY;
+SELECT SNO, SUM(STATUS),AVG(STATUS),MAX(STATUS),MIN(STATUS),COUNT(STATUS) FROM SUPPLIER GROUP BY CITY
+       *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression
+
+
+SQL> SELECT CITY, SUM(STATUS),AVG(STATUS),MAX(STATUS),MIN(STATUS),COUNT(STATUS) FROM SUPPLIER GROUP BY CITY;
+
+CITY                 SUM(STATUS) AVG(STATUS) MAX(STATUS) MIN(STATUS)
+-------------------- ----------- ----------- ----------- -----------
+COUNT(STATUS)
+-------------
+MUM                           55        27.5          40          15
+            2
+
+DEL                           20          20          20          20
+            1
+
+BLR                           90          30          50          10
+            3
+
+
+CITY                 SUM(STATUS) AVG(STATUS) MAX(STATUS) MIN(STATUS)
+-------------------- ----------- ----------- ----------- -----------
+COUNT(STATUS)
+-------------
+CHI                           25          25          25          25
+            1
+
+
+SQL> SELECT CITY, SUM(QUANTITY),AVG(QUANTITY),MAX(QUANTITY),MIN(QUANTITY),COUNT(QUANTITY) FROM SUP_PARTS SP, SUPPLIER S GROUP BY CITY;
+
+CITY                 SUM(QUANTITY) AVG(QUANTITY) MAX(QUANTITY) MIN(QUANTITY)
+-------------------- ------------- ------------- ------------- -------------
+COUNT(QUANTITY)
+---------------
+MUM                           1406    117.166667           200            50
+             12
+
+DEL                            703    117.166667           200            50
+              6
+
+BLR                           2109    117.166667           200            50
+             18
+
+
+CITY                 SUM(QUANTITY) AVG(QUANTITY) MAX(QUANTITY) MIN(QUANTITY)
+-------------------- ------------- ------------- ------------- -------------
+COUNT(QUANTITY)
+---------------
+CHI                            703    117.166667           200            50
+              6
+
+
+SQL> SELECT CITY, SUM(SP.QUANTITY),AVG(SP.QUANTITY),MAX(SP.QUANTITY),MIN(SP.QUANTITY),COUNT(SP.QUANTITY) FROM SUP_PARTS SP, SUPPLIER S WHERE S.SNO=SP.SNO GROUP BY CITY;
+
+CITY                 SUM(SP.QUANTITY) AVG(SP.QUANTITY) MAX(SP.QUANTITY)
+-------------------- ---------------- ---------------- ----------------
+MIN(SP.QUANTITY) COUNT(SP.QUANTITY)
+---------------- ------------------
+MUM                               353       117.666667              151
+             100                  3
+
+DEL                               250              125              200
+              50                  2
+
+BLR                               100              100              100
+             100                  1
+
+
+SQL> SELECT CITY, SUM(SP.QUANTITY),AVG(SP.QUANTITY),MAX(SP.QUANTITY),MIN(SP.QUANTITY),COUNT(SP.QUANTITY) FROM SUP_PARTS SP, SUPPLIER S WHERE S.SNO=SP.SNO;
+SELECT CITY, SUM(SP.QUANTITY),AVG(SP.QUANTITY),MAX(SP.QUANTITY),MIN(SP.QUANTITY),COUNT(SP.QUANTITY) FROM SUP_PARTS SP, SUPPLIER S WHERE S.SNO=SP.SNO
+       *
+ERROR at line 1:
+ORA-00937: not a single-group group function
+
+
+SQL> SELECT SUM(SP.QUANTITY),AVG(SP.QUANTITY),MAX(SP.QUANTITY),MIN(SP.QUANTITY),COUNT(SP.QUANTITY) FROM SUP_PARTS SP, SUPPLIER S WHERE S.SNO=SP.SNO;
+
+SUM(SP.QUANTITY) AVG(SP.QUANTITY) MAX(SP.QUANTITY) MIN(SP.QUANTITY)
+---------------- ---------------- ---------------- ----------------
+COUNT(SP.QUANTITY)
+------------------
+             703       117.166667              200               50
+                 6
+
+
+SQL> SELECT * FROM SUP_PARTS;
+
+SNO  PNO    QUANTITY
+---- ---- ----------
+S1   P1          100
+S2   P1          151
+S2   P2          102
+S2   P4          100
+S3   P4           50
+S3   P5          200
+
+6 rows selected.
+
+SQL> SELECT CITY, SUM(SP.QUANTITY),AVG(SP.QUANTITY),MAX(SP.QUANTITY),MIN(SP.QUANTITY),COUNT(SP.QUANTITY) FROM SUP_PARTS SP, SUPPLIER S WHERE S.SNO=SP.SNO GROUP BY S.CITY;
+
+CITY                 SUM(SP.QUANTITY) AVG(SP.QUANTITY) MAX(SP.QUANTITY)
+-------------------- ---------------- ---------------- ----------------
+MIN(SP.QUANTITY) COUNT(SP.QUANTITY)
+---------------- ------------------
+MUM                               353       117.666667              151
+             100                  3
+
+DEL                               250              125              200
+              50                  2
+
+BLR                               100              100              100
+             100                  1
+
+
+SQL> SELECT SNO,AVG(QUANTITY),SUM(QUANTITY) FROM SUP_PARTS;
+SELECT SNO,AVG(QUANTITY),SUM(QUANTITY) FROM SUP_PARTS
+       *
+ERROR at line 1:
+ORA-00937: not a single-group group function
+
+
+SQL> SELECT SNO,AVG(QUANTITY),SUM(QUANTITY) FROM SUP_PARTS GROUP BY SNO;
+
+SNO  AVG(QUANTITY) SUM(QUANTITY)
+---- ------------- -------------
+S1             100           100
+S2      117.666667           353
+S3             125           250
+
+SQL> SELECT SNO,AVG(QUANTITY),SUM(QUANTITY) FROM SUP_PARTS;
+SELECT SNO,AVG(QUANTITY),SUM(QUANTITY) FROM SUP_PARTS
+       *
+ERROR at line 1:
+ORA-00937: not a single-group group function
+
+
+SQL> SELECT AVG(QUANTITY),SUM(QUANTITY) FROM SUP_PARTS;
+
+AVG(QUANTITY) SUM(QUANTITY)
+------------- -------------
+   117.166667           703
+
+SQL> SELECT SNO,AVG(QUANTITY),SUM(QUANTITY) FROM SUP_PARTS GROUP BY SNO HAVING AVG(QUANTITY)>(SELECT AVG(QUANTITY) FROM SUP_PARTS);
+
+SNO  AVG(QUANTITY) SUM(QUANTITY)
+---- ------------- -------------
+S2      117.666667           353
+S3             125           250
+
+SQL> SELECT SNO,AVG(QUANTITY),SUM(QUANTITY) FROM SUP_PARTS GROUP BY SNO WHERE AVG(QUANTITY)>(SELECT AVG(QUANTITY) FROM SUP_PARTS);
+SELECT SNO,AVG(QUANTITY),SUM(QUANTITY) FROM SUP_PARTS GROUP BY SNO WHERE AVG(QUANTITY)>(SELECT AVG(QUANTITY) FROM SUP_PARTS)
+                                                                   *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> SELECT SNO,AVG(QUANTITY),SUM(QUANTITY) FROM SUP_PARTS GROUP BY SNO HAVING AVG(QUANTITY)>(SELECT AVG(QUANTITY) FROM SUP_PARTS);
+
+SNO  AVG(QUANTITY) SUM(QUANTITY)
+---- ------------- -------------
+S2      117.666667           353
+S3             125           250
+
+SQL> SELECT SNO,AVG(QUANTITY),SUM(QUANTITY) FROM SUP_PARTS WHERE PNO='P2' GROUP BY SNO HAVING AVG(QUANTITY)>(SELECT AVG(QUANTITY) FROM SUP_PARTS);
+
+no rows selected
+
+SQL> SELECT SNO,AVG(QUANTITY),SUM(QUANTITY) FROM SUP_PARTS WHERE PNO='P2' GROUP BY SNO;
+
+SNO  AVG(QUANTITY) SUM(QUANTITY)
+---- ------------- -------------
+S2             102           102
+
+SQL> SELECT SNO,AVG(QUANTITY),SUM(QUANTITY) FROM SUP_PARTS GROUP BY SNO WHERE PNO='P2' HAVING AVG(QUANTITY)>(SELECT AVG(QUANTITY) FROM SUP_PARTS);
+SELECT SNO,AVG(QUANTITY),SUM(QUANTITY) FROM SUP_PARTS GROUP BY SNO WHERE PNO='P2' HAVING AVG(QUANTITY)>(SELECT AVG(QUANTITY) FROM SUP_PARTS)
+                                                                   *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> SELECT SNO,AVG(QUANTITY),SUM(QUANTITY) FROM SUP_PARTS WHERE PNO='P2' GROUP BY SNO;
+
+SNO  AVG(QUANTITY) SUM(QUANTITY)
+---- ------------- -------------
+S2             102           102
+
+SQL> SELECT SNO,AVG(QUANTITY),SUM(QUANTITY) FROM SUP_PARTS GROUP BY SNO,PNO HAVING AVG(QUANTITY)>(SELECT AVG(QUANTITY) FROM SUP_PARTS);
+
+SNO  AVG(QUANTITY) SUM(QUANTITY)
+---- ------------- -------------
+S2             151           151
+S3             200           200
+
+SQL> SELECT SNO,AVG(QUANTITY),SUM(QUANTITY) FROM SUP_PARTS GROUP BY SNO,PNO
+  2  ;
+
+SNO  AVG(QUANTITY) SUM(QUANTITY)
+---- ------------- -------------
+S1             100           100
+S2             151           151
+S2             102           102
+S2             100           100
+S3              50            50
+S3             200           200
+
+6 rows selected.
+
+SQL> SELECT SNO,AVG(QUANTITY),SUM(QUANTITY) FROM SUP_PARTS GROUP BY SNO,PNO;
+
+SNO  AVG(QUANTITY) SUM(QUANTITY)
+---- ------------- -------------
+S1             100           100
+S2             151           151
+S2             102           102
+S2             100           100
+S3              50            50
+S3             200           200
+
+6 rows selected.
+
+SQL> SELECT * FROM SUP_PARTS;
+
+SNO  PNO    QUANTITY
+---- ---- ----------
+S1   P1          100
+S2   P1          151
+S2   P2          102
+S2   P4          100
+S3   P4           50
+S3   P5          200
+
+6 rows selected.
+
+SQL> SELECT AVG(WEIGHT),SUM(WEIGHT);
+SELECT AVG(WEIGHT),SUM(WEIGHT)
+                             *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> SELECT AVG(WEIGHT),SUM(WEIGHT) FROM PARTS GROUP BY CITY,COLOR;
+
+AVG(WEIGHT) SUM(WEIGHT)
+----------- -----------
+         13          26
+          1           1
+          5           5
+          2           2
+         35          35
+         30          30
+         22          22
+
+7 rows selected.
+
+SQL> SELECT * FROM PARTS;
+
+PNO  PNAME                COLOR               WEIGHT CITY
+---- -------------------- --------------- ---------- --------------------
+P1   NUT                  RED                     11 BLR
+P2   BOLT                 BLUE                    22 MUM
+P3   PAINT                GREEN                    1 BLR
+P4   DRILLBIT             BLACK                   30 DEL
+P5   NAIL                 BLACK                    5 CHI
+P6   NIB                  WHITE                    2 BLR
+P7   MOUSE                RED                     15 BLR
+P8   PEN                  RED                     35 MUM
+P10  RIM                  BLACK                      DEL
+P11  JACK                 BLACK                      DEL
+
+10 rows selected.
+
+SQL> SELECT AVG(WEIGHT),SUM(WEIGHT) FROM PARTS GROUP BY CITY;
+
+AVG(WEIGHT) SUM(WEIGHT)
+----------- -----------
+       28.5          57
+         30          30
+       7.25          29
+          5           5
+
+SQL> SELECT CITY, AVG(WEIGHT),SUM(WEIGHT) FROM PARTS GROUP BY CITY;
+
+CITY                 AVG(WEIGHT) SUM(WEIGHT)
+-------------------- ----------- -----------
+MUM                         28.5          57
+DEL                           30          30
+BLR                         7.25          29
+CHI                            5           5
+
+SQL> SELECT CITY,COLOR, AVG(WEIGHT),SUM(WEIGHT) FROM PARTS GROUP BY CITY,COLOR;
+
+CITY                 COLOR           AVG(WEIGHT) SUM(WEIGHT)
+-------------------- --------------- ----------- -----------
+BLR                  RED                      13          26
+BLR                  GREEN                     1           1
+CHI                  BLACK                     5           5
+BLR                  WHITE                     2           2
+MUM                  RED                      35          35
+DEL                  BLACK                    30          30
+MUM                  BLUE                     22          22
+
+7 rows selected.
+
+SQL> SELECT CITY,COLOR, AVG(WEIGHT),SUM(WEIGHT) FROM PARTS GROUP BY CITY,COLOR;
+
+CITY                 COLOR           AVG(WEIGHT) SUM(WEIGHT)
+-------------------- --------------- ----------- -----------
+BLR                  RED                      13          26
+BLR                  GREEN                     1           1
+CHI                  BLACK                     5           5
+BLR                  WHITE                     2           2
+MUM                  RED                      35          35
+DEL                  BLACK                    30          30
+MUM                  BLUE                     22          22
+
+7 rows selected.
+
+SQL> SELECT * FROM EMP;
+
+EMPN ENAME                DOB       DEPT SUPE DOJ
+---- -------------------- --------- ---- ---- ---------
+E1   SHANKAR              01-JAN-90 D1   E2
+E2   RAVI                 01-JAN-92 D2   E2
+
+SQL> SELECT * FROM DEPT;
+
+DEPT DNAME                EMPN
+---- -------------------- ----
+D1   DEPARTMENT1          E1
+D2   DEPARTMENT1          E2
+
+SQL> SELECT * FROM EMPLOYEES;
+SELECT * FROM EMPLOYEES
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> SELECT MAX(SUM(WEIGHT)) FROM PARTS;
+SELECT MAX(SUM(WEIGHT)) FROM PARTS
+           *
+ERROR at line 1:
+ORA-00978: nested group function without GROUP BY
+
+
+SQL> SELECT MAX(SUM(WEIGHT)) FROM PARTS GROUP BY COLOR;
+
+MAX(SUM(WEIGHT))
+----------------
+              61
+
+SQL> SELECT SNO, MAX(COUNT(QUANTITY)) FROM SUP_PARTS GROUP BY SNO;
+SELECT SNO, MAX(COUNT(QUANTITY)) FROM SUP_PARTS GROUP BY SNO
+       *
+ERROR at line 1:
+ORA-00937: not a single-group group function
+
+
+SQL> SELECT SNO, MAX(COUNT(QUANTITY)) FROM SUP_PARTS GROUP BY SNO;
+SELECT SNO, MAX(COUNT(QUANTITY)) FROM SUP_PARTS GROUP BY SNO
+       *
+ERROR at line 1:
+ORA-00937: not a single-group group function
+
+
+SQL> SELECT MAX(COUNT(QUANTITY)) FROM SUP_PARTS GROUP BY SNO;
+
+MAX(COUNT(QUANTITY))
+--------------------
+                   3
+
+SQL> SELECT MAX(COUNT(QUANTITY)) FROM SUP_PARTS GROUP BY SNO;
+
+MAX(COUNT(QUANTITY))
+--------------------
+                   3
+
+SQL> SELECT MAX(SUM(QUANTITY)) FROM SUP_PARTS GROUP BY PNO;
+
+MAX(SUM(QUANTITY))
+------------------
+               251
+
+SQL> SELECT SNO FROM SUP_PARTS GROUP BY SNO HAVING MAX(COUNT(QUANTITY))=(SELECT MAX(COUNT(QUANTITY)) FROM SUP_PARTS GROUP BY SNO);
+SELECT SNO FROM SUP_PARTS GROUP BY SNO HAVING MAX(COUNT(QUANTITY))=(SELECT MAX(COUNT(QUANTITY)) FROM SUP_PARTS GROUP BY SNO)
+                                                  *
+ERROR at line 1:
+ORA-00935: group function is nested too deeply
+
+
+SQL> SELECT SNO FROM SUP_PARTS GROUP BY SNO HAVING MAX(COUNT(QUANTITY)) IN (SELECT MAX(COUNT(QUANTITY)) FROM SUP_PARTS GROUP BY SNO);
+SELECT SNO FROM SUP_PARTS GROUP BY SNO HAVING MAX(COUNT(QUANTITY)) IN (SELECT MAX(COUNT(QUANTITY)) FROM SUP_PARTS GROUP BY SNO)
+                                                  *
+ERROR at line 1:
+ORA-00935: group function is nested too deeply
+
+
+SQL> SELECT MAX(SUM(QUANTITY)) FROM SUP_PARTS GROUP BY SNO;
+
+MAX(SUM(QUANTITY))
+------------------
+               353
+
+SQL> SELECT SNO FROM SUP_PARTS GROUP BY SNO HAVING SUM(QUANTITY)=(SELECT MAX(SUM(QUANTITY)) FROM SUP_PARTS GROUP BY SNO);
+
+SNO
+----
+S2
+
+SQL> SELECT SNAME FROM SUPPLIER WHERE SNO=(SELECT SNO FROM SUP_PARTS GROUP BY SNO HAVING SUM(QUANTITY)=(SELECT MAX(SUM(QUANTITY)) FROM SUP_PARTS GROUP BY SNO));
+
+SNAME
+--------------------
+SHYAM
+
+SQL> SELECT MAX(SUM(QUANTITY) FROM SUP_PARTS GROUP BY PNO;
+SELECT MAX(SUM(QUANTITY) FROM SUP_PARTS GROUP BY PNO
+                         *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> SELECT MAX(SUM(QUANTITY)) FROM SUP_PARTS GROUP BY PNO;
+
+MAX(SUM(QUANTITY))
+------------------
+               251
+
+SQL> SELECT PNO FROM SUP_PARTS GROUP BY PNO HAVING PNO=(SELECT MAX(SUM(QUANTITY)) FROM SUP_PARTS GROUP BY PNO);
+SELECT PNO FROM SUP_PARTS GROUP BY PNO HAVING PNO=(SELECT MAX(SUM(QUANTITY)) FROM SUP_PARTS GROUP BY PNO)
+                                              *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> SELECT PNO FROM SUP_PARTS GROUP BY PNO HAVING SUM(QUANTITY)=(SELECT MAX(SUM(QUANTITY)) FROM SUP_PARTS GROUP BY PNO);
+
+PNO
+----
+P1
+
+SQL> SELECT PNO,SUM(QUANTITY) FROM SUP_PARTS GROUP BY PNO HAVING SUM(QUANTITY)=(SELECT MAX(SUM(QUANTITY)) FROM SUP_PARTS GROUP BY PNO);
+
+PNO  SUM(QUANTITY)
+---- -------------
+P1             251
+
+SQL> SELECT PNO,SUM(QUANTITY) FROM SUP_PARTS GROUP BY PNO HAVING SUM(QUANTITY)=(SELECT MAX(SUM(QUANTITY)) FROM SUP_PARTS GROUP BY PNO);
+
+PNO  SUM(QUANTITY)
+---- -------------
+P1             251
+
+SQL> SELECT * FROM SUP_PARTS;
+
+SNO  PNO    QUANTITY
+---- ---- ----------
+S1   P1          100
+S2   P1          151
+S2   P2          102
+S2   P4          100
+S3   P4           50
+S3   P5          200
+
+6 rows selected.
+
+SQL> INSERT INTO SUP_PARTS VALUES('S4','P3',251);
+
+1 row created.
+
+SQL> SELECT PNO,SUM(QUANTITY) FROM SUP_PARTS GROUP BY PNO HAVING SUM(QUANTITY)=(SELECT MAX(SUM(QUANTITY)) FROM SUP_PARTS GROUP BY PNO);
+
+PNO  SUM(QUANTITY)
+---- -------------
+P1             251
+P3             251
+
+SQL> SELECT PNO,SUM(QUANTITY) FROM SUP_PARTS GROUP BY PNO HAVING SUM(QUANTITY) IS IN(SELECT MAX(SUM(QUANTITY)) FROM SUP_PARTS GROUP BY PNO);
+SELECT PNO,SUM(QUANTITY) FROM SUP_PARTS GROUP BY PNO HAVING SUM(QUANTITY) IS IN(SELECT MAX(SUM(QUANTITY)) FROM SUP_PARTS GROUP BY PNO)
+                                                                             *
+ERROR at line 1:
+ORA-00908: missing NULL keyword
+
+
+SQL> SELECT PNO,SUM(QUANTITY) FROM SUP_PARTS GROUP BY PNO HAVING SUM(QUANTITY) IN(SELECT MAX(SUM(QUANTITY)) FROM SUP_PARTS GROUP BY PNO);
+
+PNO  SUM(QUANTITY)
+---- -------------
+P1             251
+P3             251
+
+SQL> SELECT PNO,SUM(QUANTITY) FROM SUP_PARTS GROUP BY PNO HAVING SUM(QUANTITY)=(SELECT MAX(SUM(QUANTITY)) FROM SUP_PARTS GROUP BY PNO);
+
+PNO  SUM(QUANTITY)
+---- -------------
+P1             251
+P3             251
+
+SQL> SELECT SNO FROM SUP_PARTS GROUP BY SNO HAVING(AVG(QUANTITY)>(SELECT AVG(QUANTITY) FROM SUP_PARTS);
+SELECT SNO FROM SUP_PARTS GROUP BY SNO HAVING(AVG(QUANTITY)>(SELECT AVG(QUANTITY) FROM SUP_PARTS)
+                                                           *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> SELECT SNO FROM SUP_PARTS GROUP BY SNO HAVING AVG(QUANTITY)>(SELECT AVG(QUANTITY) FROM SUP_PARTS);
+
+SNO
+----
+S4
+
+SQL> SELECT * FROM SUP_PARTS;
+
+SNO  PNO    QUANTITY
+---- ---- ----------
+S1   P1          100
+S2   P1          151
+S2   P2          102
+S2   P4          100
+S3   P4           50
+S3   P5          200
+S4   P3          251
+
+7 rows selected.
+
+SQL> SELECT AVG(QUANTITY) FROM SUP_PARTS;
+
+AVG(QUANTITY)
+-------------
+   136.285714
+
+SQL> SELECT SNO,AVG(QUANTITY) FROM SUP_PARTS GROUP BY SNO;
+
+SNO  AVG(QUANTITY)
+---- -------------
+S1             100
+S2      117.666667
+S3             125
+S4             251
+
+SQL> SELECT STATUS FROM SUPPLIERS WHERE SNAME='RAM';
+SELECT STATUS FROM SUPPLIERS WHERE SNAME='RAM'
+                   *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> SELECT STATUS FROM SUPPLIER WHERE SNAME='RAM';
+
+    STATUS
+----------
+        30
+        10
+
+SQL> SELECT * FROM SUPPLIER WHERE STATUS IN(SELECT STATUS FROM SUPPLIER WHERE SNAME='RAM');
+
+SNO  SNAME                    STATUS CITY
+---- -------------------- ---------- --------------------
+S4   RAM                          30 BLR
+S1   RAM                          10 BLR
+
+SQL> SELECT * FROM SUPPLIER;
+
+SNO  SNAME                    STATUS CITY
+---- -------------------- ---------- --------------------
+S2   SHYAM                        15 MUM
+S3   RAMYA                        20 DEL
+S4   RAM                          30 BLR
+S5   RAMYA                        40 MUM
+S6   JACK                         25 CHI
+S7   JANE                         50 BLR
+S1   RAM                          10 BLR
+
+7 rows selected.
+
+SQL> SELECT * FROM SUPPLIER WHERE CITY=(SELECT CITY FROM SUPPLIER WHERE SNAME-'RAM');
+SELECT * FROM SUPPLIER WHERE CITY=(SELECT CITY FROM SUPPLIER WHERE SNAME-'RAM')
+                                                                              *
+ERROR at line 1:
+ORA-00920: invalid relational operator
+
+
+SQL> SELECT * FROM SUPPLIER WHERE CITY IN(SELECT CITY FROM SUPPLIER WHERE SNAME-'RAM');
+SELECT * FROM SUPPLIER WHERE CITY IN(SELECT CITY FROM SUPPLIER WHERE SNAME-'RAM')
+                                                                                *
+ERROR at line 1:
+ORA-00920: invalid relational operator
+
+
+SQL> SELECT * FROM SUPPLIER WHERE CITY IN (SELECT CITY FROM SUPPLIER WHERE SNAME-'RAM');
+SELECT * FROM SUPPLIER WHERE CITY IN (SELECT CITY FROM SUPPLIER WHERE SNAME-'RAM')
+                                                                                 *
+ERROR at line 1:
+ORA-00920: invalid relational operator
+
+
+SQL> SELECT * FROM SUPPLIER WHERE CITY IN (SELECT CITY FROM SUPPLIER WHERE SNAME-'RAM');
+SELECT * FROM SUPPLIER WHERE CITY IN (SELECT CITY FROM SUPPLIER WHERE SNAME-'RAM')
+                                                                                 *
+ERROR at line 1:
+ORA-00920: invalid relational operator
+
+
+SQL> SELECT * FROM SUPPLIER WHERE CITY IN (SELECT CITY FROM SUPPLIER WHERE SNAME='RAM');
+
+SNO  SNAME                    STATUS CITY
+---- -------------------- ---------- --------------------
+S1   RAM                          10 BLR
+S7   JANE                         50 BLR
+S4   RAM                          30 BLR
+
+SQL> SELECT SUM(QUANTITY) FROM SUP_PARTS GROUP BY SNO;
+
+SUM(QUANTITY)
+-------------
+          100
+          353
+          250
+          251
+
+SQL> SELECT * FROM SUPPLIER WHERE CITY IN(SELECT CITY FROM SUPPLIER WHERE SNAME-'RAMYA');
+SELECT * FROM SUPPLIER WHERE CITY IN(SELECT CITY FROM SUPPLIER WHERE SNAME-'RAMYA')
+                                                                                  *
+ERROR at line 1:
+ORA-00920: invalid relational operator
+
+
+SQL> SELECT * FROM SUPPLIER WHERE CITY IN(SELECT CITY FROM SUPPLIER WHERE SNAME='RAMYA');
+
+SNO  SNAME                    STATUS CITY
+---- -------------------- ---------- --------------------
+S3   RAMYA                        20 DEL
+S5   RAMYA                        40 MUM
+S2   SHYAM                        15 MUM
+
+SQL> SELECT * FROM SUPPLIER WHERE CITY =ALL(SELECT CITY FROM SUPPLIER WHERE SNAME='RAMYA');
+
+no rows selected
+
+SQL> SELECT * FROM SUPPLIER WHERE CITY =ANY(SELECT CITY FROM SUPPLIER WHERE SNAME='RAMYA');
+
+SNO  SNAME                    STATUS CITY
+---- -------------------- ---------- --------------------
+S3   RAMYA                        20 DEL
+S5   RAMYA                        40 MUM
+S2   SHYAM                        15 MUM
+
+SQL> SELECT * FROM SUPPLIER;
+
+SNO  SNAME                    STATUS CITY
+---- -------------------- ---------- --------------------
+S2   SHYAM                        15 MUM
+S3   RAMYA                        20 DEL
+S4   RAM                          30 BLR
+S5   RAMYA                        40 MUM
+S6   JACK                         25 CHI
+S7   JANE                         50 BLR
+S1   RAM                          10 BLR
+
+7 rows selected.
+
+SQL> SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+SP2-0734: unknown command beginning "SSSSSSSSSS..." - rest of line ignored.
+SQL> SELECT * FROM SUPPLIER WHERE STATUS =ANY(SELECT CITY FROM SUPPLIER WHERE SNAME='RAMYA');
+SELECT * FROM SUPPLIER WHERE STATUS =ANY(SELECT CITY FROM SUPPLIER WHERE SNAME='RAMYA')
+                                                *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> SELECT * FROM SUPPLIER WHERE SNO =ANY(SELECT CITY FROM SUPPLIER WHERE SNAME='RAMYA');
+
+no rows selected
+
+SQL> SELECT * FROM SUPPLIER WHERE CITY IN(SELECT CITY FROM SUPPLIER WHERE SNAME='RAMYA' ORDER BY SNAME);
+SELECT * FROM SUPPLIER WHERE CITY IN(SELECT CITY FROM SUPPLIER WHERE SNAME='RAMYA' ORDER BY SNAME)
+                                                                                   *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> SELECT * FROM SUPPLIER WHERE CITY IN(SELECT CITY FROM SUPPLIER WHERE SNAME='RAMYA' ORDER BY SNAME);
+SELECT * FROM SUPPLIER WHERE CITY IN(SELECT CITY FROM SUPPLIER WHERE SNAME='RAMYA' ORDER BY SNAME)
+                                                                                   *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> SELECT * FROM SUPPLIER WHERE CITY IN(SELECT CITY FROM SUPPLIER WHERE SNAME='RAMYA' ORDER BY CITY);
+SELECT * FROM SUPPLIER WHERE CITY IN(SELECT CITY FROM SUPPLIER WHERE SNAME='RAMYA' ORDER BY CITY)
+                                                                                   *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> SELECT * FROM SUPPLIER WHERE CITY IN(SELECT CITY FROM SUPPLIER WHERE SNAME='RAMYA');
+
+SNO  SNAME                    STATUS CITY
+---- -------------------- ---------- --------------------
+S3   RAMYA                        20 DEL
+S5   RAMYA                        40 MUM
+S2   SHYAM                        15 MUM
+
+SQL> SELECT * FROM SUPPLIER WHERE CITY IN(SELECT CITY FROM SUPPLIER WHERE SNAME='RAMYA')ORDER BY SNAME;
+
+SNO  SNAME                    STATUS CITY
+---- -------------------- ---------- --------------------
+S3   RAMYA                        20 DEL
+S5   RAMYA                        40 MUM
+S2   SHYAM                        15 MUM
+
+SQL> SELECT * FROM SUPPLIER WHERE CITY IN(SELECT CITY FROM SUPPLIER WHERE SNAME='RAMYA')ORDER BY CITY;
+
+SNO  SNAME                    STATUS CITY
+---- -------------------- ---------- --------------------
+S3   RAMYA                        20 DEL
+S2   SHYAM                        15 MUM
+S5   RAMYA                        40 MUM
+
+SQL> SELECT * FROM SUPPLIER WHERE SNO, CITY IN(SELECT SNO, CITY FROM SUPPLIER WHERE SNAME='RAMYA')ORDER BY CITY;
+SELECT * FROM SUPPLIER WHERE SNO, CITY IN(SELECT SNO, CITY FROM SUPPLIER WHERE SNAME='RAMYA')ORDER BY CITY
+                                *
+ERROR at line 1:
+ORA-00920: invalid relational operator
+
+
+SQL> SELECT * FROM SUPPLIER WHERE SNO, CITY = (SELECT SNO, CITY FROM SUPPLIER WHERE SNAME='RAMYA')ORDER BY CITY;
+SELECT * FROM SUPPLIER WHERE SNO, CITY = (SELECT SNO, CITY FROM SUPPLIER WHERE SNAME='RAMYA')ORDER BY CITY
+                                *
+ERROR at line 1:
+ORA-00920: invalid relational operator
+
+
+SQL> SELECT * FROM SUPPLIER WHERE SNO, CITY IN (SELECT SNO, CITY FROM SUPPLIER WHERE SNAME='RAMYA')ORDER BY CITY;
+SELECT * FROM SUPPLIER WHERE SNO, CITY IN (SELECT SNO, CITY FROM SUPPLIER WHERE SNAME='RAMYA')ORDER BY CITY
+                                *
+ERROR at line 1:
+ORA-00920: invalid relational operator
+
+
+SQL> SELECT * FROM (SELECT SNO,PNAME,QUANTITY FROM SUP_PARTS SP, PARTS P WHERE SP.PNO=P.PNO);
+
+SNO  PNAME                  QUANTITY
+---- -------------------- ----------
+S2   NUT                         151
+S1   NUT                         100
+S2   BOLT                        102
+S4   PAINT                       251
+S3   DRILLBIT                     50
+S2   DRILLBIT                    100
+S3   NAIL                        200
+
+7 rows selected.
+
+SQL> SELECT * FROM SUPPLIER WHERE SNO CITY IN (SELECT SNO, CITY FROM SUPPLIER WHERE SNAME='RAMYA')ORDER BY CITY;
+SELECT * FROM SUPPLIER WHERE SNO CITY IN (SELECT SNO, CITY FROM SUPPLIER WHERE SNAME='RAMYA')ORDER BY CITY
+                                 *
+ERROR at line 1:
+ORA-00920: invalid relational operator
+
+
+SQL> SELECT * FROM SUPPLIER WHERE SNO, CITY IN (SELECT SNO, CITY FROM SUPPLIER WHERE SNAME='RAMYA')ORDER BY CITY;
+SELECT * FROM SUPPLIER WHERE SNO, CITY IN (SELECT SNO, CITY FROM SUPPLIER WHERE SNAME='RAMYA')ORDER BY CITY
+                                *
+ERROR at line 1:
+ORA-00920: invalid relational operator
+
+
+SQL> SELECT * FROM SUPPLIER UNION PARTS;
+SELECT * FROM SUPPLIER UNION PARTS
+                             *
+ERROR at line 1:
+ORA-00928: missing SELECT keyword
+
+
+SQL> SELECT * FROM SUPPLIER UNION PARTS;
+SELECT * FROM SUPPLIER UNION PARTS
+                             *
+ERROR at line 1:
+ORA-00928: missing SELECT keyword
+
+
+SQL> SELECT * FROM SUPPLIER UNION PARTS;
+SELECT * FROM SUPPLIER UNION PARTS
+                             *
+ERROR at line 1:
+ORA-00928: missing SELECT keyword
+
+
+SQL> (SELECT * FROM SUPPLIER)UNION (SELECT * FROM PARTS);
+(SELECT * FROM SUPPLIER)UNION (SELECT * FROM PARTS)
+ *
+ERROR at line 1:
+ORA-01789: query block has incorrect number of result columns
+
+
+SQL> (SELECT * FROM SUPPLIER) UNION (SELECT * FROM PARTS);
+(SELECT * FROM SUPPLIER) UNION (SELECT * FROM PARTS)
+ *
+ERROR at line 1:
+ORA-01789: query block has incorrect number of result columns
+
+
+SQL> (SELECT * FROM SUPPLIER) UNION (SELECT * FROM SUP_PARTS);
+(SELECT * FROM SUPPLIER) UNION (SELECT * FROM SUP_PARTS)
+ *
+ERROR at line 1:
+ORA-01789: query block has incorrect number of result columns
+
+
+SQL> (SELECT SNO FROM SUPPLIER) UNION (SELECT PNO FROM PARTS);
+
+SNO
+----
+P1
+P10
+P11
+P2
+P3
+P4
+P5
+P6
+P7
+P8
+S1
+
+SNO
+----
+S2
+S3
+S4
+S5
+S6
+S7
+
+17 rows selected.
+
+SQL> (SELECT SNAME FROM SUPPLIER) INTERSECT (SELECT PNAME FROM PARTS);
+
+SNAME
+--------------------
+JACK
+
+SQL> (SELECT SNO,SNAME FROM SUPPLIER) UNION (SELECT PNO,PNAME FROM PARTS);
+
+SNO  SNAME
+---- --------------------
+P1   NUT
+P10  RIM
+P11  JACK
+P2   BOLT
+P3   PAINT
+P4   DRILLBIT
+P5   NAIL
+P6   NIB
+P7   MOUSE
+P8   PEN
+S1   RAM
+
+SNO  SNAME
+---- --------------------
+S2   SHYAM
+S3   RAMYA
+S4   RAM
+S5   RAMYA
+S6   JACK
+S7   JANE
+
+17 rows selected.
+
+SQL> (SELECT SNO,SNAME,CITY FROM SUPPLIER) UNION (SELECT PNO,PNAME,CITY FROM PARTS);
+
+SNO  SNAME                CITY
+---- -------------------- --------------------
+P1   NUT                  BLR
+P10  RIM                  DEL
+P11  JACK                 DEL
+P2   BOLT                 MUM
+P3   PAINT                BLR
+P4   DRILLBIT             DEL
+P5   NAIL                 CHI
+P6   NIB                  BLR
+P7   MOUSE                BLR
+P8   PEN                  MUM
+S1   RAM                  BLR
+
+SNO  SNAME                CITY
+---- -------------------- --------------------
+S2   SHYAM                MUM
+S3   RAMYA                DEL
+S4   RAM                  BLR
+S5   RAMYA                MUM
+S6   JACK                 CHI
+S7   JANE                 BLR
+
+17 rows selected.
+
+SQL> ALTER TABLE SUP_PARTS ADD PHONE_NUM NUMBER(10);
+
+Table altered.
+
+SQL> SELECT * FROM SUP_PARTS
+  2  ;
+
+SNO  PNO    QUANTITY  PHONE_NUM
+---- ---- ---------- ----------
+S1   P1          100
+S2   P1          151
+S2   P2          102
+S2   P4          100
+S3   P4           50
+S3   P5          200
+S4   P3          251
+
+7 rows selected.
+
+SQL> ALTER TABLE SUPPLIER ADD PHONE_NUM NUMBER(10);
+
+Table altered.
+
+SQL> (SELECT * FROM SUPPLIER) UNION (SELECT * FROM SUP_PARTS);
+(SELECT * FROM SUPPLIER) UNION (SELECT * FROM SUP_PARTS)
+ *
+ERROR at line 1:
+ORA-01789: query block has incorrect number of result columns
+
+
+SQL> (SELECT * FROM SUPPLIER)UNION (SELECT * FROM PARTS);
+(SELECT * FROM SUPPLIER)UNION (SELECT * FROM PARTS)
+        *
+ERROR at line 1:
+ORA-01790: expression must have same datatype as corresponding expression
+
+
+SQL> ALTER TABLE SUP
+  2  ;
+
+*
+ERROR at line 2:
+ORA-02210: no options specified for ALTER TABLE
+
+
+SQL> ALTER TABLE SUP_PARTS DROP PHONE_NUM;
+ALTER TABLE SUP_PARTS DROP PHONE_NUM
+                           *
+ERROR at line 1:
+ORA-00905: missing keyword
+
+
+SQL> ALTER TABLE SUP_PARTS DROP COLUMN PHONE_NUM;
+
+Table altered.
+
+SQL> SELECT * FROM SUP_PARTS;
+
+SNO  PNO    QUANTITY
+---- ---- ----------
+S1   P1          100
+S2   P1          151
+S2   P2          102
+S2   P4          100
+S3   P4           50
+S3   P5          200
+S4   P3          251
+
+7 rows selected.
+
+SQL> SELECT * FROM SUPPLIER;
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM
+---- -------------------- ---------- -------------------- ----------
+S2   SHYAM                        15 MUM
+S3   RAMYA                        20 DEL
+S4   RAM                          30 BLR
+S5   RAMYA                        40 MUM
+S6   JACK                         25 CHI
+S7   JANE                         50 BLR
+S1   RAM                          10 BLR
+
+7 rows selected.
+
+SQL> (SELECT SNAME FROM SUPPLIER) INTERSECT (SELECT PNAME FROM PARTS);
+
+SNAME
+--------------------
+JACK
+
+SQL> SELECT SNAME.SUPPLIER INTERSET PNAME.PARTS;
+SELECT SNAME.SUPPLIER INTERSET PNAME.PARTS
+                               *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> (SELECT CITY FROM SUPPLIER) INTERSECT (SELECT CITY FROM PARTS);
+
+CITY
+--------------------
+BLR
+CHI
+DEL
+MUM
+
+SQL> (SELECT CITY FROM SUPPLIER) UNION (SELECT CITY FROM PARTS);
+
+CITY
+--------------------
+BLR
+CHI
+DEL
+MUM
+
+SQL> (SELECT CITY FROM SUPPLIER) MINUS (SELECT CITY FROM PARTS);
+
+no rows selected
+
+SQL> (SELECT CITY FROM SUPPLIER) MINUS (SELECT CITY FROM PARTS);
+
+no rows selected
+
+SQL> SELECT * FROM SUPPLIER,PARTS;
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S2   SHYAM                        15 MUM                             P1
+NUT                  RED                     11 BLR
+
+S2   SHYAM                        15 MUM                             P2
+BOLT                 BLUE                    22 MUM
+
+S2   SHYAM                        15 MUM                             P3
+PAINT                GREEN                    1 BLR
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S2   SHYAM                        15 MUM                             P4
+DRILLBIT             BLACK                   30 DEL
+
+S2   SHYAM                        15 MUM                             P5
+NAIL                 BLACK                    5 CHI
+
+S2   SHYAM                        15 MUM                             P6
+NIB                  WHITE                    2 BLR
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S2   SHYAM                        15 MUM                             P7
+MOUSE                RED                     15 BLR
+
+S2   SHYAM                        15 MUM                             P8
+PEN                  RED                     35 MUM
+
+S2   SHYAM                        15 MUM                             P10
+RIM                  BLACK                      DEL
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S2   SHYAM                        15 MUM                             P11
+JACK                 BLACK                      DEL
+
+S3   RAMYA                        20 DEL                             P1
+NUT                  RED                     11 BLR
+
+S3   RAMYA                        20 DEL                             P2
+BOLT                 BLUE                    22 MUM
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S3   RAMYA                        20 DEL                             P3
+PAINT                GREEN                    1 BLR
+
+S3   RAMYA                        20 DEL                             P4
+DRILLBIT             BLACK                   30 DEL
+
+S3   RAMYA                        20 DEL                             P5
+NAIL                 BLACK                    5 CHI
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S3   RAMYA                        20 DEL                             P6
+NIB                  WHITE                    2 BLR
+
+S3   RAMYA                        20 DEL                             P7
+MOUSE                RED                     15 BLR
+
+S3   RAMYA                        20 DEL                             P8
+PEN                  RED                     35 MUM
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S3   RAMYA                        20 DEL                             P10
+RIM                  BLACK                      DEL
+
+S3   RAMYA                        20 DEL                             P11
+JACK                 BLACK                      DEL
+
+S4   RAM                          30 BLR                             P1
+NUT                  RED                     11 BLR
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S4   RAM                          30 BLR                             P2
+BOLT                 BLUE                    22 MUM
+
+S4   RAM                          30 BLR                             P3
+PAINT                GREEN                    1 BLR
+
+S4   RAM                          30 BLR                             P4
+DRILLBIT             BLACK                   30 DEL
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S4   RAM                          30 BLR                             P5
+NAIL                 BLACK                    5 CHI
+
+S4   RAM                          30 BLR                             P6
+NIB                  WHITE                    2 BLR
+
+S4   RAM                          30 BLR                             P7
+MOUSE                RED                     15 BLR
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S4   RAM                          30 BLR                             P8
+PEN                  RED                     35 MUM
+
+S4   RAM                          30 BLR                             P10
+RIM                  BLACK                      DEL
+
+S4   RAM                          30 BLR                             P11
+JACK                 BLACK                      DEL
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S5   RAMYA                        40 MUM                             P1
+NUT                  RED                     11 BLR
+
+S5   RAMYA                        40 MUM                             P2
+BOLT                 BLUE                    22 MUM
+
+S5   RAMYA                        40 MUM                             P3
+PAINT                GREEN                    1 BLR
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S5   RAMYA                        40 MUM                             P4
+DRILLBIT             BLACK                   30 DEL
+
+S5   RAMYA                        40 MUM                             P5
+NAIL                 BLACK                    5 CHI
+
+S5   RAMYA                        40 MUM                             P6
+NIB                  WHITE                    2 BLR
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S5   RAMYA                        40 MUM                             P7
+MOUSE                RED                     15 BLR
+
+S5   RAMYA                        40 MUM                             P8
+PEN                  RED                     35 MUM
+
+S5   RAMYA                        40 MUM                             P10
+RIM                  BLACK                      DEL
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S5   RAMYA                        40 MUM                             P11
+JACK                 BLACK                      DEL
+
+S6   JACK                         25 CHI                             P1
+NUT                  RED                     11 BLR
+
+S6   JACK                         25 CHI                             P2
+BOLT                 BLUE                    22 MUM
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S6   JACK                         25 CHI                             P3
+PAINT                GREEN                    1 BLR
+
+S6   JACK                         25 CHI                             P4
+DRILLBIT             BLACK                   30 DEL
+
+S6   JACK                         25 CHI                             P5
+NAIL                 BLACK                    5 CHI
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S6   JACK                         25 CHI                             P6
+NIB                  WHITE                    2 BLR
+
+S6   JACK                         25 CHI                             P7
+MOUSE                RED                     15 BLR
+
+S6   JACK                         25 CHI                             P8
+PEN                  RED                     35 MUM
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S6   JACK                         25 CHI                             P10
+RIM                  BLACK                      DEL
+
+S6   JACK                         25 CHI                             P11
+JACK                 BLACK                      DEL
+
+S7   JANE                         50 BLR                             P1
+NUT                  RED                     11 BLR
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S7   JANE                         50 BLR                             P2
+BOLT                 BLUE                    22 MUM
+
+S7   JANE                         50 BLR                             P3
+PAINT                GREEN                    1 BLR
+
+S7   JANE                         50 BLR                             P4
+DRILLBIT             BLACK                   30 DEL
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S7   JANE                         50 BLR                             P5
+NAIL                 BLACK                    5 CHI
+
+S7   JANE                         50 BLR                             P6
+NIB                  WHITE                    2 BLR
+
+S7   JANE                         50 BLR                             P7
+MOUSE                RED                     15 BLR
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S7   JANE                         50 BLR                             P8
+PEN                  RED                     35 MUM
+
+S7   JANE                         50 BLR                             P10
+RIM                  BLACK                      DEL
+
+S7   JANE                         50 BLR                             P11
+JACK                 BLACK                      DEL
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S1   RAM                          10 BLR                             P1
+NUT                  RED                     11 BLR
+
+S1   RAM                          10 BLR                             P2
+BOLT                 BLUE                    22 MUM
+
+S1   RAM                          10 BLR                             P3
+PAINT                GREEN                    1 BLR
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S1   RAM                          10 BLR                             P4
+DRILLBIT             BLACK                   30 DEL
+
+S1   RAM                          10 BLR                             P5
+NAIL                 BLACK                    5 CHI
+
+S1   RAM                          10 BLR                             P6
+NIB                  WHITE                    2 BLR
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S1   RAM                          10 BLR                             P7
+MOUSE                RED                     15 BLR
+
+S1   RAM                          10 BLR                             P8
+PEN                  RED                     35 MUM
+
+S1   RAM                          10 BLR                             P10
+RIM                  BLACK                      DEL
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S1   RAM                          10 BLR                             P11
+JACK                 BLACK                      DEL
+
+
+70 rows selected.
+
+SQL> SELECT * FROM EMP,SUPPLIER;
+
+EMPN ENAME                DOB       DEPT SUPE DOJ       SNO
+---- -------------------- --------- ---- ---- --------- ----
+SNAME                    STATUS CITY                  PHONE_NUM
+-------------------- ---------- -------------------- ----------
+E1   SHANKAR              01-JAN-90 D1   E2             S2
+SHYAM                        15 MUM
+
+E1   SHANKAR              01-JAN-90 D1   E2             S3
+RAMYA                        20 DEL
+
+E1   SHANKAR              01-JAN-90 D1   E2             S4
+RAM                          30 BLR
+
+
+EMPN ENAME                DOB       DEPT SUPE DOJ       SNO
+---- -------------------- --------- ---- ---- --------- ----
+SNAME                    STATUS CITY                  PHONE_NUM
+-------------------- ---------- -------------------- ----------
+E1   SHANKAR              01-JAN-90 D1   E2             S5
+RAMYA                        40 MUM
+
+E1   SHANKAR              01-JAN-90 D1   E2             S6
+JACK                         25 CHI
+
+E1   SHANKAR              01-JAN-90 D1   E2             S7
+JANE                         50 BLR
+
+
+EMPN ENAME                DOB       DEPT SUPE DOJ       SNO
+---- -------------------- --------- ---- ---- --------- ----
+SNAME                    STATUS CITY                  PHONE_NUM
+-------------------- ---------- -------------------- ----------
+E1   SHANKAR              01-JAN-90 D1   E2             S1
+RAM                          10 BLR
+
+E2   RAVI                 01-JAN-92 D2   E2             S2
+SHYAM                        15 MUM
+
+E2   RAVI                 01-JAN-92 D2   E2             S3
+RAMYA                        20 DEL
+
+
+EMPN ENAME                DOB       DEPT SUPE DOJ       SNO
+---- -------------------- --------- ---- ---- --------- ----
+SNAME                    STATUS CITY                  PHONE_NUM
+-------------------- ---------- -------------------- ----------
+E2   RAVI                 01-JAN-92 D2   E2             S4
+RAM                          30 BLR
+
+E2   RAVI                 01-JAN-92 D2   E2             S5
+RAMYA                        40 MUM
+
+E2   RAVI                 01-JAN-92 D2   E2             S6
+JACK                         25 CHI
+
+
+EMPN ENAME                DOB       DEPT SUPE DOJ       SNO
+---- -------------------- --------- ---- ---- --------- ----
+SNAME                    STATUS CITY                  PHONE_NUM
+-------------------- ---------- -------------------- ----------
+E2   RAVI                 01-JAN-92 D2   E2             S7
+JANE                         50 BLR
+
+E2   RAVI                 01-JAN-92 D2   E2             S1
+RAM                          10 BLR
+
+
+14 rows selected.
+
+SQL> SELECT AVG(WEIGHT) FROM PARTS WHERE EXISTS
+  2  (SELECT * FROM PARTS WHERE PNO='P8');
+
+AVG(WEIGHT)
+-----------
+     15.125
+
+SQL> SELECT AVG(WEIGHT) FROM PARTS WHERE EXISTS
+  2  (SELECT * FROM PARTS WHERE PNO='P22');
+
+AVG(WEIGHT)
+-----------
+
+
+SQL> SELECT * FROM SUPPLIER WHERE ESISTS (SELECT * FROM SUPPLIER WHERE SNO='S8');
+SELECT * FROM SUPPLIER WHERE ESISTS (SELECT * FROM SUPPLIER WHERE SNO='S8')
+                                     *
+ERROR at line 1:
+ORA-00936: missing expression
+
+
+SQL> SELECT * FROM SUPPLIER WHERE EXISTS (SELECT * FROM SUPPLIER WHERE SNO='S8');
+
+no rows selected
+
+SQL> SELECT * FROM SUPPLIER WHERE NOT EXISTS (SELECT * FROM SUPPLIER WHERE SNO='S8');
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM
+---- -------------------- ---------- -------------------- ----------
+S2   SHYAM                        15 MUM
+S3   RAMYA                        20 DEL
+S4   RAM                          30 BLR
+S5   RAMYA                        40 MUM
+S6   JACK                         25 CHI
+S7   JANE                         50 BLR
+S1   RAM                          10 BLR
+
+7 rows selected.
+
+SQL> SELECT * FROM SUPPLIER WHERE EXISTS (SELECT * FROM SUPPLIER WHERE SNO='S7');
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM
+---- -------------------- ---------- -------------------- ----------
+S2   SHYAM                        15 MUM
+S3   RAMYA                        20 DEL
+S4   RAM                          30 BLR
+S5   RAMYA                        40 MUM
+S6   JACK                         25 CHI
+S7   JANE                         50 BLR
+S1   RAM                          10 BLR
+
+7 rows selected.
+
+SQL> SELECT * FROM SUPPLIER WHERE EXISTS (SELECT * FROM SUPPLIER WHERE CITY='BLR');
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM
+---- -------------------- ---------- -------------------- ----------
+S2   SHYAM                        15 MUM
+S3   RAMYA                        20 DEL
+S4   RAM                          30 BLR
+S5   RAMYA                        40 MUM
+S6   JACK                         25 CHI
+S7   JANE                         50 BLR
+S1   RAM                          10 BLR
+
+7 rows selected.
+
+SQL> SELECT * FROM SUPPLIER WHERE EXISTS (SELECT * FROM SUPPLIER WHERE CITY='BLR');
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM
+---- -------------------- ---------- -------------------- ----------
+S2   SHYAM                        15 MUM
+S3   RAMYA                        20 DEL
+S4   RAM                          30 BLR
+S5   RAMYA                        40 MUM
+S6   JACK                         25 CHI
+S7   JANE                         50 BLR
+S1   RAM                          10 BLR
+
+7 rows selected.
+
+SQL> SELECT * FROM SUPPLIER S, PARTS P WHERE EXISTS(SELECT S.SNO,S.SNAME FROM SUP_PARTS SP WHERE S.SNO=SP.SNO);
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S1   RAM                          10 BLR                             P1
+NUT                  RED                     11 BLR
+
+S1   RAM                          10 BLR                             P2
+BOLT                 BLUE                    22 MUM
+
+S1   RAM                          10 BLR                             P3
+PAINT                GREEN                    1 BLR
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S1   RAM                          10 BLR                             P4
+DRILLBIT             BLACK                   30 DEL
+
+S1   RAM                          10 BLR                             P5
+NAIL                 BLACK                    5 CHI
+
+S1   RAM                          10 BLR                             P6
+NIB                  WHITE                    2 BLR
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S1   RAM                          10 BLR                             P7
+MOUSE                RED                     15 BLR
+
+S1   RAM                          10 BLR                             P8
+PEN                  RED                     35 MUM
+
+S1   RAM                          10 BLR                             P10
+RIM                  BLACK                      DEL
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S1   RAM                          10 BLR                             P11
+JACK                 BLACK                      DEL
+
+S2   SHYAM                        15 MUM                             P1
+NUT                  RED                     11 BLR
+
+S2   SHYAM                        15 MUM                             P2
+BOLT                 BLUE                    22 MUM
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S2   SHYAM                        15 MUM                             P3
+PAINT                GREEN                    1 BLR
+
+S2   SHYAM                        15 MUM                             P4
+DRILLBIT             BLACK                   30 DEL
+
+S2   SHYAM                        15 MUM                             P5
+NAIL                 BLACK                    5 CHI
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S2   SHYAM                        15 MUM                             P6
+NIB                  WHITE                    2 BLR
+
+S2   SHYAM                        15 MUM                             P7
+MOUSE                RED                     15 BLR
+
+S2   SHYAM                        15 MUM                             P8
+PEN                  RED                     35 MUM
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S2   SHYAM                        15 MUM                             P10
+RIM                  BLACK                      DEL
+
+S2   SHYAM                        15 MUM                             P11
+JACK                 BLACK                      DEL
+
+S3   RAMYA                        20 DEL                             P1
+NUT                  RED                     11 BLR
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S3   RAMYA                        20 DEL                             P2
+BOLT                 BLUE                    22 MUM
+
+S3   RAMYA                        20 DEL                             P3
+PAINT                GREEN                    1 BLR
+
+S3   RAMYA                        20 DEL                             P4
+DRILLBIT             BLACK                   30 DEL
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S3   RAMYA                        20 DEL                             P5
+NAIL                 BLACK                    5 CHI
+
+S3   RAMYA                        20 DEL                             P6
+NIB                  WHITE                    2 BLR
+
+S3   RAMYA                        20 DEL                             P7
+MOUSE                RED                     15 BLR
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S3   RAMYA                        20 DEL                             P8
+PEN                  RED                     35 MUM
+
+S3   RAMYA                        20 DEL                             P10
+RIM                  BLACK                      DEL
+
+S3   RAMYA                        20 DEL                             P11
+JACK                 BLACK                      DEL
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S4   RAM                          30 BLR                             P1
+NUT                  RED                     11 BLR
+
+S4   RAM                          30 BLR                             P2
+BOLT                 BLUE                    22 MUM
+
+S4   RAM                          30 BLR                             P3
+PAINT                GREEN                    1 BLR
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S4   RAM                          30 BLR                             P4
+DRILLBIT             BLACK                   30 DEL
+
+S4   RAM                          30 BLR                             P5
+NAIL                 BLACK                    5 CHI
+
+S4   RAM                          30 BLR                             P6
+NIB                  WHITE                    2 BLR
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S4   RAM                          30 BLR                             P7
+MOUSE                RED                     15 BLR
+
+S4   RAM                          30 BLR                             P8
+PEN                  RED                     35 MUM
+
+S4   RAM                          30 BLR                             P10
+RIM                  BLACK                      DEL
+
+
+SNO  SNAME                    STATUS CITY                  PHONE_NUM PNO
+---- -------------------- ---------- -------------------- ---------- ----
+PNAME                COLOR               WEIGHT CITY
+-------------------- --------------- ---------- --------------------
+S4   RAM                          30 BLR                             P11
+JACK                 BLACK                      DEL
+
+
+40 rows selected.
+
+SQL> SELECT ROWNUM FROM SUPPLIER;
+
+    ROWNUM
+----------
+         1
+         2
+         3
+         4
+         5
+         6
+         7
+
+7 rows selected.
+
+SQL> SELECT ROWNUM FROM PARTS;
+
+    ROWNUM
+----------
+         1
+         2
+         3
+         4
+         5
+         6
+         7
+         8
+         9
+        10
+
+10 rows selected.
+
+SQL> SELECT SNO,SNAME, CITY, STATUS,RANK() OVER (PARTITION BY CITY ORDER BY STATUS) FROM SUPPLIERS;
+SELECT SNO,SNAME, CITY, STATUS,RANK() OVER (PARTITION BY CITY ORDER BY STATUS) FROM SUPPLIERS
+                                                                                    *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> SELECT SNO,SNAME, CITY, STATUS,RANK() OVER (PARTITION BY CITY ORDER BY STATUS) FROM SUPPLIER;
+
+SNO  SNAME                CITY                     STATUS
+---- -------------------- -------------------- ----------
+RANK()OVER(PARTITIONBYCITYORDERBYSTATUS)
+----------------------------------------
+S1   RAM                  BLR                          10
+                                       1
+
+S4   RAM                  BLR                          30
+                                       2
+
+S7   JANE                 BLR                          50
+                                       3
+
+
+SNO  SNAME                CITY                     STATUS
+---- -------------------- -------------------- ----------
+RANK()OVER(PARTITIONBYCITYORDERBYSTATUS)
+----------------------------------------
+S6   JACK                 CHI                          25
+                                       1
+
+S3   RAMYA                DEL                          20
+                                       1
+
+S2   SHYAM                MUM                          15
+                                       1
+
+
+SNO  SNAME                CITY                     STATUS
+---- -------------------- -------------------- ----------
+RANK()OVER(PARTITIONBYCITYORDERBYSTATUS)
+----------------------------------------
+S5   RAMYA                MUM                          40
+                                       2
+
+
+7 rows selected.
+
+SQL> SELECT SNO,SNAME, CITY, STATUS,RANK() OVER (PARTITION BY CITY ORDER BY STATUS) AS MYRANK FROM SUPPLIER;
+
+SNO  SNAME                CITY                     STATUS     MYRANK
+---- -------------------- -------------------- ---------- ----------
+S1   RAM                  BLR                          10          1
+S4   RAM                  BLR                          30          2
+S7   JANE                 BLR                          50          3
+S6   JACK                 CHI                          25          1
+S3   RAMYA                DEL                          20          1
+S2   SHYAM                MUM                          15          1
+S5   RAMYA                MUM                          40          2
+
+7 rows selected.
+
+SQL> SELECT SNO,SNAME, CITY, STATUS,RANK() OVER (GROUP BY CITY ORDER BY STATUS) AS MYRANK FROM SUPPLIER;
+SELECT SNO,SNAME, CITY, STATUS,RANK() OVER (GROUP BY CITY ORDER BY STATUS) AS MYRANK FROM SUPPLIER
+                                            *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> SELECT SNO,SNAME, CITY, STATUS,RANK() OVER (PARTITION BY CITY ORDER BY STATUS DESC) AS MYRANK FROM SUPPLIER;
+
+SNO  SNAME                CITY                     STATUS     MYRANK
+---- -------------------- -------------------- ---------- ----------
+S7   JANE                 BLR                          50          1
+S4   RAM                  BLR                          30          2
+S1   RAM                  BLR                          10          3
+S6   JACK                 CHI                          25          1
+S3   RAMYA                DEL                          20          1
+S5   RAMYA                MUM                          40          1
+S2   SHYAM                MUM                          15          2
+
+7 rows selected.
+
+SQL> SELECT SNO,SNAME, CITY, STATUS,RANK() OVER (ORDER BY STATUS DESC) AS MYRANK FROM SUPPLIER;
+
+SNO  SNAME                CITY                     STATUS     MYRANK
+---- -------------------- -------------------- ---------- ----------
+S7   JANE                 BLR                          50          1
+S5   RAMYA                MUM                          40          2
+S4   RAM                  BLR                          30          3
+S6   JACK                 CHI                          25          4
+S3   RAMYA                DEL                          20          5
+S2   SHYAM                MUM                          15          6
+S1   RAM                  BLR                          10          7
+
+7 rows selected.
+
+SQL>

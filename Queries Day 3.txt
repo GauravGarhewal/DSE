@@ -1,0 +1,3215 @@
+
+SQL*Plus: Release 11.2.0.2.0 Production on Wed Nov 21 09:27:17 2018
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> connect
+Enter user-name: SYSTEM
+Enter password:
+Connected.
+SQL> SELECT * FROM TAB
+  2  ;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+AQ$DEF$_AQCALL                 VIEW
+AQ$DEF$_AQERROR                VIEW
+AQ$_DEF$_AQCALL_F              VIEW
+AQ$_DEF$_AQERROR_F             VIEW
+AQ$_INTERNET_AGENTS            TABLE
+AQ$_INTERNET_AGENT_PRIVS       TABLE
+AQ$_QUEUES                     TABLE
+AQ$_QUEUE_TABLES               TABLE
+AQ$_SCHEDULES                  TABLE
+CATALOG                        SYNONYM
+COL                            SYNONYM
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+DEF$_AQCALL                    TABLE
+DEF$_AQERROR                   TABLE
+DEF$_CALLDEST                  TABLE
+DEF$_DEFAULTDEST               TABLE
+DEF$_DESTINATION               TABLE
+DEF$_ERROR                     TABLE
+DEF$_LOB                       TABLE
+DEF$_ORIGIN                    TABLE
+DEF$_PROPAGATOR                TABLE
+DEF$_PUSHED_TRANSACTIONS       TABLE
+HELP                           TABLE
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+LOGMNRC_DBNAME_UID_MAP         TABLE
+LOGMNRC_GSBA                   TABLE
+LOGMNRC_GSII                   TABLE
+LOGMNRC_GTCS                   TABLE
+LOGMNRC_GTLO                   TABLE
+LOGMNRP_CTAS_PART_MAP          TABLE
+LOGMNRT_MDDL$                  TABLE
+LOGMNR_AGE_SPILL$              TABLE
+LOGMNR_ATTRCOL$                TABLE
+LOGMNR_ATTRIBUTE$              TABLE
+LOGMNR_CCOL$                   TABLE
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+LOGMNR_CDEF$                   TABLE
+LOGMNR_COL$                    TABLE
+LOGMNR_COLTYPE$                TABLE
+LOGMNR_DICTIONARY$             TABLE
+LOGMNR_DICTSTATE$              TABLE
+LOGMNR_ENC$                    TABLE
+LOGMNR_ERROR$                  TABLE
+LOGMNR_FILTER$                 TABLE
+LOGMNR_GLOBAL$                 TABLE
+LOGMNR_GT_TAB_INCLUDE$         TABLE
+LOGMNR_GT_USER_INCLUDE$        TABLE
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+LOGMNR_GT_XID_INCLUDE$         TABLE
+LOGMNR_ICOL$                   TABLE
+LOGMNR_IND$                    TABLE
+LOGMNR_INDCOMPART$             TABLE
+LOGMNR_INDPART$                TABLE
+LOGMNR_INDSUBPART$             TABLE
+LOGMNR_INTEGRATED_SPILL$       TABLE
+LOGMNR_KOPM$                   TABLE
+LOGMNR_LOB$                    TABLE
+LOGMNR_LOBFRAG$                TABLE
+LOGMNR_LOG$                    TABLE
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+LOGMNR_LOGMNR_BUILDLOG         TABLE
+LOGMNR_NTAB$                   TABLE
+LOGMNR_OBJ$                    TABLE
+LOGMNR_OPQTYPE$                TABLE
+LOGMNR_PARAMETER$              TABLE
+LOGMNR_PARTOBJ$                TABLE
+LOGMNR_PROCESSED_LOG$          TABLE
+LOGMNR_PROPS$                  TABLE
+LOGMNR_REFCON$                 TABLE
+LOGMNR_RESTART_CKPT$           TABLE
+LOGMNR_RESTART_CKPT_TXINFO$    TABLE
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+LOGMNR_SEED$                   TABLE
+LOGMNR_SESSION$                TABLE
+LOGMNR_SESSION_ACTIONS$        TABLE
+LOGMNR_SESSION_EVOLVE$         TABLE
+LOGMNR_SPILL$                  TABLE
+LOGMNR_SUBCOLTYPE$             TABLE
+LOGMNR_TAB$                    TABLE
+LOGMNR_TABCOMPART$             TABLE
+LOGMNR_TABPART$                TABLE
+LOGMNR_TABSUBPART$             TABLE
+LOGMNR_TS$                     TABLE
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+LOGMNR_TYPE$                   TABLE
+LOGMNR_UID$                    TABLE
+LOGMNR_USER$                   TABLE
+LOGSTDBY$APPLY_MILESTONE       TABLE
+LOGSTDBY$APPLY_PROGRESS        TABLE
+LOGSTDBY$EDS_TABLES            TABLE
+LOGSTDBY$EVENTS                TABLE
+LOGSTDBY$FLASHBACK_SCN         TABLE
+LOGSTDBY$HISTORY               TABLE
+LOGSTDBY$PARAMETERS            TABLE
+LOGSTDBY$PLSQL                 TABLE
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+LOGSTDBY$SCN                   TABLE
+LOGSTDBY$SKIP                  TABLE
+LOGSTDBY$SKIP_SUPPORT          TABLE
+LOGSTDBY$SKIP_TRANSACTION      TABLE
+MVIEW$_ADV_AJG                 TABLE
+MVIEW$_ADV_BASETABLE           TABLE
+MVIEW$_ADV_CLIQUE              TABLE
+MVIEW$_ADV_ELIGIBLE            TABLE
+MVIEW$_ADV_EXCEPTIONS          TABLE
+MVIEW$_ADV_FILTER              TABLE
+MVIEW$_ADV_FILTERINSTANCE      TABLE
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+MVIEW$_ADV_FJG                 TABLE
+MVIEW$_ADV_GC                  TABLE
+MVIEW$_ADV_INFO                TABLE
+MVIEW$_ADV_JOURNAL             TABLE
+MVIEW$_ADV_LEVEL               TABLE
+MVIEW$_ADV_LOG                 TABLE
+MVIEW$_ADV_OUTPUT              TABLE
+MVIEW$_ADV_PARAMETERS          TABLE
+MVIEW$_ADV_PLAN                TABLE
+MVIEW$_ADV_PRETTY              TABLE
+MVIEW$_ADV_ROLLUP              TABLE
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+MVIEW$_ADV_SQLDEPEND           TABLE
+MVIEW$_ADV_TEMP                TABLE
+MVIEW$_ADV_WORKLOAD            TABLE
+MVIEW_EVALUATIONS              VIEW
+MVIEW_EXCEPTIONS               VIEW
+MVIEW_FILTER                   VIEW
+MVIEW_FILTERINSTANCE           VIEW
+MVIEW_LOG                      VIEW
+MVIEW_RECOMMENDATIONS          VIEW
+MVIEW_WORKLOAD                 VIEW
+OL$                            TABLE
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+OL$HINTS                       TABLE
+OL$NODES                       TABLE
+PARTS                          TABLE
+PRODUCT_PRIVS                  VIEW
+PRODUCT_USER_PROFILE           SYNONYM
+PUBLICSYN                      SYNONYM
+REPCAT$_AUDIT_ATTRIBUTE        TABLE
+REPCAT$_AUDIT_COLUMN           TABLE
+REPCAT$_COLUMN_GROUP           TABLE
+REPCAT$_CONFLICT               TABLE
+REPCAT$_DDL                    TABLE
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+REPCAT$_EXCEPTIONS             TABLE
+REPCAT$_EXTENSION              TABLE
+REPCAT$_FLAVORS                TABLE
+REPCAT$_FLAVOR_OBJECTS         TABLE
+REPCAT$_GENERATED              TABLE
+REPCAT$_GROUPED_COLUMN         TABLE
+REPCAT$_INSTANTIATION_DDL      TABLE
+REPCAT$_KEY_COLUMNS            TABLE
+REPCAT$_OBJECT_PARMS           TABLE
+REPCAT$_OBJECT_TYPES           TABLE
+REPCAT$_PARAMETER_COLUMN       TABLE
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+REPCAT$_PRIORITY               TABLE
+REPCAT$_PRIORITY_GROUP         TABLE
+REPCAT$_REFRESH_TEMPLATES      TABLE
+REPCAT$_REPCAT                 TABLE
+REPCAT$_REPCATLOG              TABLE
+REPCAT$_REPCOLUMN              TABLE
+REPCAT$_REPGROUP_PRIVS         TABLE
+REPCAT$_REPOBJECT              TABLE
+REPCAT$_REPPROP                TABLE
+REPCAT$_REPSCHEMA              TABLE
+REPCAT$_RESOLUTION             TABLE
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+REPCAT$_RESOLUTION_METHOD      TABLE
+REPCAT$_RESOLUTION_STATISTICS  TABLE
+REPCAT$_RESOL_STATS_CONTROL    TABLE
+REPCAT$_RUNTIME_PARMS          TABLE
+REPCAT$_SITES_NEW              TABLE
+REPCAT$_SITE_OBJECTS           TABLE
+REPCAT$_SNAPGROUP              TABLE
+REPCAT$_TEMPLATE_OBJECTS       TABLE
+REPCAT$_TEMPLATE_PARMS         TABLE
+REPCAT$_TEMPLATE_REFGROUPS     TABLE
+REPCAT$_TEMPLATE_SITES         TABLE
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+REPCAT$_TEMPLATE_STATUS        TABLE
+REPCAT$_TEMPLATE_TARGETS       TABLE
+REPCAT$_TEMPLATE_TYPES         TABLE
+REPCAT$_USER_AUTHORIZATIONS    TABLE
+REPCAT$_USER_PARM_VALUES       TABLE
+SQLPLUS_PRODUCT_PROFILE        TABLE
+SUPPLIER                       TABLE
+SUP_PART                       TABLE
+SYSCATALOG                     SYNONYM
+SYSFILES                       SYNONYM
+TAB                            SYNONYM
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+TABQUOTAS                      SYNONYM
+
+177 rows selected.
+
+SQL> SELECT * FROM SUPPLIER;
+
+SNO  SNAME                STATU CITY
+---- -------------------- ----- --------------------
+S2   GAURAV               6     MAHARASHTRA
+S1   DEBASHIS             8     ASSAM
+S3   AMBARISH             7     CHENNAI
+S4   HARISHJ              5     GOA
+S5   BAKUL                4     MUMBAI
+S6   MANISH               2     MP
+S7   NAKUL                1     ORISSA
+S8   MAYONESSE            6     BANGLORE
+S9   BINDWA               6     NASIK
+S10  KARISHMA             9     MALYALAM
+
+10 rows selected.
+
+SQL> SELECT * FROM EMPLOYEES;
+SELECT * FROM EMPLOYEES
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> CLEAR;
+SQL> CLR
+SP2-0042: unknown command "CLR" - rest of line ignored.
+SQL> SWEEP;
+SP2-0042: unknown command "SWEEP" - rest of line ignored.
+SQL> DESC SUP_PART;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SNO                                       NOT NULL CHAR(4)
+ PNO                                       NOT NULL CHAR(4)
+ QUANTITY                                           NUMBER(10)
+
+SQL> ALTER TABLE SUP
+  2  ;
+
+*
+ERROR at line 2:
+ORA-02210: no options specified for ALTER TABLE
+
+
+SQL> ALTER TABLE SUP_PART
+  2  CONSTRAINT ;
+CONSTRAINT
+*
+ERROR at line 2:
+ORA-01735: invalid ALTER TABLE option
+
+
+SQL> ALTER TABLE PARTS
+  2  ADD CONSTRAINT UQ_PARTS UNIQUE(PNAME);
+
+Table altered.
+
+SQL> DESC PARTS;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PNO                                       NOT NULL CHAR(4)
+ PNAME                                              VARCHAR2(20)
+ COLOR                                              VARCHAR2(15)
+ WEIGHT                                             NUMBER(4,2)
+ CITY                                               VARCHAR2(20)
+
+SQL> SELECT * FROM PARTS;
+
+PNO  PNAME                COLOR               WEIGHT CITY
+---- -------------------- --------------- ---------- --------------------
+P1   NUT                  SILVER               10.02 MUMBAI
+P2   NAIL                 GREY                  3.65 BANGLORE
+P3   TURBINE              BLACK                96.65 ORISSA
+P4   LAPTOP               BRONZE               71.11 DELHI
+P5   MOBILE               YELLOW               56.69 PUNJAB
+
+SQL> INSERT INTO PARTS VALUES('P6',,'GREEN','10,'BANGLORE';
+ERROR:
+ORA-01756: quoted string not properly terminated
+
+
+SQL> INSERT INTO PARTS VALUES('P6',,'GREEN','10,'BANGLORE');
+ERROR:
+ORA-01756: quoted string not properly terminated
+
+
+SQL> INSERT INTO PARTS VALUES('P6',,'GREEN',10,'BANGLORE');
+INSERT INTO PARTS VALUES('P6',,'GREEN',10,'BANGLORE')
+                              *
+ERROR at line 1:
+ORA-00936: missing expression
+
+
+SQL> INSERT INTO PARTS VALUES('P6','','GREEN',10,'BANGLORE');
+
+1 row created.
+
+SQL> INSERT INTO PARTS VALUES('P7','','RED',10,'MUMBAI');
+
+1 row created.
+
+SQL> SELECT * FROM PARTS;
+
+PNO  PNAME                COLOR               WEIGHT CITY
+---- -------------------- --------------- ---------- --------------------
+P1   NUT                  SILVER               10.02 MUMBAI
+P2   NAIL                 GREY                  3.65 BANGLORE
+P3   TURBINE              BLACK                96.65 ORISSA
+P4   LAPTOP               BRONZE               71.11 DELHI
+P5   MOBILE               YELLOW               56.69 PUNJAB
+P6                        GREEN                   10 BANGLORE
+P7                        RED                     10 MUMBAI
+
+7 rows selected.
+
+SQL> INSERT INTO PARTS VALUES('P8','NUT','GREEN',10,'BANGLORE');
+INSERT INTO PARTS VALUES('P8','NUT','GREEN',10,'BANGLORE')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (SYSTEM.UQ_PARTS) violated
+
+
+SQL> UPDATE PARTS SET COLOR='WHITE' WHERE PNO='P1;;
+ERROR:
+ORA-01756: quoted string not properly terminated
+
+
+SQL>
+SQL>
+SQL> UPDATE PARTS SET COLOR='WHITE' WHERE PNO='P1;
+ERROR:
+ORA-01756: quoted string not properly terminated
+
+
+SQL> UPDATE TABLE PARTS SET COLOR='WHITE' WHERE PNO='P1;
+ERROR:
+ORA-01756: quoted string not properly terminated
+
+
+SQL> UPDATE PARTS SET COLOR='WHITE' WHERE PNO='P1';
+
+1 row updated.
+
+SQL> ALTER TABLE SUP_PARTS
+  2  ADD CONSTRAITS FK_SNO FOREIGN KEY SUPPLIER(SNO);
+ADD CONSTRAITS FK_SNO FOREIGN KEY SUPPLIER(SNO)
+                      *
+ERROR at line 2:
+ORA-01735: invalid ALTER TABLE option
+
+
+SQL> ADD CONSTRAITS FK_SNO FOREIGN KEY SNO SUPPLIER(SNO);
+SP2-0734: unknown command beginning "ADD CONSTR..." - rest of line ignored.
+SQL> SYSDATE
+SP2-0042: unknown command "SYSDATE" - rest of line ignored.
+SQL> ADD CONSTRAITS FK_SNO FOREIGN KEY SNO REFERENCES SUPPLIER(SNO);
+SP2-0734: unknown command beginning "ADD CONSTR..." - rest of line ignored.
+SQL> ALTER TABLE SUP_PARTS
+  2  ADD CONSTRAITS FK_SNO FOREIGN KEY SNO REFERENCES SUPPLIER(SNO);
+ADD CONSTRAITS FK_SNO FOREIGN KEY SNO REFERENCES SUPPLIER(SNO)
+                      *
+ERROR at line 2:
+ORA-01735: invalid ALTER TABLE option
+
+
+SQL> ADD CONSTRAITS FK_SNO FOREIGN KEY (SNO) REFERENCES SUPPLIER(SNO);
+SP2-0734: unknown command beginning "ADD CONSTR..." - rest of line ignored.
+SQL> ALTER TABLE SUP_PARTS
+  2  ADD CONSTRAITS FK_SNO FOREIGN KEY (SNO) REFERENCES SUPPLIER(SNO);
+ADD CONSTRAITS FK_SNO FOREIGN KEY (SNO) REFERENCES SUPPLIER(SNO)
+                      *
+ERROR at line 2:
+ORA-01735: invalid ALTER TABLE option
+
+
+SQL> ALTER TABLE SUP_PARTS
+  2  ADD CONSTRAINT FK_SNO FOREIGN KEY (SNO) REFERENCES SUPPLIER(SNO);
+ALTER TABLE SUP_PARTS
+*
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> ALTER TABLE SUP_PART
+  2  ADD CONSTRAINT FK_SNO FOREIGN KEY (SNO) REFERENCES SUPPLIER(SNO);
+
+Table altered.
+
+SQL> CREATE TABLE EMP(EMPNO CHAR(4),
+  2  ENAME VARCHAR(20),
+  3  DOB DATE,
+  4  DEPTNO CHAR (4),
+  5  CONSTRAINT PK_EMP PRIMARY KEY (EMPNO));
+
+Table created.
+
+SQL> CREATE TABLE DEPT(DEPTNO CHAR(4),
+  2  DNAME VARCHAR(20),
+  3  EMPNO CHAR(4),
+  4  CONSTRAINT PK_DEPT PRIMARY KEY (DEPTNO),
+  5  CONSTRAINT FK_EMP FOREGIN KEY (EMPNO) REFERENCE EMP (EMPNO));
+CONSTRAINT FK_EMP FOREGIN KEY (EMPNO) REFERENCE EMP (EMPNO))
+                              *
+ERROR at line 5:
+ORA-00907: missing right parenthesis
+
+
+SQL> CREATE TABLE DEPT(DEPTNO CHAR(4),
+  2  DNAME VARCHAR(20),
+  3  EMPNO CHAR(4),
+  4  CONSTRAINT PK_DEPT PRIMARY KEY (DEPTNO),
+  5  CONSTRAINT FK_EMP FOREGIN KEY (EMPNO) REFERENCE EMP (EMPNO));
+CONSTRAINT FK_EMP FOREGIN KEY (EMPNO) REFERENCE EMP (EMPNO))
+                              *
+ERROR at line 5:
+ORA-00907: missing right parenthesis
+
+
+SQL> CREATE TABLE DEPT(DEPTNO CHAR(4),
+  2  DNAME VARCHAR(20),
+  3  EMPNO CHAR(4),
+  4  CONSTRAINT PK_DEPT PRIMARY KEY (DEPTNO));
+
+Table created.
+
+SQL> ALTER TABLE EMP ADD CONSTRAINT FK_DEPT FOREIGN KEY (DEPTNO) REFERENCE DEPT (DEPTNO);
+ALTER TABLE EMP ADD CONSTRAINT FK_DEPT FOREIGN KEY (DEPTNO) REFERENCE DEPT (DEPTNO)
+                                                            *
+ERROR at line 1:
+ORA-00905: missing keyword
+
+
+SQL> ALTER TABLE EMP ADD CONSTRAINT FK_DEPT FOREIGN KEY (DEPTNO) REFERENCES DEPT (DEPTNO);
+
+Table altered.
+
+SQL> ALTER TABLE DEPT ADD CONSTRAINT FK_EMP FOREIGN KEY (EMPNO) REFERENCES EMP (EMPNO);
+
+Table altered.
+
+SQL> ALTER TABLE EMP ADD CONSTRAINT CK_DATE CHECK (DATE<SYSDATE);
+ALTER TABLE EMP ADD CONSTRAINT CK_DATE CHECK (DATE<SYSDATE)
+                                              *
+ERROR at line 1:
+ORA-00936: missing expression
+
+
+SQL> ALTER TABLE EMP ADD CONSTRAINT CK_DATE CHECK (DATE<SYSDATE);
+ALTER TABLE EMP ADD CONSTRAINT CK_DATE CHECK (DATE<SYSDATE)
+                                              *
+ERROR at line 1:
+ORA-00936: missing expression
+
+
+SQL> ALTER TABLE EMP ADD CONSTRAINT CK_DATE CHECK (DOB<SYSDATE);
+ALTER TABLE EMP ADD CONSTRAINT CK_DATE CHECK (DOB<SYSDATE)
+                                                  *
+ERROR at line 1:
+ORA-02436: date or system variable wrongly specified in CHECK constraint
+
+
+SQL> ALTER TABLE EMP ADD CONSTRAINT CK_DATE CHECK (DOB<'21-NOV-2018');
+
+Table altered.
+
+SQL> ALTER TABLE EMP ADD CONSTRAINT UQ_ENAME UNIQUE(ENAME);
+
+Table altered.
+
+SQL> DESC EMP;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPNO                                     NOT NULL CHAR(4)
+ ENAME                                              VARCHAR2(20)
+ DOB                                                DATE
+ DEPTNO                                             CHAR(4)
+
+SQL> SELECT SYSDATE FROM DUAL;
+
+SYSDATE
+---------
+21-NOV-18
+
+SQL> FOREIGN KEY
+SP2-0734: unknown command beginning "FOREIGN KE..." - rest of line ignored.
+SQL> SELECT CONSTRAINT_NAME,CONSTRAINT_TYPE,SEARCH_CONDITION FROM USER_CONSTRAINT WHERE TABLE_NAME='EMP';
+SELECT CONSTRAINT_NAME,CONSTRAINT_TYPE,SEARCH_CONDITION FROM USER_CONSTRAINT WHERE TABLE_NAME='EMP'
+                                                             *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> SELECT CONSTRAINT_NAME,CONSTRAINT_TYPE,SEARCH_CONDITION FROM USER_CONSTRAINTS WHERE TABLE_NAME='EMP';
+
+CONSTRAINT_NAME                C
+------------------------------ -
+SEARCH_CONDITION
+--------------------------------------------------------------------------------
+PK_EMP                         P
+
+
+FK_DEPT                        R
+
+
+CK_DATE                        C
+DOB<'21-NOV-2018'
+
+
+CONSTRAINT_NAME                C
+------------------------------ -
+SEARCH_CONDITION
+--------------------------------------------------------------------------------
+UQ_ENAME                       U
+
+
+
+SQL> SELECT CONSTRAINT_NAME,CONSTRAINT_TYPE,SEARCH_CONDITION FROM USER_CONSTRAINTS WHERE TABLE_NAME='DEPT';
+
+CONSTRAINT_NAME                C
+------------------------------ -
+SEARCH_CONDITION
+--------------------------------------------------------------------------------
+PK_DEPT                        P
+
+
+FK_EMP                         R
+
+
+
+SQL> DESC EMP;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPNO                                     NOT NULL CHAR(4)
+ ENAME                                              VARCHAR2(20)
+ DOB                                                DATE
+ DEPTNO                                             CHAR(4)
+
+SQL> DESC DEPT,
+SP2-0565: Illegal identifier.
+SQL> DESC DEPT;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ DEPTNO                                    NOT NULL CHAR(4)
+ DNAME                                              VARCHAR2(20)
+ EMPNO                                              CHAR(4)
+
+SQL> ALTER TABLE EMP ADD SUPERVISOR CHAR(4);
+
+Table altered.
+
+SQL> ALTER TABLE EMP ADD CONSTRAINT FK_SUPERVISOR FOREIGN KEY(SUPERVISOR) REFERENCES EMP(EMPNO);
+
+Table altered.
+
+SQL> DESC EMP;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPNO                                     NOT NULL CHAR(4)
+ ENAME                                              VARCHAR2(20)
+ DOB                                                DATE
+ DEPTNO                                             CHAR(4)
+ SUPERVISOR                                         CHAR(4)
+
+SQL> /
+ALTER TABLE EMP ADD CONSTRAINT FK_SUPERVISOR FOREIGN KEY(SUPERVISOR) REFERENCES EMP(EMPNO)
+                                             *
+ERROR at line 1:
+ORA-02275: such a referential constraint already exists in the table
+
+
+SQL> INSERT INTO EMP VALUES('E1','SHANKAR','01-JAN-1990','D1','E10');
+INSERT INTO EMP VALUES('E1','SHANKAR','01-JAN-1990','D1','E10')
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (SYSTEM.FK_DEPT) violated - parent key not
+found
+
+
+SQL> INSERT INTO EMP VALUES('E1','SHANKAR','01-JAN-1990','D1','');
+INSERT INTO EMP VALUES('E1','SHANKAR','01-JAN-1990','D1','')
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (SYSTEM.FK_DEPT) violated - parent key not
+found
+
+
+SQL> INSERT INTO EMP VALUES('E1','SHANKAR','01-JAN-1990','','');
+
+1 row created.
+
+SQL> INSERT INTO EMP VALUES('E2','RAVI','01-JAN-1992','','');
+
+1 row created.
+
+SQL> SELECT * FROM SUPPLIER
+  2  ;
+
+SNO  SNAME                STATU CITY
+---- -------------------- ----- --------------------
+S2   GAURAV               6     MAHARASHTRA
+S1   DEBASHIS             8     ASSAM
+S3   AMBARISH             7     CHENNAI
+S4   HARISHJ              5     GOA
+S5   BAKUL                4     MUMBAI
+S6   MANISH               2     MP
+S7   NAKUL                1     ORISSA
+S8   MAYONESSE            6     BANGLORE
+S9   BINDWA               6     NASIK
+S10  KARISHMA             9     MALYALAM
+
+10 rows selected.
+
+SQL> CREATE TABLE TEMP(TEMP_NO CHAR(4),
+  2  TEMP_NAME VARCHAR(20),
+  3  TEMP_VAL NUMBER (10),
+  4  CONSTRAINT PK_TEMP PRIMARY KEY (TEMP_NO));
+
+Table created.
+
+SQL> DESC TEMP;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ TEMP_NO                                   NOT NULL CHAR(4)
+ TEMP_NAME                                          VARCHAR2(20)
+ TEMP_VAL                                           NUMBER(10)
+
+SQL> ALTER TABLE TEMP DROP TEMP_NO;
+ALTER TABLE TEMP DROP TEMP_NO
+                      *
+ERROR at line 1:
+ORA-00905: missing keyword
+
+
+SQL> ALTER TABLE TEMP DROP COLUMN TEMP_NO;
+
+Table altered.
+
+SQL> DESC TEMPL
+ERROR:
+ORA-04043: object TEMPL does not exist
+
+
+SQL> DESC TEMP,
+SP2-0565: Illegal identifier.
+SQL> DESC TEMP;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ TEMP_NAME                                          VARCHAR2(20)
+ TEMP_VAL                                           NUMBER(10)
+
+SQL> RENAME TABLE TEMP TO TEMPERORY;
+RENAME TABLE TEMP TO TEMPERORY
+       *
+ERROR at line 1:
+ORA-00903: invalid table name
+
+
+SQL> RENAME TEMP TO TEMPERORY;
+
+Table renamed.
+
+SQL> DESC TEMPERORY;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ TEMP_NAME                                          VARCHAR2(20)
+ TEMP_VAL                                           NUMBER(10)
+
+SQL> RENAME TEMPERORY TO TEMP;
+
+Table renamed.
+
+SQL> DESC TEMP;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ TEMP_NAME                                          VARCHAR2(20)
+ TEMP_VAL                                           NUMBER(10)
+
+SQL> SELECT * FROM SUPPLIER;
+
+SNO  SNAME                STATU CITY
+---- -------------------- ----- --------------------
+S2   GAURAV               6     MAHARASHTRA
+S1   DEBASHIS             8     ASSAM
+S3   AMBARISH             7     CHENNAI
+S4   HARISHJ              5     GOA
+S5   BAKUL                4     MUMBAI
+S6   MANISH               2     MP
+S7   NAKUL                1     ORISSA
+S8   MAYONESSE            6     BANGLORE
+S9   BINDWA               6     NASIK
+S10  KARISHMA             9     MALYALAM
+
+10 rows selected.
+
+SQL> INSERT INTO SUPPLIER('S11','GAURAV','5','DUBAI');
+INSERT INTO SUPPLIER('S11','GAURAV','5','DUBAI')
+                     *
+ERROR at line 1:
+ORA-00928: missing SELECT keyword
+
+
+SQL> INSERT INTO SUPPLIER VALUES('S11','GAURAV','5','DUBAI');
+
+1 row created.
+
+SQL> SELECT * FROM SUPPLIER;
+
+SNO  SNAME                STATU CITY
+---- -------------------- ----- --------------------
+S2   GAURAV               6     MAHARASHTRA
+S1   DEBASHIS             8     ASSAM
+S3   AMBARISH             7     CHENNAI
+S4   HARISHJ              5     GOA
+S5   BAKUL                4     MUMBAI
+S6   MANISH               2     MP
+S7   NAKUL                1     ORISSA
+S8   MAYONESSE            6     BANGLORE
+S9   BINDWA               6     NASIK
+S10  KARISHMA             9     MALYALAM
+S11  GAURAV               5     DUBAI
+
+11 rows selected.
+
+SQL> SELECT SNAME FROM SUPPLIER;
+
+SNAME
+--------------------
+GAURAV
+DEBASHIS
+AMBARISH
+HARISHJ
+BAKUL
+MANISH
+NAKUL
+MAYONESSE
+BINDWA
+KARISHMA
+GAURAV
+
+11 rows selected.
+
+SQL> SELECT DISTINCT (SNAME) FROM SUPPLIER;
+
+SNAME
+--------------------
+NAKUL
+MAYONESSE
+DEBASHIS
+AMBARISH
+BAKUL
+MANISH
+BINDWA
+HARISHJ
+GAURAV
+KARISHMA
+
+10 rows selected.
+
+SQL> CREATE TABLE TEMP1 AS (SELECT * FROM TEMP);
+
+Table created.
+
+SQL> DESC TEMP1;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ TEMP_NAME                                          VARCHAR2(20)
+ TEMP_VAL                                           NUMBER(10)
+
+SQL> DROP TABLE TEMP1;
+
+Table dropped.
+
+SQL> SELECT * FROM SUP_PART;
+
+SNO  PNO    QUANTITY
+---- ---- ----------
+S1   P1         1000
+
+SQL> SELECT * FROM SUP_PARTS;
+SELECT * FROM SUP_PARTS
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> SELECT * FROM SUP_PART;
+
+SNO  PNO    QUANTITY
+---- ---- ----------
+S1   P1         1000
+
+SQL> SELECT * FROM PART;
+SELECT * FROM PART
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> SELECT * FROM PARTS;
+
+PNO  PNAME                COLOR               WEIGHT CITY
+---- -------------------- --------------- ---------- --------------------
+P1   NUT                  WHITE                10.02 MUMBAI
+P2   NAIL                 GREY                  3.65 BANGLORE
+P3   TURBINE              BLACK                96.65 ORISSA
+P4   LAPTOP               BRONZE               71.11 DELHI
+P5   MOBILE               YELLOW               56.69 PUNJAB
+P6                        GREEN                   10 BANGLORE
+P7                        RED                     10 MUMBAI
+
+7 rows selected.
+
+SQL> SELECT WEIGHT FROM PARTS;
+
+    WEIGHT
+----------
+     10.02
+      3.65
+     96.65
+     71.11
+     56.69
+        10
+        10
+
+7 rows selected.
+
+SQL> SELECT WEIGHT +10 FROM PARTS;
+
+ WEIGHT+10
+----------
+     20.02
+     13.65
+    106.65
+     81.11
+     66.69
+        20
+        20
+
+7 rows selected.
+
+SQL> SELECT * FROM PARTS;
+
+PNO  PNAME                COLOR               WEIGHT CITY
+---- -------------------- --------------- ---------- --------------------
+P1   NUT                  WHITE                10.02 MUMBAI
+P2   NAIL                 GREY                  3.65 BANGLORE
+P3   TURBINE              BLACK                96.65 ORISSA
+P4   LAPTOP               BRONZE               71.11 DELHI
+P5   MOBILE               YELLOW               56.69 PUNJAB
+P6                        GREEN                   10 BANGLORE
+P7                        RED                     10 MUMBAI
+
+7 rows selected.
+
+SQL> SELECT WEIGHT +10*2 FROM PARTS;
+
+WEIGHT+10*2
+-----------
+      30.02
+      23.65
+     116.65
+      91.11
+      76.69
+         30
+         30
+
+7 rows selected.
+
+SQL> SELECT WEIGHT +10*2/2 FROM PARTS;
+
+WEIGHT+10*2/2
+-------------
+        20.02
+        13.65
+       106.65
+        81.11
+        66.69
+           20
+           20
+
+7 rows selected.
+
+SQL> SELECT WEIGHT +10*2/4 FROM PARTS;
+
+WEIGHT+10*2/4
+-------------
+        15.02
+         8.65
+       101.65
+        76.11
+        61.69
+           15
+           15
+
+7 rows selected.
+
+SQL> SELECT WEIGHT +10*2/7 FROM PARTS;
+
+WEIGHT+10*2/7
+-------------
+   12.8771429
+   6.50714286
+   99.5071429
+   73.9671429
+   59.5471429
+   12.8571429
+   12.8571429
+
+7 rows selected.
+
+SQL> SELECT PNO,WEIGHT +10 FROM PARTS WHERE WEIGHT+10=20.02 AND CITY='MUMBAI';
+
+PNO   WEIGHT+10
+---- ----------
+P1        20.02
+
+SQL> SELECT PNO,WEIGHT +10 FROM PARTS WHERE WEIGHT+20=30.02 AND CITY='MUMBAI';
+
+PNO   WEIGHT+10
+---- ----------
+P1        20.02
+
+SQL> SELECT * FROM PARTS;
+
+PNO  PNAME                COLOR               WEIGHT CITY
+---- -------------------- --------------- ---------- --------------------
+P1   NUT                  WHITE                10.02 MUMBAI
+P2   NAIL                 GREY                  3.65 BANGLORE
+P3   TURBINE              BLACK                96.65 ORISSA
+P4   LAPTOP               BRONZE               71.11 DELHI
+P5   MOBILE               YELLOW               56.69 PUNJAB
+P6                        GREEN                   10 BANGLORE
+P7                        RED                     10 MUMBAI
+
+7 rows selected.
+
+SQL> SELECT * FROM PARTS WHERE PNAME = NULL;
+
+no rows selected
+
+SQL> SELECT * FROM PARTS WHERE PNAME ='NULL';
+
+no rows selected
+
+SQL> SELECT * FROM PARTS WHERE PNAME IS NULL;
+
+PNO  PNAME                COLOR               WEIGHT CITY
+---- -------------------- --------------- ---------- --------------------
+P6                        GREEN                   10 BANGLORE
+P7                        RED                     10 MUMBAI
+
+SQL> SELECT * FROM PARTS WHERE PNAME = '';
+
+no rows selected
+
+SQL> SELECT * FROM PARTS WHERE PNAME == '';
+SELECT * FROM PARTS WHERE PNAME == ''
+                                 *
+ERROR at line 1:
+ORA-00936: missing expression
+
+
+SQL> SELECT * FROM PARTS WHERE PNAME = ' ';
+
+no rows selected
+
+SQL> SELECT * FROM PARTS WHERE PNAME LIKE NULL;
+
+no rows selected
+
+SQL> SELECT * FROM PARTS;
+
+PNO  PNAME                COLOR               WEIGHT CITY
+---- -------------------- --------------- ---------- --------------------
+P1   NUT                  WHITE                10.02 MUMBAI
+P2   NAIL                 GREY                  3.65 BANGLORE
+P3   TURBINE              BLACK                96.65 ORISSA
+P4   LAPTOP               BRONZE               71.11 DELHI
+P5   MOBILE               YELLOW               56.69 PUNJAB
+P6                        GREEN                   10 BANGLORE
+P7                        RED                     10 MUMBAI
+
+7 rows selected.
+
+SQL> INSERT INTO PARTS VALUES('P8','MOUSE','GREY',,'BANGLORE');
+INSERT INTO PARTS VALUES('P8','MOUSE','GREY',,'BANGLORE')
+                                             *
+ERROR at line 1:
+ORA-00936: missing expression
+
+
+SQL> INSERT INTO PARTS VALUES('P8','MOUSE','GREY','','BANGLORE');
+
+1 row created.
+
+SQL> INSERT INTO PARTS VALUES('P9','BUTTON','BLACK','','MUMBAI');
+
+1 row created.
+
+SQL> INSERT INTO PARTS VALUES('P10','NIBS','BLACK','','DELHI');
+
+1 row created.
+
+SQL> SELECT * FROM PARTS;
+
+PNO  PNAME                COLOR               WEIGHT CITY
+---- -------------------- --------------- ---------- --------------------
+P1   NUT                  WHITE                10.02 MUMBAI
+P2   NAIL                 GREY                  3.65 BANGLORE
+P3   TURBINE              BLACK                96.65 ORISSA
+P4   LAPTOP               BRONZE               71.11 DELHI
+P5   MOBILE               YELLOW               56.69 PUNJAB
+P6                        GREEN                   10 BANGLORE
+P7                        RED                     10 MUMBAI
+P8   MOUSE                GREY                       BANGLORE
+P9   BUTTON               BLACK                      MUMBAI
+P10  NIBS                 BLACK                      DELHI
+
+10 rows selected.
+
+SQL> SELECT SUM(WEIGHT) FROM PARTS;
+
+SUM(WEIGHT)
+-----------
+     258.12
+
+SQL> SELECT COUNT(WEIGHT) FROM PARTS;
+
+COUNT(WEIGHT)
+-------------
+            7
+
+SQL> SELECT COUNT(*) FROM PARTS;
+
+  COUNT(*)
+----------
+        10
+
+SQL> SELECT MAX(WEIGHT) FROM PARTS;
+
+MAX(WEIGHT)
+-----------
+      96.65
+
+SQL> SELECT MIN(WEIGHT) FROM PARTS;
+
+MIN(WEIGHT)
+-----------
+       3.65
+
+SQL> SELECT AVG(WEIGHT) FROM PARTS;
+
+AVG(WEIGHT)
+-----------
+ 36.8742857
+
+SQL> SELECT AVG(NVL(WEIGHT,0)) FROM PARTS;
+
+AVG(NVL(WEIGHT,0))
+------------------
+            25.812
+
+SQL> SELECT * FROM PARTS;
+
+PNO  PNAME                COLOR               WEIGHT CITY
+---- -------------------- --------------- ---------- --------------------
+P1   NUT                  WHITE                10.02 MUMBAI
+P2   NAIL                 GREY                  3.65 BANGLORE
+P3   TURBINE              BLACK                96.65 ORISSA
+P4   LAPTOP               BRONZE               71.11 DELHI
+P5   MOBILE               YELLOW               56.69 PUNJAB
+P6                        GREEN                   10 BANGLORE
+P7                        RED                     10 MUMBAI
+P8   MOUSE                GREY                       BANGLORE
+P9   BUTTON               BLACK                      MUMBAI
+P10  NIBS                 BLACK                      DELHI
+
+10 rows selected.
+
+SQL> SELECT COUNT(NVL(WEIGHT,0)) FROM PARTS;
+
+COUNT(NVL(WEIGHT,0))
+--------------------
+                  10
+
+SQL> SELECT PNO,PNAME,AVG(NVL(WEIGHT,0)), COUNT(NVL(WEIGHT,0)) FROM PARTS;
+SELECT PNO,PNAME,AVG(NVL(WEIGHT,0)), COUNT(NVL(WEIGHT,0)) FROM PARTS
+       *
+ERROR at line 1:
+ORA-00937: not a single-group group function
+
+
+SQL> SELECT PNO AS PART NUMBER FROM PARTS;
+SELECT PNO AS PART NUMBER FROM PARTS
+                   *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> SELECT PNO AS PART_NUMBER FROM PARTS;
+
+PART
+----
+P1
+P2
+P3
+P4
+P5
+P6
+P7
+P8
+P9
+P10
+
+10 rows selected.
+
+SQL> SELECT PNO AS PART_NUMBER,PNAME "pname", WEIGHT WT FROM PARTS;
+
+PART pname                        WT
+---- -------------------- ----------
+P1   NUT                       10.02
+P2   NAIL                       3.65
+P3   TURBINE                   96.65
+P4   LAPTOP                    71.11
+P5   MOBILE                    56.69
+P6                                10
+P7                                10
+P8   MOUSE
+P9   BUTTON
+P10  NIBS
+
+10 rows selected.
+
+SQL> SELECT PNO WITH PNAME FROM PARTS;
+SELECT PNO WITH PNAME FROM PARTS
+           *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> SELECT PNO || PNAME||WEIGHT FROM PARTS;
+
+PNO||PNAME||WEIGHT
+----------------------------------------------------------------
+P1  NUT10.02
+P2  NAIL3.65
+P3  TURBINE96.65
+P4  LAPTOP71.11
+P5  MOBILE56.69
+P6  10
+P7  10
+P8  MOUSE
+P9  BUTTON
+P10 NIBS
+
+10 rows selected.
+
+SQL> SELECT PNO || PNAME||" : "||WEIGHT FROM PARTS;
+SELECT PNO || PNAME||" : "||WEIGHT FROM PARTS
+                     *
+ERROR at line 1:
+ORA-00904: " : ": invalid identifier
+
+
+SQL> SELECT PNO || PNAME||WEIGHT FROM PARTS;
+
+PNO||PNAME||WEIGHT
+----------------------------------------------------------------
+P1  NUT10.02
+P2  NAIL3.65
+P3  TURBINE96.65
+P4  LAPTOP71.11
+P5  MOBILE56.69
+P6  10
+P7  10
+P8  MOUSE
+P9  BUTTON
+P10 NIBS
+
+10 rows selected.
+
+SQL> SELECT PNO ||WITH PNAME||WEIGHT FROM PARTS;
+SELECT PNO ||WITH PNAME||WEIGHT FROM PARTS
+             *
+ERROR at line 1:
+ORA-00936: missing expression
+
+
+SQL> SELECT PNO ||HAS PNAME||WEIGHT FROM PARTS;
+SELECT PNO ||HAS PNAME||WEIGHT FROM PARTS
+                      *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> SELECT PNO ||: PNAME||WEIGHT FROM PARTS;
+SP2-0552: Bind variable "PNAME" not declared.
+SQL> SELECT PNO ||NAMED PNAME||WEIGHT FROM PARTS;
+SELECT PNO ||NAMED PNAME||WEIGHT FROM PARTS
+                        *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> SELECT PNO ||KAJSASS PNAME||WEIGHT FROM PARTS;
+SELECT PNO ||KAJSASS PNAME||WEIGHT FROM PARTS
+                          *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> SELECT PNO ||PNAME||WEIGHT FROM PARTS;
+
+PNO||PNAME||WEIGHT
+----------------------------------------------------------------
+P1  NUT10.02
+P2  NAIL3.65
+P3  TURBINE96.65
+P4  LAPTOP71.11
+P5  MOBILE56.69
+P6  10
+P7  10
+P8  MOUSE
+P9  BUTTON
+P10 NIBS
+
+10 rows selected.
+
+SQL> SELECT PNO ||DSDSDSDSDSDS PNAME||WEIGHT FROM PARTS;
+SELECT PNO ||DSDSDSDSDSDS PNAME||WEIGHT FROM PARTS
+                               *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> SELECT * FROM PARTS WHERE CITY IN ('BANGLORE','MUMBAI','CHENNAI');
+
+PNO  PNAME                COLOR               WEIGHT CITY
+---- -------------------- --------------- ---------- --------------------
+P1   NUT                  WHITE                10.02 MUMBAI
+P2   NAIL                 GREY                  3.65 BANGLORE
+P6                        GREEN                   10 BANGLORE
+P7                        RED                     10 MUMBAI
+P8   MOUSE                GREY                       BANGLORE
+P9   BUTTON               BLACK                      MUMBAI
+
+6 rows selected.
+
+SQL> SELECT * FROM PARTS WHERE CITY NOT IN ('BANGLORE','MUMBAI','CHENNAI');
+
+PNO  PNAME                COLOR               WEIGHT CITY
+---- -------------------- --------------- ---------- --------------------
+P3   TURBINE              BLACK                96.65 ORISSA
+P4   LAPTOP               BRONZE               71.11 DELHI
+P5   MOBILE               YELLOW               56.69 PUNJAB
+P10  NIBS                 BLACK                      DELHI
+
+SQL> SELECT * FROM PARTS WHERE CITY NOT IN ('BANGLORE','MUMBAI','CHENNAI') ORDER BY WEIGHT;
+
+PNO  PNAME                COLOR               WEIGHT CITY
+---- -------------------- --------------- ---------- --------------------
+P5   MOBILE               YELLOW               56.69 PUNJAB
+P4   LAPTOP               BRONZE               71.11 DELHI
+P3   TURBINE              BLACK                96.65 ORISSA
+P10  NIBS                 BLACK                      DELHI
+
+SQL> SELECT * FROM PARTS WHERE CITY NOT IN ('BANGLORE','MUMBAI','CHENNAI') ORDER BY NVL(WEIGHT,0);
+
+PNO  PNAME                COLOR               WEIGHT CITY
+---- -------------------- --------------- ---------- --------------------
+P10  NIBS                 BLACK                      DELHI
+P5   MOBILE               YELLOW               56.69 PUNJAB
+P4   LAPTOP               BRONZE               71.11 DELHI
+P3   TURBINE              BLACK                96.65 ORISSA
+
+SQL> SELECT * FROM PARTS WHERE CITY NOT IN ('BANGLORE','MUMBAI','CHENNAI') ORDER BY 3;
+
+PNO  PNAME                COLOR               WEIGHT CITY
+---- -------------------- --------------- ---------- --------------------
+P3   TURBINE              BLACK                96.65 ORISSA
+P10  NIBS                 BLACK                      DELHI
+P4   LAPTOP               BRONZE               71.11 DELHI
+P5   MOBILE               YELLOW               56.69 PUNJAB
+
+SQL> SELECT PNO,PNAME,WEIGHT,WEIGHT+50 AS TOTAL FROM PARTS WHERE CITY NOT IN ('BANGLORE','MUMBAI','CHENNAI') ORDER BY 3;
+
+PNO  PNAME                    WEIGHT      TOTAL
+---- -------------------- ---------- ----------
+P5   MOBILE                    56.69     106.69
+P4   LAPTOP                    71.11     121.11
+P3   TURBINE                   96.65     146.65
+P10  NIBS
+
+SQL> SELECT PNO,PNAME,WEIGHT,WEIGHT+50 AS TOTAL FROM PARTS ORDER BY 3;
+
+PNO  PNAME                    WEIGHT      TOTAL
+---- -------------------- ---------- ----------
+P2   NAIL                       3.65      53.65
+P7                                10         60
+P6                                10         60
+P1   NUT                       10.02      60.02
+P5   MOBILE                    56.69     106.69
+P4   LAPTOP                    71.11     121.11
+P3   TURBINE                   96.65     146.65
+P8   MOUSE
+P9   BUTTON
+P10  NIBS
+
+10 rows selected.
+
+SQL> SELECT PNO,PNAME,WEIGHT,WEIGHT+50 AS TOTAL FROM PARTS;
+
+PNO  PNAME                    WEIGHT      TOTAL
+---- -------------------- ---------- ----------
+P1   NUT                       10.02      60.02
+P2   NAIL                       3.65      53.65
+P3   TURBINE                   96.65     146.65
+P4   LAPTOP                    71.11     121.11
+P5   MOBILE                    56.69     106.69
+P6                                10         60
+P7                                10         60
+P8   MOUSE
+P9   BUTTON
+P10  NIBS
+
+10 rows selected.
+
+SQL> SELECT PNO,PNAME,WEIGHT,WEIGHT+50 AS TOTAL FROM PARTS ORDER BY TOTAL;
+
+PNO  PNAME                    WEIGHT      TOTAL
+---- -------------------- ---------- ----------
+P2   NAIL                       3.65      53.65
+P7                                10         60
+P6                                10         60
+P1   NUT                       10.02      60.02
+P5   MOBILE                    56.69     106.69
+P4   LAPTOP                    71.11     121.11
+P3   TURBINE                   96.65     146.65
+P8   MOUSE
+P9   BUTTON
+P10  NIBS
+
+10 rows selected.
+
+SQL> DESC PARTS
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PNO                                       NOT NULL CHAR(4)
+ PNAME                                              VARCHAR2(20)
+ COLOR                                              VARCHAR2(15)
+ WEIGHT                                             NUMBER(4,2)
+ CITY                                               VARCHAR2(20)
+
+SQL> SELECT ROWNUM FROM PARTS
+  2  ;
+
+    ROWNUM
+----------
+         1
+         2
+         3
+         4
+         5
+         6
+         7
+         8
+         9
+        10
+
+10 rows selected.
+
+SQL> SELECT PNO,PNAME,WEIGHT,WEIGHT+50 AS TOTAL FROM PARTS ORDER BY 6;
+SELECT PNO,PNAME,WEIGHT,WEIGHT+50 AS TOTAL FROM PARTS ORDER BY 6
+                                                               *
+ERROR at line 1:
+ORA-01785: ORDER BY item must be the number of a SELECT-list expression
+
+
+SQL> SELECT PNO,PNAME,COLOR,CITY,WEIGHT,WEIGHT+50 AS TOTAL FROM PARTS ORDER BY 6;
+
+PNO  PNAME                COLOR           CITY                     WEIGHT
+---- -------------------- --------------- -------------------- ----------
+     TOTAL
+----------
+P2   NAIL                 GREY            BANGLORE                   3.65
+     53.65
+
+P7                        RED             MUMBAI                       10
+        60
+
+P6                        GREEN           BANGLORE                     10
+        60
+
+
+PNO  PNAME                COLOR           CITY                     WEIGHT
+---- -------------------- --------------- -------------------- ----------
+     TOTAL
+----------
+P1   NUT                  WHITE           MUMBAI                    10.02
+     60.02
+
+P5   MOBILE               YELLOW          PUNJAB                    56.69
+    106.69
+
+P4   LAPTOP               BRONZE          DELHI                     71.11
+    121.11
+
+
+PNO  PNAME                COLOR           CITY                     WEIGHT
+---- -------------------- --------------- -------------------- ----------
+     TOTAL
+----------
+P3   TURBINE              BLACK           ORISSA                    96.65
+    146.65
+
+P8   MOUSE                GREY            BANGLORE
+
+
+P9   BUTTON               BLACK           MUMBAI
+
+
+
+PNO  PNAME                COLOR           CITY                     WEIGHT
+---- -------------------- --------------- -------------------- ----------
+     TOTAL
+----------
+P10  NIBS                 BLACK           DELHI
+
+
+
+10 rows selected.
+
+SQL> SELECT PNO,PNAME,COLOR,CITY,WEIGHT,WEIGHT+50 AS TOTAL FROM PARTS ORDER BY COLOR,CITY;
+
+PNO  PNAME                COLOR           CITY                     WEIGHT
+---- -------------------- --------------- -------------------- ----------
+     TOTAL
+----------
+P10  NIBS                 BLACK           DELHI
+
+
+P9   BUTTON               BLACK           MUMBAI
+
+
+P3   TURBINE              BLACK           ORISSA                    96.65
+    146.65
+
+
+PNO  PNAME                COLOR           CITY                     WEIGHT
+---- -------------------- --------------- -------------------- ----------
+     TOTAL
+----------
+P4   LAPTOP               BRONZE          DELHI                     71.11
+    121.11
+
+P6                        GREEN           BANGLORE                     10
+        60
+
+P2   NAIL                 GREY            BANGLORE                   3.65
+     53.65
+
+
+PNO  PNAME                COLOR           CITY                     WEIGHT
+---- -------------------- --------------- -------------------- ----------
+     TOTAL
+----------
+P8   MOUSE                GREY            BANGLORE
+
+
+P7                        RED             MUMBAI                       10
+        60
+
+P1   NUT                  WHITE           MUMBAI                    10.02
+     60.02
+
+
+PNO  PNAME                COLOR           CITY                     WEIGHT
+---- -------------------- --------------- -------------------- ----------
+     TOTAL
+----------
+P5   MOBILE               YELLOW          PUNJAB                    56.69
+    106.69
+
+
+10 rows selected.
+
+SQL> SELECT LOWER(SHANKAR GOWDA)
+  2  ;
+SELECT LOWER(SHANKAR GOWDA)
+                     *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> SELECT LOWER(SHANKARGOWDA);
+SELECT LOWER(SHANKARGOWDA)
+                         *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> SELECT LOWER(SHANKARGOWDA)FROM DUAL;
+SELECT LOWER(SHANKARGOWDA)FROM DUAL
+             *
+ERROR at line 1:
+ORA-00904: "SHANKARGOWDA": invalid identifier
+
+
+SQL> SELECT LOWER('SHANKARGOWDA')FROM DUAL;
+
+LOWER('SHANK
+------------
+shankargowda
+
+SQL> DESC DUAL;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ DUMMY                                              VARCHAR2(1)
+
+SQL> SELECT * FROM DUAL;
+
+D
+-
+X
+
+SQL> SELECT INITCAP('SHANKARGOWDA')FROM DUAL;
+
+INITCAP('SHA
+------------
+Shankargowda
+
+SQL> SELECT INITCAP('SHANKAR GOWDA')FROM DUAL;
+
+INITCAP('SHAN
+-------------
+Shankar Gowda
+
+SQL> SELECT INITCAP(PNAME) FROM PARTS;
+
+INITCAP(PNAME)
+--------------------
+Nut
+Nail
+Turbine
+Laptop
+Mobile
+
+
+Mouse
+Button
+Nibs
+
+10 rows selected.
+
+SQL> SELECT PNO||PNAME FROM PARTS;
+
+PNO||PNAME
+------------------------
+P1  NUT
+P2  NAIL
+P3  TURBINE
+P4  LAPTOP
+P5  MOBILE
+P6
+P7
+P8  MOUSE
+P9  BUTTON
+P10 NIBS
+
+10 rows selected.
+
+SQL> SELECT CONCAT(PNO,PNAME) FROM PARTS;
+
+CONCAT(PNO,PNAME)
+------------------------
+P1  NUT
+P2  NAIL
+P3  TURBINE
+P4  LAPTOP
+P5  MOBILE
+P6
+P7
+P8  MOUSE
+P9  BUTTON
+P10 NIBS
+
+10 rows selected.
+
+SQL> SELECT CONCAT(PNO,'IS WITH',PNAME) FROM PARTS;
+SELECT CONCAT(PNO,'IS WITH',PNAME) FROM PARTS
+       *
+ERROR at line 1:
+ORA-00909: invalid number of arguments
+
+
+SQL> SELECT CONCAT(PNO,"IS WITH",PNAME) FROM PARTS;
+SELECT CONCAT(PNO,"IS WITH",PNAME) FROM PARTS
+       *
+ERROR at line 1:
+ORA-00909: invalid number of arguments
+
+
+SQL> SELECT SUBSTR('STRING',4,3)FROM DUAL;
+
+SUB
+---
+ING
+
+SQL> SELECT SUBSTR('STRING',5,3)FROM DUAL;
+
+SU
+--
+NG
+
+SQL> SELECT SUBSTR('STRING',6,3)FROM DUAL;
+
+S
+-
+G
+
+SQL> SELECT SUBSTR('STRING',7,3)FROM DUAL;
+
+S
+-
+
+
+SQL> SELECT SUBSTR('STRING',20,3)FROM DUAL;
+
+S
+-
+
+
+SQL> SELECT SUBSTR('STRING',3,3)FROM DUAL;
+
+SUB
+---
+RIN
+
+SQL> SELECT SUBSTR(PNAME,3,3) FROM PARTS;
+
+SUBSTR(PNAME
+------------
+T
+IL
+RBI
+PTO
+BIL
+
+
+USE
+TTO
+BS
+
+10 rows selected.
+
+SQL> SELECT INSTR('STRING','I') FROM DUAL;
+
+INSTR('STRING','I')
+-------------------
+                  4
+
+SQL> SELECT INSTR('STRING','A') FROM DUAL;
+
+INSTR('STRING','A')
+-------------------
+                  0
+
+SQL> SELECT LPAD('STRING',10,'*') FROM DUAL;
+
+LPAD('STRI
+----------
+****STRING
+
+SQL> ROUND(99.99,1) FROM DUAL;
+SP2-0734: unknown command beginning "ROUND(99.9..." - rest of line ignored.
+SQL> SELECT ROUND(99.99,1) FROM DUAL;
+
+ROUND(99.99,1)
+--------------
+           100
+
+SQL> SELECT ROUND(99.9,1) FROM DUAL;
+
+ROUND(99.9,1)
+-------------
+         99.9
+
+SQL> SELECT ROUND(100.002,2) FROM DUAL;
+
+ROUND(100.002,2)
+----------------
+             100
+
+SQL> SELECT TRUNC(99.99999,2) FROM DUAL;
+
+TRUNC(99.99999,2)
+-----------------
+            99.99
+
+SQL> SELECT ROUND('31-DEC-99',YEAR) FROM DUAL;
+SELECT ROUND('31-DEC-99',YEAR) FROM DUAL
+                         *
+ERROR at line 1:
+ORA-00904: "YEAR": invalid identifier
+
+
+SQL> SELECT ROUND('31-DEC-99','YEAR') FROM DUAL;
+SELECT ROUND('31-DEC-99','YEAR') FROM DUAL
+             *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> SELECT ROUND('31-DEC-99','2000') FROM DUAL;
+SELECT ROUND('31-DEC-99','2000') FROM DUAL
+             *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> SELECT ROUND('31-DEC-99','YEAR') FROM DUAL;
+SELECT ROUND('31-DEC-99','YEAR') FROM DUAL
+             *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> SELECT ROUND('31-DEC-99','YEAR') FROM DUAL;
+SELECT ROUND('31-DEC-99','YEAR') FROM DUAL
+             *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> SELECT MONTHS_BETWEEN('1-JAN-2000','3-MAR-2008') FROM DUAL;
+
+MONTHS_BETWEEN('1-JAN-2000','3-MAR-2008')
+-----------------------------------------
+                               -98.064516
+
+SQL> SELECT NEXT_DAY('1-JAN-2019') FROM DUAL;
+SELECT NEXT_DAY('1-JAN-2019') FROM DUAL
+       *
+ERROR at line 1:
+ORA-00909: invalid number of arguments
+
+
+SQL> SELECT NEXT_DAY('1-JAN-2019','2-JAN-2019') FROM DUAL;
+SELECT NEXT_DAY('1-JAN-2019','2-JAN-2019') FROM DUAL
+                             *
+ERROR at line 1:
+ORA-01846: not a valid day of the week
+
+
+SQL> SELECT NEXT_DAY('1-JAN-2019','10-JAN-2019') FROM DUAL;
+SELECT NEXT_DAY('1-JAN-2019','10-JAN-2019') FROM DUAL
+                             *
+ERROR at line 1:
+ORA-01846: not a valid day of the week
+
+
+SQL> SELECT NEXT_DAY('1-JAN-2019',2) FROM DUAL;
+
+NEXT_DAY(
+---------
+07-JAN-19
+
+SQL> SELECT NEXT_DAY('1-JAN-2019',3) FROM DUAL;
+
+NEXT_DAY(
+---------
+08-JAN-19
+
+SQL> SELECT NEXT_DAY('1-JAN-2019',0) FROM DUAL;
+SELECT NEXT_DAY('1-JAN-2019',0) FROM DUAL
+                             *
+ERROR at line 1:
+ORA-01846: not a valid day of the week
+
+
+SQL> SELECT NEXT_DAY('1-JAN-2019',1) FROM DUAL;
+
+NEXT_DAY(
+---------
+06-JAN-19
+
+SQL> SELECT NEXT_DAY('1-JAN-2019',10) FROM DUAL;
+SELECT NEXT_DAY('1-JAN-2019',10) FROM DUAL
+                             *
+ERROR at line 1:
+ORA-01846: not a valid day of the week
+
+
+SQL> SELECT NEXT_DAY('1-JAN-2019',7) FROM DUAL;
+
+NEXT_DAY(
+---------
+05-JAN-19
+
+SQL> SELECT NEXT_DAY('1-JAN-2019',6) FROM DUAL;
+
+NEXT_DAY(
+---------
+04-JAN-19
+
+SQL> SELECT NEXT_DAY('1-JAN-2019',5) FROM DUAL;
+
+NEXT_DAY(
+---------
+03-JAN-19
+
+SQL> SELECT NEXT_DAY('1-JAN-2019',4) FROM DUAL;
+
+NEXT_DAY(
+---------
+02-JAN-19
+
+SQL> SELECT NEXT_DAY('1-JAN-2019',3) FROM DUAL;
+
+NEXT_DAY(
+---------
+08-JAN-19
+
+SQL> SELECT LAST_DAY('1-JAN-2019') FROM DUAL;
+
+LAST_DAY(
+---------
+31-JAN-19
+
+SQL> SELECT ROUND(TO_DATE('31-DEC-1999',YEAR)) FROM DUAL;
+SELECT ROUND(TO_DATE('31-DEC-1999',YEAR)) FROM DUAL
+                                   *
+ERROR at line 1:
+ORA-00904: "YEAR": invalid identifier
+
+
+SQL> SELECT ROUND(TO_DATE('31-DEC-1999','YEAR')) FROM DUAL;
+SELECT ROUND(TO_DATE('31-DEC-1999','YEAR')) FROM DUAL
+                                   *
+ERROR at line 1:
+ORA-01820: format code cannot appear in date input format
+
+
+SQL> SELECT ROUND(TO_DATE('31-DEC-1999',0)) FROM DUAL;
+SELECT ROUND(TO_DATE('31-DEC-1999',0)) FROM DUAL
+                                   *
+ERROR at line 1:
+ORA-00932: inconsistent datatypes: expected DATE got NUMBER
+
+
+SQL> SELECT ROUND(TO_DATE('31-DEC-1999')) FROM DUAL;
+
+ROUND(TO_
+---------
+31-DEC-99
+
+SQL> SELECT ROUND(TO_DATE('31-DEC-1999','2000')) FROM DUAL;
+SELECT ROUND(TO_DATE('31-DEC-1999','2000')) FROM DUAL
+                                   *
+ERROR at line 1:
+ORA-01821: date format not recognized
+
+
+SQL> SELECT ROUND(TO_DATE('31-DEC-1999'),'2000') FROM DUAL;
+SELECT ROUND(TO_DATE('31-DEC-1999'),'2000') FROM DUAL
+                                    *
+ERROR at line 1:
+ORA-01821: date format not recognized
+
+
+SQL> SELECT ROUND(TO_DATE('31-DEC-1999'),YEAR) FROM DUAL;
+SELECT ROUND(TO_DATE('31-DEC-1999'),YEAR) FROM DUAL
+                                    *
+ERROR at line 1:
+ORA-00904: "YEAR": invalid identifier
+
+
+SQL> SELECT ROUND(TO_DATE('31-DEC-1999'),'YEAR') FROM DUAL;
+
+ROUND(TO_
+---------
+01-JAN-00
+
+SQL> SELECT * FROM PARTS;
+
+PNO  PNAME                COLOR               WEIGHT CITY
+---- -------------------- --------------- ---------- --------------------
+P1   NUT                  WHITE                10.02 MUMBAI
+P2   NAIL                 GREY                  3.65 BANGLORE
+P3   TURBINE              BLACK                96.65 ORISSA
+P4   LAPTOP               BRONZE               71.11 DELHI
+P5   MOBILE               YELLOW               56.69 PUNJAB
+P6                        GREEN                   10 BANGLORE
+P7                        RED                     10 MUMBAI
+P8   MOUSE                GREY                       BANGLORE
+P9   BUTTON               BLACK                      MUMBAI
+P10  NIBS                 BLACK                      DELHI
+
+10 rows selected.
+
+SQL> SELECT PNAME,COLOR,WEIGHT,
+  2  DECODE (COLOR,'BLACK',WEIGHT *2,
+  3  'GREY',WEIGHT*5,WEIGHT) REVISED_WEIGHT
+  4  FROM PARTS;
+
+PNAME                COLOR               WEIGHT REVISED_WEIGHT
+-------------------- --------------- ---------- --------------
+NUT                  WHITE                10.02          10.02
+NAIL                 GREY                  3.65          18.25
+TURBINE              BLACK                96.65          193.3
+LAPTOP               BRONZE               71.11          71.11
+MOBILE               YELLOW               56.69          56.69
+                     GREEN                   10             10
+                     RED                     10             10
+MOUSE                GREY
+BUTTON               BLACK
+NIBS                 BLACK
+
+10 rows selected.
+
+SQL> SELECT * FROM SUP_PART;
+
+SNO  PNO    QUANTITY
+---- ---- ----------
+S1   P1         1000
+
+SQL> INSERT INTO SUP_PART VALUES('&SNO','&PNO','&QUANTITY');
+Enter value for sno: S2
+Enter value for pno: P1
+Enter value for quantity: 126500
+old   1: INSERT INTO SUP_PART VALUES('&SNO','&PNO','&QUANTITY')
+new   1: INSERT INTO SUP_PART VALUES('S2','P1','126500')
+
+1 row created.
+
+SQL> /
+Enter value for sno: S1
+Enter value for pno: P2
+Enter value for quantity: 1000
+old   1: INSERT INTO SUP_PART VALUES('&SNO','&PNO','&QUANTITY')
+new   1: INSERT INTO SUP_PART VALUES('S1','P2','1000')
+
+1 row created.
+
+SQL> /
+Enter value for sno: S3
+Enter value for pno: P1
+Enter value for quantity: 15600
+old   1: INSERT INTO SUP_PART VALUES('&SNO','&PNO','&QUANTITY')
+new   1: INSERT INTO SUP_PART VALUES('S3','P1','15600')
+
+1 row created.
+
+SQL> /
+Enter value for sno: S3
+Enter value for pno: P3
+Enter value for quantity: 195000
+old   1: INSERT INTO SUP_PART VALUES('&SNO','&PNO','&QUANTITY')
+new   1: INSERT INTO SUP_PART VALUES('S3','P3','195000')
+
+1 row created.
+
+SQL> /
+Enter value for sno: S1
+Enter value for pno: P3
+Enter value for quantity: 15000
+old   1: INSERT INTO SUP_PART VALUES('&SNO','&PNO','&QUANTITY')
+new   1: INSERT INTO SUP_PART VALUES('S1','P3','15000')
+
+1 row created.
+
+SQL> SELECT SNAME FROM SUPPLIER WHERE SNO IN (SELECT SNO FROM SUP_PARTS WHERE PNO='P2');
+SELECT SNAME FROM SUPPLIER WHERE SNO IN (SELECT SNO FROM SUP_PARTS WHERE PNO='P2')
+                                                         *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> SELECT SNAME FROM SUPPLIER WHERE SNO IN (SELECT SNO FROM SUP_PART WHERE PNO='P2');
+
+SNAME
+--------------------
+DEBASHIS
+
+SQL> SELECT * FROM SUPPLIER,PARTS WHERE SNAME=PNAME;
+
+no rows selected
+
+SQL> SELECT * FROM SUPPLIER,PARTS WHERE SNAME!=PNAME;
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S2   GAURAV               6     MAHARASHTRA          P1   NUT
+WHITE                10.02 MUMBAI
+
+S1   DEBASHIS             8     ASSAM                P1   NUT
+WHITE                10.02 MUMBAI
+
+S3   AMBARISH             7     CHENNAI              P1   NUT
+WHITE                10.02 MUMBAI
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S4   HARISHJ              5     GOA                  P1   NUT
+WHITE                10.02 MUMBAI
+
+S5   BAKUL                4     MUMBAI               P1   NUT
+WHITE                10.02 MUMBAI
+
+S6   MANISH               2     MP                   P1   NUT
+WHITE                10.02 MUMBAI
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S7   NAKUL                1     ORISSA               P1   NUT
+WHITE                10.02 MUMBAI
+
+S8   MAYONESSE            6     BANGLORE             P1   NUT
+WHITE                10.02 MUMBAI
+
+S9   BINDWA               6     NASIK                P1   NUT
+WHITE                10.02 MUMBAI
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S10  KARISHMA             9     MALYALAM             P1   NUT
+WHITE                10.02 MUMBAI
+
+S11  GAURAV               5     DUBAI                P1   NUT
+WHITE                10.02 MUMBAI
+
+S2   GAURAV               6     MAHARASHTRA          P2   NAIL
+GREY                  3.65 BANGLORE
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S1   DEBASHIS             8     ASSAM                P2   NAIL
+GREY                  3.65 BANGLORE
+
+S3   AMBARISH             7     CHENNAI              P2   NAIL
+GREY                  3.65 BANGLORE
+
+S4   HARISHJ              5     GOA                  P2   NAIL
+GREY                  3.65 BANGLORE
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S5   BAKUL                4     MUMBAI               P2   NAIL
+GREY                  3.65 BANGLORE
+
+S6   MANISH               2     MP                   P2   NAIL
+GREY                  3.65 BANGLORE
+
+S7   NAKUL                1     ORISSA               P2   NAIL
+GREY                  3.65 BANGLORE
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S8   MAYONESSE            6     BANGLORE             P2   NAIL
+GREY                  3.65 BANGLORE
+
+S9   BINDWA               6     NASIK                P2   NAIL
+GREY                  3.65 BANGLORE
+
+S10  KARISHMA             9     MALYALAM             P2   NAIL
+GREY                  3.65 BANGLORE
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S11  GAURAV               5     DUBAI                P2   NAIL
+GREY                  3.65 BANGLORE
+
+S2   GAURAV               6     MAHARASHTRA          P3   TURBINE
+BLACK                96.65 ORISSA
+
+S1   DEBASHIS             8     ASSAM                P3   TURBINE
+BLACK                96.65 ORISSA
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S3   AMBARISH             7     CHENNAI              P3   TURBINE
+BLACK                96.65 ORISSA
+
+S4   HARISHJ              5     GOA                  P3   TURBINE
+BLACK                96.65 ORISSA
+
+S5   BAKUL                4     MUMBAI               P3   TURBINE
+BLACK                96.65 ORISSA
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S6   MANISH               2     MP                   P3   TURBINE
+BLACK                96.65 ORISSA
+
+S7   NAKUL                1     ORISSA               P3   TURBINE
+BLACK                96.65 ORISSA
+
+S8   MAYONESSE            6     BANGLORE             P3   TURBINE
+BLACK                96.65 ORISSA
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S9   BINDWA               6     NASIK                P3   TURBINE
+BLACK                96.65 ORISSA
+
+S10  KARISHMA             9     MALYALAM             P3   TURBINE
+BLACK                96.65 ORISSA
+
+S11  GAURAV               5     DUBAI                P3   TURBINE
+BLACK                96.65 ORISSA
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S2   GAURAV               6     MAHARASHTRA          P4   LAPTOP
+BRONZE               71.11 DELHI
+
+S1   DEBASHIS             8     ASSAM                P4   LAPTOP
+BRONZE               71.11 DELHI
+
+S3   AMBARISH             7     CHENNAI              P4   LAPTOP
+BRONZE               71.11 DELHI
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S4   HARISHJ              5     GOA                  P4   LAPTOP
+BRONZE               71.11 DELHI
+
+S5   BAKUL                4     MUMBAI               P4   LAPTOP
+BRONZE               71.11 DELHI
+
+S6   MANISH               2     MP                   P4   LAPTOP
+BRONZE               71.11 DELHI
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S7   NAKUL                1     ORISSA               P4   LAPTOP
+BRONZE               71.11 DELHI
+
+S8   MAYONESSE            6     BANGLORE             P4   LAPTOP
+BRONZE               71.11 DELHI
+
+S9   BINDWA               6     NASIK                P4   LAPTOP
+BRONZE               71.11 DELHI
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S10  KARISHMA             9     MALYALAM             P4   LAPTOP
+BRONZE               71.11 DELHI
+
+S11  GAURAV               5     DUBAI                P4   LAPTOP
+BRONZE               71.11 DELHI
+
+S2   GAURAV               6     MAHARASHTRA          P5   MOBILE
+YELLOW               56.69 PUNJAB
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S1   DEBASHIS             8     ASSAM                P5   MOBILE
+YELLOW               56.69 PUNJAB
+
+S3   AMBARISH             7     CHENNAI              P5   MOBILE
+YELLOW               56.69 PUNJAB
+
+S4   HARISHJ              5     GOA                  P5   MOBILE
+YELLOW               56.69 PUNJAB
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S5   BAKUL                4     MUMBAI               P5   MOBILE
+YELLOW               56.69 PUNJAB
+
+S6   MANISH               2     MP                   P5   MOBILE
+YELLOW               56.69 PUNJAB
+
+S7   NAKUL                1     ORISSA               P5   MOBILE
+YELLOW               56.69 PUNJAB
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S8   MAYONESSE            6     BANGLORE             P5   MOBILE
+YELLOW               56.69 PUNJAB
+
+S9   BINDWA               6     NASIK                P5   MOBILE
+YELLOW               56.69 PUNJAB
+
+S10  KARISHMA             9     MALYALAM             P5   MOBILE
+YELLOW               56.69 PUNJAB
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S11  GAURAV               5     DUBAI                P5   MOBILE
+YELLOW               56.69 PUNJAB
+
+S2   GAURAV               6     MAHARASHTRA          P8   MOUSE
+GREY                       BANGLORE
+
+S1   DEBASHIS             8     ASSAM                P8   MOUSE
+GREY                       BANGLORE
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S3   AMBARISH             7     CHENNAI              P8   MOUSE
+GREY                       BANGLORE
+
+S4   HARISHJ              5     GOA                  P8   MOUSE
+GREY                       BANGLORE
+
+S5   BAKUL                4     MUMBAI               P8   MOUSE
+GREY                       BANGLORE
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S6   MANISH               2     MP                   P8   MOUSE
+GREY                       BANGLORE
+
+S7   NAKUL                1     ORISSA               P8   MOUSE
+GREY                       BANGLORE
+
+S8   MAYONESSE            6     BANGLORE             P8   MOUSE
+GREY                       BANGLORE
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S9   BINDWA               6     NASIK                P8   MOUSE
+GREY                       BANGLORE
+
+S10  KARISHMA             9     MALYALAM             P8   MOUSE
+GREY                       BANGLORE
+
+S11  GAURAV               5     DUBAI                P8   MOUSE
+GREY                       BANGLORE
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S2   GAURAV               6     MAHARASHTRA          P9   BUTTON
+BLACK                      MUMBAI
+
+S1   DEBASHIS             8     ASSAM                P9   BUTTON
+BLACK                      MUMBAI
+
+S3   AMBARISH             7     CHENNAI              P9   BUTTON
+BLACK                      MUMBAI
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S4   HARISHJ              5     GOA                  P9   BUTTON
+BLACK                      MUMBAI
+
+S5   BAKUL                4     MUMBAI               P9   BUTTON
+BLACK                      MUMBAI
+
+S6   MANISH               2     MP                   P9   BUTTON
+BLACK                      MUMBAI
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S7   NAKUL                1     ORISSA               P9   BUTTON
+BLACK                      MUMBAI
+
+S8   MAYONESSE            6     BANGLORE             P9   BUTTON
+BLACK                      MUMBAI
+
+S9   BINDWA               6     NASIK                P9   BUTTON
+BLACK                      MUMBAI
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S10  KARISHMA             9     MALYALAM             P9   BUTTON
+BLACK                      MUMBAI
+
+S11  GAURAV               5     DUBAI                P9   BUTTON
+BLACK                      MUMBAI
+
+S2   GAURAV               6     MAHARASHTRA          P10  NIBS
+BLACK                      DELHI
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S1   DEBASHIS             8     ASSAM                P10  NIBS
+BLACK                      DELHI
+
+S3   AMBARISH             7     CHENNAI              P10  NIBS
+BLACK                      DELHI
+
+S4   HARISHJ              5     GOA                  P10  NIBS
+BLACK                      DELHI
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S5   BAKUL                4     MUMBAI               P10  NIBS
+BLACK                      DELHI
+
+S6   MANISH               2     MP                   P10  NIBS
+BLACK                      DELHI
+
+S7   NAKUL                1     ORISSA               P10  NIBS
+BLACK                      DELHI
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S8   MAYONESSE            6     BANGLORE             P10  NIBS
+BLACK                      DELHI
+
+S9   BINDWA               6     NASIK                P10  NIBS
+BLACK                      DELHI
+
+S10  KARISHMA             9     MALYALAM             P10  NIBS
+BLACK                      DELHI
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S11  GAURAV               5     DUBAI                P10  NIBS
+BLACK                      DELHI
+
+
+88 rows selected.
+
+SQL>
+SQL> SELECT COUNT(*) FROM SUPPLIERS;
+SELECT COUNT(*) FROM SUPPLIERS
+                     *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> SELECT COUNT(*) FROM SUPPLIER;
+
+  COUNT(*)
+----------
+        11
+
+SQL> SELECT COUNT(*) FROM SUP_PARTS;
+SELECT COUNT(*) FROM SUP_PARTS
+                     *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> SELECT COUNT(*) FROM SUP_PART;
+
+  COUNT(*)
+----------
+         6
+
+SQL> SELECT COUNT(*) FROM PARTS;
+
+  COUNT(*)
+----------
+        10
+
+SQL> SELECT * FROM SUPPLIER,PARTS WHERE SUPPLIER.CITY=PARTS.CITY;
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S5   BAKUL                4     MUMBAI               P9   BUTTON
+BLACK                      MUMBAI
+
+S5   BAKUL                4     MUMBAI               P7
+RED                     10 MUMBAI
+
+S5   BAKUL                4     MUMBAI               P1   NUT
+WHITE                10.02 MUMBAI
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S7   NAKUL                1     ORISSA               P3   TURBINE
+BLACK                96.65 ORISSA
+
+S8   MAYONESSE            6     BANGLORE             P8   MOUSE
+GREY                       BANGLORE
+
+S8   MAYONESSE            6     BANGLORE             P6
+GREEN                   10 BANGLORE
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY
+--------------- ---------- --------------------
+S8   MAYONESSE            6     BANGLORE             P2   NAIL
+GREY                  3.65 BANGLORE
+
+
+7 rows selected.
+
+SQL> SELECT * FROM SUPPLIER,PARTS,SUP_PART
+  2  WHERE SUPPLIER.SNO=SUP_PART.SNO;
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY                 SNO  PNO    QUANTITY
+--------------- ---------- -------------------- ---- ---- ----------
+S1   DEBASHIS             8     ASSAM                P1   NUT
+WHITE                10.02 MUMBAI               S1   P1         1000
+
+S1   DEBASHIS             8     ASSAM                P2   NAIL
+GREY                  3.65 BANGLORE             S1   P1         1000
+
+S1   DEBASHIS             8     ASSAM                P3   TURBINE
+BLACK                96.65 ORISSA               S1   P1         1000
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY                 SNO  PNO    QUANTITY
+--------------- ---------- -------------------- ---- ---- ----------
+S1   DEBASHIS             8     ASSAM                P4   LAPTOP
+BRONZE               71.11 DELHI                S1   P1         1000
+
+S1   DEBASHIS             8     ASSAM                P5   MOBILE
+YELLOW               56.69 PUNJAB               S1   P1         1000
+
+S1   DEBASHIS             8     ASSAM                P6
+GREEN                   10 BANGLORE             S1   P1         1000
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY                 SNO  PNO    QUANTITY
+--------------- ---------- -------------------- ---- ---- ----------
+S1   DEBASHIS             8     ASSAM                P7
+RED                     10 MUMBAI               S1   P1         1000
+
+S1   DEBASHIS             8     ASSAM                P8   MOUSE
+GREY                       BANGLORE             S1   P1         1000
+
+S1   DEBASHIS             8     ASSAM                P9   BUTTON
+BLACK                      MUMBAI               S1   P1         1000
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY                 SNO  PNO    QUANTITY
+--------------- ---------- -------------------- ---- ---- ----------
+S1   DEBASHIS             8     ASSAM                P10  NIBS
+BLACK                      DELHI                S1   P1         1000
+
+S2   GAURAV               6     MAHARASHTRA          P1   NUT
+WHITE                10.02 MUMBAI               S2   P1       126500
+
+S2   GAURAV               6     MAHARASHTRA          P2   NAIL
+GREY                  3.65 BANGLORE             S2   P1       126500
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY                 SNO  PNO    QUANTITY
+--------------- ---------- -------------------- ---- ---- ----------
+S2   GAURAV               6     MAHARASHTRA          P3   TURBINE
+BLACK                96.65 ORISSA               S2   P1       126500
+
+S2   GAURAV               6     MAHARASHTRA          P4   LAPTOP
+BRONZE               71.11 DELHI                S2   P1       126500
+
+S2   GAURAV               6     MAHARASHTRA          P5   MOBILE
+YELLOW               56.69 PUNJAB               S2   P1       126500
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY                 SNO  PNO    QUANTITY
+--------------- ---------- -------------------- ---- ---- ----------
+S2   GAURAV               6     MAHARASHTRA          P6
+GREEN                   10 BANGLORE             S2   P1       126500
+
+S2   GAURAV               6     MAHARASHTRA          P7
+RED                     10 MUMBAI               S2   P1       126500
+
+S2   GAURAV               6     MAHARASHTRA          P8   MOUSE
+GREY                       BANGLORE             S2   P1       126500
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY                 SNO  PNO    QUANTITY
+--------------- ---------- -------------------- ---- ---- ----------
+S2   GAURAV               6     MAHARASHTRA          P9   BUTTON
+BLACK                      MUMBAI               S2   P1       126500
+
+S2   GAURAV               6     MAHARASHTRA          P10  NIBS
+BLACK                      DELHI                S2   P1       126500
+
+S1   DEBASHIS             8     ASSAM                P1   NUT
+WHITE                10.02 MUMBAI               S1   P2         1000
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY                 SNO  PNO    QUANTITY
+--------------- ---------- -------------------- ---- ---- ----------
+S1   DEBASHIS             8     ASSAM                P2   NAIL
+GREY                  3.65 BANGLORE             S1   P2         1000
+
+S1   DEBASHIS             8     ASSAM                P3   TURBINE
+BLACK                96.65 ORISSA               S1   P2         1000
+
+S1   DEBASHIS             8     ASSAM                P4   LAPTOP
+BRONZE               71.11 DELHI                S1   P2         1000
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY                 SNO  PNO    QUANTITY
+--------------- ---------- -------------------- ---- ---- ----------
+S1   DEBASHIS             8     ASSAM                P5   MOBILE
+YELLOW               56.69 PUNJAB               S1   P2         1000
+
+S1   DEBASHIS             8     ASSAM                P6
+GREEN                   10 BANGLORE             S1   P2         1000
+
+S1   DEBASHIS             8     ASSAM                P7
+RED                     10 MUMBAI               S1   P2         1000
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY                 SNO  PNO    QUANTITY
+--------------- ---------- -------------------- ---- ---- ----------
+S1   DEBASHIS             8     ASSAM                P8   MOUSE
+GREY                       BANGLORE             S1   P2         1000
+
+S1   DEBASHIS             8     ASSAM                P9   BUTTON
+BLACK                      MUMBAI               S1   P2         1000
+
+S1   DEBASHIS             8     ASSAM                P10  NIBS
+BLACK                      DELHI                S1   P2         1000
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY                 SNO  PNO    QUANTITY
+--------------- ---------- -------------------- ---- ---- ----------
+S3   AMBARISH             7     CHENNAI              P1   NUT
+WHITE                10.02 MUMBAI               S3   P1        15600
+
+S3   AMBARISH             7     CHENNAI              P2   NAIL
+GREY                  3.65 BANGLORE             S3   P1        15600
+
+S3   AMBARISH             7     CHENNAI              P3   TURBINE
+BLACK                96.65 ORISSA               S3   P1        15600
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY                 SNO  PNO    QUANTITY
+--------------- ---------- -------------------- ---- ---- ----------
+S3   AMBARISH             7     CHENNAI              P4   LAPTOP
+BRONZE               71.11 DELHI                S3   P1        15600
+
+S3   AMBARISH             7     CHENNAI              P5   MOBILE
+YELLOW               56.69 PUNJAB               S3   P1        15600
+
+S3   AMBARISH             7     CHENNAI              P6
+GREEN                   10 BANGLORE             S3   P1        15600
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY                 SNO  PNO    QUANTITY
+--------------- ---------- -------------------- ---- ---- ----------
+S3   AMBARISH             7     CHENNAI              P7
+RED                     10 MUMBAI               S3   P1        15600
+
+S3   AMBARISH             7     CHENNAI              P8   MOUSE
+GREY                       BANGLORE             S3   P1        15600
+
+S3   AMBARISH             7     CHENNAI              P9   BUTTON
+BLACK                      MUMBAI               S3   P1        15600
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY                 SNO  PNO    QUANTITY
+--------------- ---------- -------------------- ---- ---- ----------
+S3   AMBARISH             7     CHENNAI              P10  NIBS
+BLACK                      DELHI                S3   P1        15600
+
+S3   AMBARISH             7     CHENNAI              P1   NUT
+WHITE                10.02 MUMBAI               S3   P3       195000
+
+S3   AMBARISH             7     CHENNAI              P2   NAIL
+GREY                  3.65 BANGLORE             S3   P3       195000
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY                 SNO  PNO    QUANTITY
+--------------- ---------- -------------------- ---- ---- ----------
+S3   AMBARISH             7     CHENNAI              P3   TURBINE
+BLACK                96.65 ORISSA               S3   P3       195000
+
+S3   AMBARISH             7     CHENNAI              P4   LAPTOP
+BRONZE               71.11 DELHI                S3   P3       195000
+
+S3   AMBARISH             7     CHENNAI              P5   MOBILE
+YELLOW               56.69 PUNJAB               S3   P3       195000
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY                 SNO  PNO    QUANTITY
+--------------- ---------- -------------------- ---- ---- ----------
+S3   AMBARISH             7     CHENNAI              P6
+GREEN                   10 BANGLORE             S3   P3       195000
+
+S3   AMBARISH             7     CHENNAI              P7
+RED                     10 MUMBAI               S3   P3       195000
+
+S3   AMBARISH             7     CHENNAI              P8   MOUSE
+GREY                       BANGLORE             S3   P3       195000
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY                 SNO  PNO    QUANTITY
+--------------- ---------- -------------------- ---- ---- ----------
+S3   AMBARISH             7     CHENNAI              P9   BUTTON
+BLACK                      MUMBAI               S3   P3       195000
+
+S3   AMBARISH             7     CHENNAI              P10  NIBS
+BLACK                      DELHI                S3   P3       195000
+
+S1   DEBASHIS             8     ASSAM                P1   NUT
+WHITE                10.02 MUMBAI               S1   P3        15000
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY                 SNO  PNO    QUANTITY
+--------------- ---------- -------------------- ---- ---- ----------
+S1   DEBASHIS             8     ASSAM                P2   NAIL
+GREY                  3.65 BANGLORE             S1   P3        15000
+
+S1   DEBASHIS             8     ASSAM                P3   TURBINE
+BLACK                96.65 ORISSA               S1   P3        15000
+
+S1   DEBASHIS             8     ASSAM                P4   LAPTOP
+BRONZE               71.11 DELHI                S1   P3        15000
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY                 SNO  PNO    QUANTITY
+--------------- ---------- -------------------- ---- ---- ----------
+S1   DEBASHIS             8     ASSAM                P5   MOBILE
+YELLOW               56.69 PUNJAB               S1   P3        15000
+
+S1   DEBASHIS             8     ASSAM                P6
+GREEN                   10 BANGLORE             S1   P3        15000
+
+S1   DEBASHIS             8     ASSAM                P7
+RED                     10 MUMBAI               S1   P3        15000
+
+
+SNO  SNAME                STATU CITY                 PNO  PNAME
+---- -------------------- ----- -------------------- ---- --------------------
+COLOR               WEIGHT CITY                 SNO  PNO    QUANTITY
+--------------- ---------- -------------------- ---- ---- ----------
+S1   DEBASHIS             8     ASSAM                P8   MOUSE
+GREY                       BANGLORE             S1   P3        15000
+
+S1   DEBASHIS             8     ASSAM                P9   BUTTON
+BLACK                      MUMBAI               S1   P3        15000
+
+S1   DEBASHIS             8     ASSAM                P10  NIBS
+BLACK                      DELHI                S1   P3        15000
+
+
+60 rows selected.
+
+SQL> SELECT * FROM SUPPLIER,SUP_PART
+  2  WHERE SUPPLIER.SNO=SUP_PART.SNO;
+
+SNO  SNAME                STATU CITY                 SNO  PNO    QUANTITY
+---- -------------------- ----- -------------------- ---- ---- ----------
+S1   DEBASHIS             8     ASSAM                S1   P1         1000
+S2   GAURAV               6     MAHARASHTRA          S2   P1       126500
+S1   DEBASHIS             8     ASSAM                S1   P2         1000
+S3   AMBARISH             7     CHENNAI              S3   P1        15600
+S3   AMBARISH             7     CHENNAI              S3   P3       195000
+S1   DEBASHIS             8     ASSAM                S1   P3        15000
+
+6 rows selected.
+
+SQL> SELECT * FROM SUPPLIER,DEPT;
+
+no rows selected
+
+SQL> SELECT * FROM SUPPLIER,DEPT;
+
+no rows selected
+
+SQL> SELECT * FROM DEPT;
+
+no rows selected
+
+SQL> SELECT * FROM SUPPLIER,EMP;
+
+SNO  SNAME                STATU CITY                 EMPN ENAME
+---- -------------------- ----- -------------------- ---- --------------------
+DOB       DEPT SUPE
+--------- ---- ----
+S2   GAURAV               6     MAHARASHTRA          E1   SHANKAR
+01-JAN-90
+
+S1   DEBASHIS             8     ASSAM                E1   SHANKAR
+01-JAN-90
+
+S3   AMBARISH             7     CHENNAI              E1   SHANKAR
+01-JAN-90
+
+
+SNO  SNAME                STATU CITY                 EMPN ENAME
+---- -------------------- ----- -------------------- ---- --------------------
+DOB       DEPT SUPE
+--------- ---- ----
+S4   HARISHJ              5     GOA                  E1   SHANKAR
+01-JAN-90
+
+S5   BAKUL                4     MUMBAI               E1   SHANKAR
+01-JAN-90
+
+S6   MANISH               2     MP                   E1   SHANKAR
+01-JAN-90
+
+
+SNO  SNAME                STATU CITY                 EMPN ENAME
+---- -------------------- ----- -------------------- ---- --------------------
+DOB       DEPT SUPE
+--------- ---- ----
+S7   NAKUL                1     ORISSA               E1   SHANKAR
+01-JAN-90
+
+S8   MAYONESSE            6     BANGLORE             E1   SHANKAR
+01-JAN-90
+
+S9   BINDWA               6     NASIK                E1   SHANKAR
+01-JAN-90
+
+
+SNO  SNAME                STATU CITY                 EMPN ENAME
+---- -------------------- ----- -------------------- ---- --------------------
+DOB       DEPT SUPE
+--------- ---- ----
+S10  KARISHMA             9     MALYALAM             E1   SHANKAR
+01-JAN-90
+
+S11  GAURAV               5     DUBAI                E1   SHANKAR
+01-JAN-90
+
+S2   GAURAV               6     MAHARASHTRA          E2   RAVI
+01-JAN-92
+
+
+SNO  SNAME                STATU CITY                 EMPN ENAME
+---- -------------------- ----- -------------------- ---- --------------------
+DOB       DEPT SUPE
+--------- ---- ----
+S1   DEBASHIS             8     ASSAM                E2   RAVI
+01-JAN-92
+
+S3   AMBARISH             7     CHENNAI              E2   RAVI
+01-JAN-92
+
+S4   HARISHJ              5     GOA                  E2   RAVI
+01-JAN-92
+
+
+SNO  SNAME                STATU CITY                 EMPN ENAME
+---- -------------------- ----- -------------------- ---- --------------------
+DOB       DEPT SUPE
+--------- ---- ----
+S5   BAKUL                4     MUMBAI               E2   RAVI
+01-JAN-92
+
+S6   MANISH               2     MP                   E2   RAVI
+01-JAN-92
+
+S7   NAKUL                1     ORISSA               E2   RAVI
+01-JAN-92
+
+
+SNO  SNAME                STATU CITY                 EMPN ENAME
+---- -------------------- ----- -------------------- ---- --------------------
+DOB       DEPT SUPE
+--------- ---- ----
+S8   MAYONESSE            6     BANGLORE             E2   RAVI
+01-JAN-92
+
+S9   BINDWA               6     NASIK                E2   RAVI
+01-JAN-92
+
+S10  KARISHMA             9     MALYALAM             E2   RAVI
+01-JAN-92
+
+
+SNO  SNAME                STATU CITY                 EMPN ENAME
+---- -------------------- ----- -------------------- ---- --------------------
+DOB       DEPT SUPE
+--------- ---- ----
+S11  GAURAV               5     DUBAI                E2   RAVI
+01-JAN-92
+
+
+22 rows selected.
+
+SQL> SELECT * FROM EMP;
+
+EMPN ENAME                DOB       DEPT SUPE
+---- -------------------- --------- ---- ----
+E1   SHANKAR              01-JAN-90
+E2   RAVI                 01-JAN-92
+
+SQL> SELECT * FROM SUPPLIER;
+
+SNO  SNAME                STATU CITY
+---- -------------------- ----- --------------------
+S2   GAURAV               6     MAHARASHTRA
+S1   DEBASHIS             8     ASSAM
+S3   AMBARISH             7     CHENNAI
+S4   HARISHJ              5     GOA
+S5   BAKUL                4     MUMBAI
+S6   MANISH               2     MP
+S7   NAKUL                1     ORISSA
+S8   MAYONESSE            6     BANGLORE
+S9   BINDWA               6     NASIK
+S10  KARISHMA             9     MALYALAM
+S11  GAURAV               5     DUBAI
+
+11 rows selected.
+
+SQL> SELECT SUPPLIER.SNAME FROM SUPPLIER,SUP_PART WHERE SUPPLIER.SNO=SUP_PART.SNO;
+
+SNAME
+--------------------
+DEBASHIS
+DEBASHIS
+DEBASHIS
+GAURAV
+AMBARISH
+AMBARISH
+
+6 rows selected.
+
+SQL> SELECT DISTINCT SUPPLIER.SNAME FROM SUPPLIER,SUP_PART WHERE SUPPLIER.SNO=SUP_PART.SNO;
+
+SNAME
+--------------------
+DEBASHIS
+AMBARISH
+GAURAV
+
+SQL> SELECT DISTINCT SNAME FROM SUPPLIER,SUP_PART WHERE SUPPLIER.SNO=SUP_PART.SNO;
+
+SNAME
+--------------------
+DEBASHIS
+AMBARISH
+GAURAV
+
+SQL> SELECT * FROM SUPPLIER;
+
+SNO  SNAME                STATU CITY
+---- -------------------- ----- --------------------
+S2   GAURAV               6     MAHARASHTRA
+S1   DEBASHIS             8     ASSAM
+S3   AMBARISH             7     CHENNAI
+S4   HARISHJ              5     GOA
+S5   BAKUL                4     MUMBAI
+S6   MANISH               2     MP
+S7   NAKUL                1     ORISSA
+S8   MAYONESSE            6     BANGLORE
+S9   BINDWA               6     NASIK
+S10  KARISHMA             9     MALYALAM
+S11  GAURAV               5     DUBAI
+
+11 rows selected.
+
+SQL> SELECT * FROM SUPPLIERS WHERE SNAME LIKE 'MA%';
+SELECT * FROM SUPPLIERS WHERE SNAME LIKE 'MA%'
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> SELECT * FROM SUPPLIER WHERE SNAME LIKE 'MA%';
+
+SNO  SNAME                STATU CITY
+---- -------------------- ----- --------------------
+S6   MANISH               2     MP
+S8   MAYONESSE            6     BANGLORE
+
+SQL> SELECT COUNT (DISTINCT CITY) FROM SUPPLIER;
+
+COUNT(DISTINCTCITY)
+-------------------
+                 11
+
+SQL> SELECT SNO FROM PARTS,SUP_PART WHERE PARTS.COLOR='BLACK';
+
+SNO
+----
+S1
+S1
+S1
+S2
+S3
+S3
+S1
+S1
+S1
+S2
+S3
+
+SNO
+----
+S3
+S1
+S1
+S1
+S2
+S3
+S3
+
+18 rows selected.
+
+SQL> SELECT DISTINCT SNO FROM PARTS,SUP_PART WHERE PARTS.COLOR='BLACK';
+
+SNO
+----
+S1
+S2
+S3
+
+SQL> SELECT SNO FROM PARTS P,SUP_PART SP WHERE P.PNO=SP.PNO AND P.COLOR='BLACK';
+
+SNO
+----
+S1
+S3
+
+SQL> SELECT SNO FROM PARTS P,SUP_PART SP WHERE P.PNO=SP.PNO AND P.COLOR='GREY';
+
+SNO
+----
+S1
+
+SQL> SELECT SNO FROM PARTS P,SUP_PART SP WHERE P.PNO=SP.PNO AND P.COLOR='WHITE';
+
+SNO
+----
+S1
+S2
+S3
+
+SQL> SELECT * FROM PARTS;
+
+PNO  PNAME                COLOR               WEIGHT CITY
+---- -------------------- --------------- ---------- --------------------
+P1   NUT                  WHITE                10.02 MUMBAI
+P2   NAIL                 GREY                  3.65 BANGLORE
+P3   TURBINE              BLACK                96.65 ORISSA
+P4   LAPTOP               BRONZE               71.11 DELHI
+P5   MOBILE               YELLOW               56.69 PUNJAB
+P6                        GREEN                   10 BANGLORE
+P7                        RED                     10 MUMBAI
+P8   MOUSE                GREY                       BANGLORE
+P9   BUTTON               BLACK                      MUMBAI
+P10  NIBS                 BLACK                      DELHI
+
+10 rows selected.
+
+SQL> SELECT * FROM SUP_PART;
+
+SNO  PNO    QUANTITY
+---- ---- ----------
+S1   P1         1000
+S2   P1       126500
+S1   P2         1000
+S3   P1        15600
+S3   P3       195000
+S1   P3        15000
+
+6 rows selected.
+
+SQL> /
+
+SNO  PNO    QUANTITY
+---- ---- ----------
+S1   P1         1000
+S2   P1       126500
+S1   P2         1000
+S3   P1        15600
+S3   P3       195000
+S1   P3        15000
+
+6 rows selected.
+
+SQL> INSERT INTO SUP_PART('&SNO','&PNO','&QUANTITY')
+  2  ;
+Enter value for sno: S5
+Enter value for pno: P4
+Enter value for quantity: 5600
+old   1: INSERT INTO SUP_PART('&SNO','&PNO','&QUANTITY')
+new   1: INSERT INTO SUP_PART('S5','P4','5600')
+INSERT INTO SUP_PART('S5','P4','5600')
+                     *
+ERROR at line 1:
+ORA-00928: missing SELECT keyword
+
+
+SQL> INSERT INTO SUP_PART VALUES('&SNO','&PNO','&QUANTITY');
+Enter value for sno: S5
+Enter value for pno: P4
+Enter value for quantity: 4566
+old   1: INSERT INTO SUP_PART VALUES('&SNO','&PNO','&QUANTITY')
+new   1: INSERT INTO SUP_PART VALUES('S5','P4','4566')
+
+1 row created.
+
+SQL> /
+Enter value for sno: S9
+Enter value for pno: P5
+Enter value for quantity: 56000
+old   1: INSERT INTO SUP_PART VALUES('&SNO','&PNO','&QUANTITY')
+new   1: INSERT INTO SUP_PART VALUES('S9','P5','56000')
+
+1 row created.
+
+SQL> /
+Enter value for sno: S8
+Enter value for pno: P6
+Enter value for quantity: 45000
+old   1: INSERT INTO SUP_PART VALUES('&SNO','&PNO','&QUANTITY')
+new   1: INSERT INTO SUP_PART VALUES('S8','P6','45000')
+
+1 row created.
+
+SQL> SELECT COUNT(SNO) FROM SUP_PART SP,PARTS P WHERE SP.SNO=P.SNO GROUP BY P.COLOR;
+SELECT COUNT(SNO) FROM SUP_PART SP,PARTS P WHERE SP.SNO=P.SNO GROUP BY P.COLOR
+                                                        *
+ERROR at line 1:
+ORA-00904: "P"."SNO": invalid identifier
+
+
+SQL> SELECT COUNT(SNO) FROM SUP_PART SP,PARTS P WHERE SP.PNO=P.PNO GROUP BY P.COLOR;
+
+COUNT(SNO)
+----------
+         1
+         3
+         1
+         2
+         1
+         1
+
+6 rows selected.
+
+SQL> SELECT COUNT(SNO), P.COLOR FROM SUP_PART SP,PARTS P WHERE SP.PNO=P.PNO GROUP BY P.COLOR;
+
+COUNT(SNO) COLOR
+---------- ---------------
+         1 GREEN
+         3 WHITE
+         1 GREY
+         2 BLACK
+         1 BRONZE
+         1 YELLOW
+
+6 rows selected.
+
+SQL> SELECT COUNT(SNO), P.COLOR,SP.SNO FROM SUP_PART SP,PARTS P WHERE SP.PNO=P.PNO GROUP BY P.COLOR;
+SELECT COUNT(SNO), P.COLOR,SP.SNO FROM SUP_PART SP,PARTS P WHERE SP.PNO=P.PNO GROUP BY P.COLOR
+                           *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression
+
+
+SQL>
